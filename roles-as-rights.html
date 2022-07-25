@@ -1,0 +1,247 @@
+<h1>{{ page.title }}</h1>
+<article class="bcls-article">
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <h2 id="Introduction">Introduction</h2>
+    <p>The Roles as Rights feature ensures that content metadata is only viewable by viewers whose role matches the role set on the content.</p>
+    <p>Roles allow you to filter content and experience elements for groups of specific viewers. You can expose content for viewers within a group and hide it from all other viewers.</p>
+    <p>The following content types can be shown or hidden based on the viewer's role:</p>
+    <ul>
+      <li>Movies</li>
+      <!-- <li>Programs</li> -->
+      <li>Series, Seasons, and Episodes</li>
+      <li>Channels and Live Events</li>
+      <li>Playlists and Pages</li>
+    </ul>
+    <p>In the Beacon CMS, you are able to create roles and assign them to most of the content type listed above. For movies and episodes, you should use Video Cloud custom fields to assign roles.</p>
+    <p>To associate viewers with roles, you will use your external Viewer Management System (VMS). You will connect these user role definitions to Brightcove Beacon using OpenID Connect (OIDC) tokens. OIDC is an authentication protocol used to verify the identity of a user to a client service.</p>
+    <!-- <p>To associate viewers with roles, you will use your external user management system or LDAP (Lightweight Directory Access Protocol) system. You will connect these user role definitions to Brightcove Beacon using OpenID Connect (OIDC) tokens. OIDC is an authentication protocol used to verify the identity of a user to a client service.</p> -->
+    <p> For details about using OIDC, see the <a href="/references/oidc-authentication-for-beacon.html">OIDC Authentication Configuration and Testing</a> document.</p>
+    
+    <!-- <figure class="bcls-figure"><img class="bcls-image--no-border" alt="China Delivery Architecture" src="/assets/images/s-general-img/china-delivery.png" /> </figure> -->
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="Workflow">Workflow</h2>
+    <p>The following workflows are associated with Roles as Rights:</p>
+    <h3>Viewer workflow</h3>
+    <p>Your app viewers will experience the following:</p>
+    <ol class="bcls-tasklist">
+      <li>
+        <p>Viewers will exist in your external Viewer Management System (VMS) and may have one or more roles assigned to them.</p> 
+        <aside class="bcls-aside bcls-aside--tip">Viewers with no roles will have access to all content with no associated roles.</aside>
+      </li>
+      <li>During viewer authentication with OIDC, a token is passed to the Beacon CMS with the viewer's role(s).</li>
+      <li>Viewers have access to assets/pages that match any of the viewer's roles.</li>
+    </ol>
+    <figure class="bcls-figure">
+      <img class="bcls-image--no-border" alt="Viewer workflow diagram" src="/assets/images/s-general-img/roles/viewer-workflow.svg" />
+    </figure> 
+
+    <h3>Admin workflow</h3>
+    <p>You or your admin person will perform the following tasks:</p>
+    <ol class="bcls-tasklist-restart">
+     <li>Assign roles to viewers in your external VMS (or sets up rules to assign roles)</li>
+     <li>
+      <p>Connect external VMS to Beacon CMS</p>
+      <aside class="bcls-aside bcls-aside--information">Contact your account manager to connect your VMS to the Brightcove Beacon CMS.</aside>
+    </li>
+     <li>Add the roles to the Beacon CMS (these roles must match what is defined in your VMS)</li>
+     <li>Assign roles to assets/pages</li>
+    </ol>
+    <figure class="bcls-figure">
+      <img class="bcls-image--no-border" alt="Admin workflow diagram" src="/assets/images/s-general-img/roles/admin-workflow.svg" />
+    </figure>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="Assigning_roles_to_viewers">Assigning roles to viewers</h2>
+    <p>You will use your external Viewer Management System (VMS) to assign viewers with specific roles. For example, you might want your employees and partners to have access to the latest training videos, but not your prospects and customers.</p>
+    <p>Contact your account manager to connect your VMS to the Brightcove Beacon CMS.</p>
+
+    <!-- <p>You will associate your VMS user roles with the Brightcove Beacon CMS. Follow these steps to make this connection:</p>
+    <ol class="bcls-tasklist-restart">
+      <li>
+        <p>Login to the Brightcove Beacon CMS and click <img class="bcls-image--no-border" alt="Gear icon" src="/assets/images/s-general-img/roles/gear-icon.png" />.</p> 
+        <figure class="bcls-figure">
+          <img class="bcls-image" alt="Top navigation" src="/assets/images/s-general-img/roles/gear-header.png" />
+        </figure> 
+      </li>
+      <li>
+        <p>In the left navigation, select <strong>Auth Providers</strong>.</p> 
+        <figure class="bcls-figure">
+          <img class="bcls-image" alt="Auth Providers navigation" src="/assets/images/s-general-img/roles/auth-providers.png" />
+        </figure> 
+      </li>
+      <li>
+        <p>Scroll down until you see <strong>Roles Claim</strong>. Enter the URL for the defined roles in your external VMS.</p> 
+        <figure class="bcls-figure">
+          <img class="bcls-image" alt="Roles Claim URL" src="/assets/images/s-general-img/roles/roles-claim.png" />
+        </figure> 
+      </li>
+      <li>Click <strong>Save Settings</strong>. </li>
+      <li>When viewers login to your Beacon app, a token will be passed to the Beacon CMS with the viewer's roles.</li>
+    </ol> -->
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="Adding_a_role">Adding a role</h2>
+    <p>You will add roles in the Brightcove Beacon CMS.</p>
+    <aside class="bcls-aside bcls-aside--information">Roles in the Beacon CMS must match the roles defined in your Viewer Management System (VMS).</aside>
+    <ol class="bcls-tasklist-restart">
+      <li>
+        <p>Return to the Brightcove Beacon CMS and click <img class="bcls-image--no-border" alt="Gear icon" src="/assets/images/s-general-img/roles/gear-icon.png" />.</p> 
+        <figure class="bcls-figure">
+          <img class="bcls-image" alt="Top navigation" src="/assets/images/s-general-img/roles/gear-header.png" />
+        </figure> 
+      </li>
+      <li>
+        <p>In the left navigation, select <strong>Roles</strong>.</p> 
+        <figure class="bcls-figure">
+          <img class="bcls-image" alt="Roles navigation" src="/assets/images/s-general-img/roles/roles-navigation.png" />
+        </figure> 
+      </li>
+      <li>
+        <p>Click <strong>Add new role</strong>.</p> 
+      </li>
+      <li>
+        <p>In the <strong>Create New Role</strong> dialog, enter a name for the role and click <strong>Save</strong>.</p> 
+        <figure class="bcls-figure">
+          <img class="bcls-image" alt="New role dialog" src="/assets/images/s-general-img/roles/new-role-dialog.png" />
+        </figure> 
+      </li>
+      <li>
+        <p>To edit an existing role, click it's corresponding role <strong>ID</strong>.</p> 
+      </li>
+      <li>
+        <p>In the <strong>Edit</strong> role dialog, update the role name and click <strong>Update</strong>.</p> 
+        <figure class="bcls-figure">
+          <img class="bcls-image" alt="Edit role dialog" src="/assets/images/s-general-img/roles/edit-role-dialog.png" />
+        </figure> 
+        <aside class="bcls-aside bcls-aside--information">Adding/editing Roles in Beacon does not propagate to your VMS.  You must make role changes in both the Beacon CMS and your VMS, and make sure that they match.</aside>
+      </li>
+    </ol>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="Assigning_roles_to_content">Assigning roles to content</h2>
+    <p>The following content types can be shown or hidden based on the viewer's role:</p>
+    <ul>
+      <li>Movies</li>
+      <!-- <li>Programs</li> -->
+      <li>Series, Seasons, and Episodes</li>
+      <li>Channels and Live Events</li>
+      <li>Playlists and Pages</li>
+    </ul>
+    <p>You will use the Brightcove Beacon CMS to assign roles to your content. These content types use a similar field for entering roles.</p>
+
+    <p>Let's walk through the steps for adding roles to a series.</p>
+    <ol class="bcls-tasklist-restart">
+      <li>
+        <p>In the top navigation, select <strong>Programs</strong>. In the left navigation, select <strong>Series</strong>.</p> 
+        <figure class="bcls-figure">
+          <img class="bcls-image" alt="Programs/series navigation" src="/assets/images/s-general-img/roles/programs-navigation.png" />
+        </figure> 
+      </li>
+      <li>
+        <p>In the Edit series screen, select <strong>Rights & Scheduling</strong>.</p> 
+        <figure class="bcls-figure">
+          <img class="bcls-image" alt="Rights & Scheduling" src="/assets/images/s-general-img/roles/rights-scheduling.png" />
+        </figure> 
+      </li>
+      <li>
+        <p>Click <strong>Select/Unselect All Roles</strong> to select all available roles.</p> 
+        <figure class="bcls-figure">
+          <img class="bcls-image" alt="Select all roles" src="/assets/images/s-general-img/roles/select-all-roles.png" />
+        </figure> 
+      </li>
+      <li>
+        <p>Or, click inside the <strong>Asset roles</strong> input area and select a role from the list of available roles.</p> 
+        <figure class="bcls-figure">
+          <img class="bcls-image" alt="Select a role" src="/assets/images/s-general-img/roles/select-a-role.png" />
+        </figure> 
+        <aside class="bcls-aside bcls-aside--tip">The default, where <strong>Asset roles</strong> is blank, allows this content to be available for everyone.</aside>
+      </li>
+      <li>You can assign roles to other content types in the <strong>Rights & Scheduling</strong> tab. The other content types include movies, series, seasons, episodes, channels, live events, playlists, and pages.</li>
+    </ol>
+  </section>
+
+  <!-- <section class="bcls-section">
+    <h2 id="Assigning_roles_to_movies_and_episodes">Assigning roles to movies and episodes</h2>
+    <p>For movies and episodes, you will add roles as custom fields in Video Cloud Studio.</p>
+    <p>Even though you can assign roles to movies and episodes in Beacon CMS, the information contained within the Video Cloud custom fields will overwrite the settings for movies and episodes in Beacon CMS.</p>
+  </section> -->
+
+  <section class="bcls-section">
+    <h2 id="Understanding_the_viewer_experience">Understanding the viewer experience</h2>
+    <p>The viewer will only see content in the Beacon app if their user account is has any of the roles associated with the content.</p>
+    <ol class="bcls-tasklist-restart">
+      <li>
+        <p>In the Beacon app, I have logged in as <strong>jdoktor</strong>. Notice the movies that display in the playlist for the <strong>BCLS</strong> page include <strong>Mom and Fawn</strong>.</p> 
+        <figure class="bcls-figure">
+          <img class="bcls-image" alt="BCLS playlist page" src="/assets/images/s-general-img/roles/mom-and-fawn-app.png" />
+        </figure> 
+      </li>
+      <li><p>Let's see why this video appears for this user while logged in. In the Beacon CMS, the <strong>Mom and Fawn</strong> movie has a <strong>Asset role</strong> of <strong>docs_admin</strong>.</p>
+        <figure class="bcls-figure">
+          <img class="bcls-image" alt="Beacon cms for movie" src="/assets/images/s-general-img/roles/beacon-cms-mom-and-fawn.png" />
+        </figure>
+      </li>
+      <li>
+        <p>Next, let's look at the roles for this app user.</p> 
+        <ol>
+          <li>In the top navigation, select <strong>Commerce</strong>.</li>
+          <li>In the left navigation, select <strong>App Users</strong>.</li>
+          <li>Select the app user ID.</li>
+        </ol>
+        <p>Notice the roles assigned to this user:</p>
+        <ul>
+          <li><strong>docs_admin</strong></li>
+          <li><strong>docs_reviewer</strong></li>
+        </ul>
+        <figure class="bcls-figure">
+          <img class="bcls-image" alt="App user roles" src="/assets/images/s-general-img/roles/jdoktor-roles.png" />
+        </figure> 
+      </li>
+      <li>Since the user has a role associated with the asset, then the user can view this asset.</li>
+      <li>
+        <p>Now, let's log into the Beacon app as a different user. Notice that this user does not see the <strong>Mom and Fawn</strong> movie in the playlist.</p> 
+        <figure class="bcls-figure">
+          <img class="bcls-image" alt="BCLS playlist page" src="/assets/images/s-general-img/roles/bcls-page-app.png" />
+        </figure> 
+      </li>
+      <li>
+        <p>If we look at the roles for this app user, we see that <strong>docs_admin</strong> is not included in their roles.</p> 
+        <figure class="bcls-figure">
+          <img class="bcls-image" alt="App user2 roles" src="/assets/images/s-general-img/roles/mboles-roles.png" />
+        </figure> 
+      </li>
+      <li>Remember, if an asset has no <strong>Asset roles</strong>, then all users can see that asset.</li>
+    </ol>
+
+   
+  </section>
+  
+  
+  <!-- <section class="bcls-section">
+    <h2 id="Limitations">Limitations</h2>
+    <p>The following are known limitations with China Delivery:</p>
+    <h3>Current limitations</h3>
+    <ul>
+      <li>Player configuration requires editing JSON and/or usage of the Player Management API; a “one-click” Player configuration via the Studio is intended for the future</li>
+      <li>The Brightcove Native Android SDK with support for China Delivery will be available in Q1 2022</li>
+    </ul>
+    <h3>Unsupported features:</h3>
+    <ul>
+      <li>Brightcove Live Streaming and Cloud Playout are not supported</li>
+      <li>Dynamic Delivery Rules and Static URLs are not supported</li>
+      <li>Chinese Data Privacy laws prohibit the use of the Audience/Campaign plugins and user-specific analytics; the latest versions of the plugins will be disabled automatically in China Delivery-enabled players</li>
+    </ul>
+    <p>Player and SDK plugins can be used as normal but external services may be unreachable from within China, and Brightcove cannot provide support for them. These include:</p>
+    <ul>
+      <li>DRM</li>
+      <li>Advertising (CSAI + SSAI)</li>
+      <li>Third-party Analytics services</li>
+    </ul>
+  </section> -->
+</article>

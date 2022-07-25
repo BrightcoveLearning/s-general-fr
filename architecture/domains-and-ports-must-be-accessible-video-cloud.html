@@ -1,0 +1,418 @@
+<h1>{{ page.title }}</h1>
+<article class="bcls-article">
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <p>The list of key URLs for Video Cloud operations are (all over http port 80 and https port 443):</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Keydomains_wildcarded">Key domains - wildcards</h2>
+    <p>The table below list key domains for Brightcove with wilcards.</p>
+    <table class="bcls-table">
+      <caption class="bcls-caption--table">
+        Key Domains for Brightcove (wildcards)
+      </caption>
+      <thead class="bcls-table__head">
+        <tr>
+          <th>Domain</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody class="bcls-table__body">
+        <tr>
+          <td>*.brightcove.net</td>
+          <td>Brightcove players</td>
+        </tr>
+        <tr>
+          <td>*.brightcove.com</td>
+          <td>Brightcove web sites</td>
+        </tr>
+        <tr>
+          <td>bcove.video</td>
+          <td>Social sharing, shortened video URLs</td>
+        </tr>
+        <tr>
+          <td>*.api.brightcove.com</td>
+          <td>Brightcove APIs for Studio and players</td>
+        </tr>
+        <tr>
+          <td>api.bcovlive.io</td>
+          <td>For Brightcove Live API</td>
+        </tr>
+        <tr>
+          <td>*.bcovlive.io</td>
+          <td>For Brightcove Live</td>
+        </tr>
+        <tr>
+          <td>*.sep.bcovlive.io</td>
+          <td>For Brightcove Live static entry point jobs</td>
+        </tr>
+        <tr>
+          <td>bcovlive-a.akamaihd.net</td>
+          <td>For Brightcove Live playback</td>
+        </tr>
+        <tr>
+          <td>*.o.brightcove.com</td>
+          <td>Source for some streaming media</td>
+        </tr>
+        <tr>
+          <td>players.brightcove.net</td>
+          <td>Source for Brightcove players</td>
+        </tr>
+        <tr>
+          <td>hls.ak.o.brightcove.com</td>
+          <td>Source for some HLS video</td>
+        </tr>
+        <tr>
+          <td>uds.ak.o.brightcove.com</td>
+          <td>Source for some video progressive downloads</td>
+        </tr>
+        <tr>
+          <td>*.boltdns.net</td>
+          <td>Dynamic Delivery</td>
+        </tr>
+        <tr>
+          <td>brightcove.vo.llnwd.net</td>
+          <td>Source for video renditions and assets</td>
+        </tr>
+        <tr>
+          <td>*.llnw.net</td>
+          <td>Source for video renditions and assets</td>
+        </tr>
+        <tr>
+          <td>*.llnwd.net</td>
+          <td>Source for video renditions and assets</td>
+        </tr>
+        <tr>
+          <td>*.akafms.net</td>
+          <td>Source for video renditions and assets</td>
+        </tr>
+        <tr>
+          <td>*.akamaihd.net</td>
+          <td>Source for video renditions and assets</td>
+        </tr>
+        <tr>
+          <td>*.analytics.edgekey.net</td>
+          <td>Source for analytics data (this is for Akamai CDN media analytics; not needed if Akamai is not used as your CDN)</td>
+        </tr>
+        <tr>
+          <td>*.cloudfront.net</td>
+          <td>Upload module and Dynamic Ingest</td>
+        </tr>
+        <tr>
+          <td>*.media.brightcove.com</td>
+          <td>Delivery of media assets</td>
+        </tr>
+        <tr>
+          <td>hlstoken-a.akamaihd.net</td>
+          <td>TokenAuth support for HLS, HLSe, and DASH</td>
+        </tr>
+        <tr>
+          <td>vjs.zencdn.net</td>
+          <td>Used by Brightcove player to play videos on some versions of IE</td>
+        </tr>
+        <tr>
+          <td>*.gallerysites.net</td>
+          <td>Used to deliver Gallery images</td>
+        </tr>
+        <tr>
+          <td>*.bcvp0rtal.com</td>
+          <td>Published Gallery portals</td>
+        </tr>
+        <tr>
+          <td>*.brightcovecdn.com</td>
+          <td>For house and custom Fastly CDN configs for Dynamic Delivery</td>
+        </tr>
+        <tr>
+          <td>ingestion-upload-production.s3.amazonaws.com/</td>
+          <td>Used when uploading images for thumbnails/posters in the Media Module</td>
+        </tr>
+        <tr>
+          <td>*.cf.brightcove.com</td>
+          <td>Delivery URL</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+  <section class="bcls-section">
+    <h2 id="specific_domains">Specfic domains</h2>
+    <p>If wildcarding is not possible, individually list the following domains (all over http port 80 and https port 443):</p>
+    <table class="bcls-table">
+      <caption class="bcls-caption--table">
+        Specific Domains
+      </caption>
+      <thead class="bcls-table__head">
+        <tr>
+          <th>Domain</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody class="bcls-table__body">
+        <tr>
+          <td>static.brightcove.com</td>
+          <td>Studio modules</td>
+        </tr>
+        <tr>
+          <td>studio.brightcove.com</td>
+          <td>Studio</td>
+        </tr>
+        <tr>
+          <td>admin.brightcove.com</td>
+          <td>For scripts used by Studio and Brightcove players</td>
+        </tr>
+        <tr>
+          <td>api.brightcove.com</td>
+          <td>For RESTful APIs called by Studio and players plugins</td>
+        </tr>
+        <tr>
+          <td>analytics.api.brightcove.com</td>
+          <td>For Analytics</td>
+        </tr>
+        <tr>
+          <td>api.bcovlive.io</td>
+          <td>Brightcove Live</td>
+        </tr>
+        <tr>
+          <td>bcove.video</td>
+          <td>Social sharing, shortened video URLs</td>
+        </tr>
+        <tr>
+          <td>bcsecure01-a.akamaihd.net</td>
+          <td>For some secure streaming</td>
+        </tr>
+        <tr>
+          <td>bcvid.brightcove.com</td>
+          <td>Used by the Studio home page</td>
+        </tr>
+        <tr>
+          <td>billing.brightcove.com</td>
+          <td>Source for billing data</td>
+        </tr>
+        <tr>
+          <td>house-cloudfront.ap-northeast-1.prod.boltdns.net</td>
+          <td>Dynamic Delivery - CDN location for assets</td>
+        </tr>
+        <tr>
+          <td>house-cloudfront.ap-southeast-1.prod.boltdns.net</td>
+          <td>Dynamic Delivery - CDN location for assets</td>
+        </tr>
+        <tr>
+          <td>house-cloudfront.ap-southeast-2.prod.boltdns.net</td>
+          <td>Dynamic Delivery - CDN location for assets</td>
+        </tr>
+        <tr>
+          <td>house-cloudfront.eu-west-1.prod.boltdns.net</td>
+          <td>Dynamic Delivery - CDN location for assets</td>
+        </tr>
+        <tr>
+          <td>house-cloudfront.us-east-1.prod.boltdns.net</td>
+          <td>Dynamic Delivery - CDN location for assets</td>
+        </tr>
+        <tr>
+          <td>*.boltdns.net</td>
+          <td>Dynamic Delivery - individual domains are too numerous and changeable to list</td>
+        </tr>
+        <tr>
+          <td>brightcove04.brightcove.com</td>
+          <td>Video streams and assets</td>
+        </tr>
+        <tr>
+          <td>brightcove.vo.llnwd.net</td>
+          <td>Source for video assets</td>
+        </tr>
+        <tr>
+          <td>brightcove-01.fcod.llnwd.net, brightcove-02.fcod.llnwd.net, brightcove-03.fcod.llnwd.net,...</td>
+          <td>...and so forth, through brightcove-199.fcod.llnwd.net; additional sources for video assets</td>
+        </tr>
+        <tr>
+          <td>brightcove04.o.brightcove.com</td>
+          <td>Video streams and assets</td>
+        </tr>
+        <tr>
+          <td>c.brightcove.com</td>
+          <td>Domain for HLS delivery</td>
+        </tr>
+        <tr>
+          <td>cms.api.brightcove.com</td>
+          <td>RESTful API used by Studio, mobile SDKs, and player plugins</td>
+        </tr>
+        <tr>
+          <td>data.brightcove.com</td>
+          <td>RESTful API called by the Analytics Module in Studio</td>
+        </tr>
+        <tr>
+          <td>edge.api.brightcove.com</td>
+          <td>Called by Brightcove players for video and other data</td>
+        </tr>
+        <tr>
+          <td>edge-elb.api.brightcove.com</td>
+          <td>Called by Brightcove players for video and other data</td>
+        </tr>
+        <tr>
+          <td>experiences.assets.brightcove.com</td>
+          <td>Assets for Studio</td>
+        </tr>
+        <tr>
+          <td>files.brightcove.com</td>
+          <td>Media assets</td>
+        </tr>
+        <tr>
+          <td>gallery.brightcove.com</td>
+          <td>For hosting video Galleries</td>
+        </tr>
+        <tr>
+          <td>gallery.assets.brightcove.com</td>
+          <td>Assets for Galleries</td>
+        </tr>
+        <tr>
+          <td>go.brightcove.com</td>
+          <td>Used to handle various user actions on brightcove.com</td>
+        </tr>
+        <tr>
+          <td>hlsak-a.akamaihd.net</td>
+          <td>Media assets</td>
+        </tr>
+        <tr>
+          <td>httpsak-a.akamaihd.net</td>
+          <td>Media assets</td>
+        </tr>
+        <tr>
+          <td>img.brightcove.com</td>
+          <td>Images for Brightcove sites</td>
+        </tr>
+        <tr>
+          <td>images.gallery.brightcove.com</td>
+          <td>Source for Gallery images</td>
+        </tr>
+        <tr>
+          <td>ingestion.api.brightcove.com</td>
+          <td>RESTful API used by Studio and integrations</td>
+        </tr>
+        <tr>
+          <td>internal.api.brightcove.com</td>
+          <td>Used by Studio</td>
+        </tr>
+        <tr>
+          <td>live.api.brightcove.com</td>
+          <td>For managing live streams</td>
+        </tr>
+        <tr>
+          <td>live.brightcove.com</td>
+          <td>For live</td>
+        </tr>
+        <tr>
+          <td>link.brightcove.com</td>
+          <td>Domain used in social sharing for players</td>
+        </tr>
+        <tr>
+          <td>metrics.brightcove.com</td>
+          <td>API used to collect analytics data for players</td>
+        </tr>
+        <tr>
+          <td>my.brightcove.com</td>
+          <td>Domain for Studio</td>
+        </tr>
+        <tr>
+          <td>oauth.brightcove.com</td>
+          <td>RESTful API used in authenticating other Brightcove APIs</td>
+        </tr>
+        <tr>
+          <td>players.brightcove.net</td>
+          <td>Domain for Brightcove players</td>
+        </tr>
+        <tr>
+          <td>players.api.brightcove.com</td>
+          <td>RESTful API called by Studio for player management</td>
+        </tr>
+        <tr>
+          <td>repos.api.brightcove.com</td>
+          <td>Domain used to store data for Brightcove players</td>
+        </tr>
+        <tr>
+          <td>preview-players.brightcove.net</td>
+          <td>Domain for Brightcove player previews</td>
+        </tr>
+        <tr>
+          <td>reporting.brightcove.com</td>
+          <td>Source for some analytics data</td>
+        </tr>
+        <tr>
+          <td>sadmin.brightcove.com</td>
+          <td>Used for Studio and players loaded over SSL</td>
+        </tr>
+        <tr>
+          <td>search.brightcove.com</td>
+          <td>Required to search Brightcove sites</td>
+        </tr>
+        <tr>
+          <td>secure.brightcove.com</td>
+          <td>Used for player assets loading over SSL</td>
+        </tr>
+        <tr>
+          <td>services.brightcove.com</td>
+          <td>Used by Studio settings</td>
+        </tr>
+        <tr>
+          <td>share.brightcove.com</td>
+          <td>Used by Studio for video sharing</td>
+        </tr>
+        <tr>
+          <td>signin.brightcove.com</td>
+          <td>Domain for signing into Studio</td>
+        </tr>
+        <tr>
+          <td>smartplayers.api.brightcove.com</td>
+          <td>Used by Studio for player management</td>
+        </tr>
+        <tr>
+          <td>uds.ak.o.brightcove.com</td>
+          <td>Video stream source</td>
+        </tr>
+        <tr>
+          <td>vjs.zencdn.net</td>
+          <td>Used by Brightcove player to play videos on some versions of IE</td>
+        </tr>
+        <tr>
+          <td>www.brightcove.com</td>
+          <td>The main Brightcove web site</td>
+        </tr>
+        <tr>
+          <td>support.brightcove.com</td>
+          <td>Documentation and support</td>
+        </tr>
+        <tr>
+          <td>learning-services-media.brightcove.com</td>
+          <td>Documentation assets</td>
+        </tr>
+        <tr>
+          <td>solutions.brightcove.com</td>
+          <td>Documentation assets and sample apps</td>
+        </tr>
+        <tr>
+          <td>docs.brightcove.com</td>
+          <td>Documentation - API References</td>
+        </tr>
+        <tr>
+          <td>a139.vi5g5.akafms.net</td>
+          <td>Source for some streaming videos</td>
+        </tr>
+        <tr>
+          <td>images.gallerysites.net</td>
+          <td>Used to deliver Gallery images</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Please understand that specific IP addresses are not available, as they may change at any time without notice. In addition, as we add new features or modify existing features, this list may change. </p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="content_security_policies">Content security policies</h2>
+    <p>Brightcove's current set of CSPs:</p>
+    <pre><code translate="no">default-src 'self';
+script-src 'self' players.brightcove.net vjs.zencdn.net;
+connect-src 'self' players.brightcove.net edge.api.brightcove.com;
+img-src 'self' players.brightcove.net *.boltdns.net *.akamaihd.net;
+style-src 'self' players.brightcove.net;
+frame-src 'self' players.brightcove.net;
+media-src 'self' *.brightcovecdn.com *.boltdns.net *.media.brightcove.com *.llnw.net *.llnwd.net *.akafms.net *.akamaihd.net *.cf.brightcove.com;
+prefetch-src 'self' *.boltdns.net;</code></pre>
+  </section>
+</article>
