@@ -1,375 +1,285 @@
-<h1>{{ page.title }}</h1>
-<article class="bcls-article">
-  <summary>{{ page.description }}</summary>
-
-
-  <section class="bcls-section">
-    <h2 id="Introduction">Introduction</h2>
-    <aside class="bcls-aside bcls-aside--warning language-editable">The first step in an implementation of cookie compliance is checking with your legal team and determine rules and regulations for all geographies you are targeting with your content.</aside>
-    <p>Cookies are used to store data on a visitor's computer or mobile device. Cookies are commonly used and sometimes critical to a website's functionality. Cookies can be used to store large amounts of data, store personal data and track online activity so advertisers can target ads. Because of the negatives that are associated with cookies, regulations have evolved around them. The two most common are:</p>
+<h1>{{page.title}}</h1> <article class="bcls-article"> <summary>{{page.description}}</summary> <section class="bcls-section">
+    <h2 id="Introduction">Présentation</h2> <aside class="bcls-aside bcls-aside--warning language-editable">La première étape de la mise en œuvre de la conformité aux cookies consiste à vérifier auprès de votre équipe juridique et à déterminer les règles et réglementations pour toutes les zones géographiques que vous ciblez avec votre contenu.</aside>
+    <p>Les cookies sont utilisés pour stocker des données sur l'ordinateur ou l'appareil mobile d'un visiteur. Les cookies sont couramment utilisés et parfois essentiels au bon fonctionnement d'un site Web. Les cookies peuvent être utilisés pour stocker de grandes quantités de données, stocker des données personnelles et suivre l'activité en ligne afin que les annonceurs puissent cibler les publicités. En raison des inconvénients associés aux cookies, les réglementations ont évolué autour d'eux. Les deux plus courants sont:</p>
     <ul>
       <li>California Consumer Privacy Act (CCPA)</li>
-      <li>General Data Protection Regulation (GDPR) used in the EU and United Kingdom</li>
+      <li>Règlement général sur la protection des données (RGPD) utilisé dans l'UE et au Royaume-Uni</li>
     </ul>
-    <p>This document is an introduction to get you started using OneTrust's Cookie Consent tool with Brightcove Beacon. Brightcove recommends using OneTrust for your Beacon cookie compliance needs.</p>
-    <aside class="bcls-aside bcls-aside--tip language-editable">
-      <p>For further general information on cookies, regulation, rules and cookie compliance see OneTrust's <a href="https://www.cookiepro.com/knowledgebase/">CookiePro Knowledge Base</a> document. For complete details on OneTrust's tools see the <a href="https://my.onetrust.com/s/topic/0TO1Q000000ItRyWAK/cookie-compliance">Cookie Compliance</a> section of the documentation at OneTrust.</p>
-    </aside>
-    <p>This main sections in this document are:</p>
+    <p>Ce document est une introduction pour vous aider à utiliser l'outil Cookie Consent de OneTrust avec Brightcove Beacon. Brightcove recommande d'utiliser OneTrust pour répondre à vos besoins de conformité aux cookies Beacon.</p> <aside class="bcls-aside bcls-aside--tip language-editable">
+      <p>Pour plus d'informations générales sur les cookies, la réglementation, les règles et la conformité aux cookies, consultez le<a href="https://www.cookiepro.com/knowledgebase/"> document</a> CookiePro Knowledge Base de OneTrust. Pour plus de détails sur les outils de OneTrust, consultez la<a href="https://my.onetrust.com/s/topic/0TO1Q000000ItRyWAK/cookie-compliance"> section</a> Cookie Compliance de la documentation de OneTrust.</p> </aside>
+    <p>Les principales sections de ce document sont les suivantes:</p>
     <ul>
-      <li>How OneTrust Cookie Consent works</li>
-      <li>Implementation steps (comprised of four sections)</li>
-      <li>What data is collected?</li>
-      <li>Implementation architecture</li>
-    </ul>
-  </section>
-
-
-  <section class="bcls-section">
-    <h2 id="How_it_works">How OneTrust Cookie Consent works</h2>
-    <p>The end result of setting up OneTrust Cookie Consent is that a banner will appear in the Beacon App for geographic locations you choose. Here is an example of what the banner could look like (taken from OneTrust's site):</p>
-    <figure class="bcls-figure">
-      <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/one-trust-banner.png" alt="one trust banner">
-    </figure>
-    <p>When a viewer clicks on the <strong>Customize Settings</strong> link in the banner, a <strong>Preference Center</strong> dialog appears. This allows your viewers to customize how cookies behave in their app:</p>
-    <figure class="bcls-figure">
-      <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/one-trust-preference-center.png" alt="one trust preference center">
-    </figure>
-    <p>OneTrust welcomes Beacon customers to contact them about the <a href="https://www.onetrust.com/products/cookie-consent/">Cookie Consent</a> product.</p>
-    <h3>Overview of implementation process</h3>
-    <p>There are a number of steps to complete to implement OneTrust's cookie compliance with your Beacon app. Here is an overview of that process:</p>
+      <li>Comment fonctionne le consentement aux cookies OneTrust</li>
+      <li>Étapes de mise en œuvre (comprenant quatre sections)</li>
+      <li>Quelles données sont collectées&nbsp;?</li>
+      <li>Architecture d'implémentation</li>
+    </ul>  </section><section class="bcls-section">
+    <h2 id="How_it_works">Comment fonctionne le consentement aux cookies OneTrust</h2>
+    <p>Le résultat final de la configuration de OneTrust Cookie Consent est qu'une bannière apparaîtra dans l'application Beacon pour les emplacements géographiques que vous choisissez. Voici un exemple de ce à quoi pourrait ressembler la bannière (extrait du site de OneTrust):</p> <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/one-trust-banner.png" alt="bannière one trust"> </figure>
+    <p>Lorsqu'un utilisateur clique sur le<strong> lien</strong> Personnaliser les paramètres dans la bannière, une boîte de<strong> dialogue Centre de</strong> préférences apparaît. Cela permet à vos spectateurs de personnaliser le comportement des cookies dans leur application:</p> <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/one-trust-preference-center.png" alt="un centre de préférences de confiance"> </figure>
+    <p>OneTrust invite les clients de Beacon à les contacter au sujet du<a href="https://www.onetrust.com/products/cookie-consent/"> produit</a> Cookie Consent.</p>
+    <h3>Aperçu du processus de mise en œuvre</h3>
+    <p>Il y a un certain nombre d'étapes à suivre pour mettre en œuvre la conformité des cookies de OneTrust avec votre application Beacon. Voici un aperçu de ce processus:</p>
     <ol>
-      <li>Define the domain from where your apps will be served.</li>
-      <li>Create templates that define your banner and preference center functionality and upload your logo for each template created.</li>
-      <li>Create a geolocation rule group, which will act as a container for geolocation rules.</li>
-      <li>Create three geolocation rules that:
+      <li>Définissez le domaine à partir duquel vos applications seront diffusées.</li>
+      <li>Créez des modèles qui définissent les fonctionnalités de votre bannière et de votre centre de préférences et téléchargez votre logo pour chaque modèle créé.</li>
+      <li>Créez un groupe de règles de géolocalisation, qui servira de conteneur pour les règles de géolocalisation.</li>
+      <li>Créez trois règles de géolocalisation qui:
         <ul>
-          <li>Define the regions in which the cookie compliance will be used.</li>
-          <li>Define the template to be used with the geolocation rule.</li>
-          <li>Define other specifications, like how often re-consent will need to be done.</li>
+          <li>Définissez les régions dans lesquelles la conformité aux cookies sera utilisée.</li>
+          <li>Définissez le modèle à utiliser avec la règle de géolocalisation.</li>
+          <li>Définissez d'autres spécifications, comme la fréquence à laquelle un nouveau consentement devra être effectué.</li>
         </ul>
       </li>
-      <li>Assign geolocation rules to the domains from which your Beacon app is served.</li>
-      <li>Generate the scripts that provide the actual cookie compliance in your Beacon app.</li>
-      <li>Supply the scripts to Brightcove's OTT Delivery Team for implementation.</li>
+      <li>Attribuez des règles de géolocalisation aux domaines à partir desquels votre application Beacon est diffusée.</li>
+      <li>Générez les scripts qui fournissent la conformité réelle des cookies dans votre application Beacon.</li>
+      <li>Fournissez les scripts à l'équipe de livraison OTT de Brightcove pour mise en œuvre.</li>
     </ol>
-    <p>The major sections following in this document lead you step by step through the implementation process.</p>
-  </section>
-
-
-  <section class="bcls-section">
-    <h2 id="Define_app_domain">Define app domain</h2>
-    <p>Later in the implementation process, you need to use the domain(s) from which your apps are served. The steps in this section define that.</p>
+    <p>Les principales sections qui suivent ce document vous guident pas à pas tout au long du processus de mise en œuvre.</p>  </section><section class="bcls-section">
+    <h2 id="Define_app_domain">Définir le domaine des applications</h2>
+    <p>Plus tard dans le processus de mise en œuvre, vous devrez utiliser le ou les domaines à partir desquels vos applications sont diffusées. Les étapes de cette section définissent cela.</p>
     <ol class="bcls-tasklist">
-      <li>Log in to your OneTrust account.</li>
-      <li>From the <em>Welcome</em> page, click the <strong>Cookie Compliance</strong> option.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/onetrust-index.png" alt="onetrust index page">
-        </figure>
+      <li>Connectez-vous à votre compte OneTrust.</li>
+      <li>Sur la<em> page d'</em>accueil, cliquez sur l'<strong>option</strong> Cookie Compliance. <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/onetrust-index.png" alt="page d'index onetrust"> </figure>
       </li>
-      <li>To start the process:
+      <li>Pour démarrer le processus:
         <ol type="a">
-          <li>In the left navigation, click <strong>Websites</strong></li>
-          <li>Click <strong>Add Website</strong></li>
-        </ol>
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/add-website.png" alt="click add website">
-        </figure>
+          <li>Dans le menu de navigation de gauche, cliquez sur<strong> Sites</strong></li>
+          <li>Cliquez sur<strong> Ajouter un site</strong></li>
+        </ol> <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/add-website.png" alt="cliquez sur Ajouter un site"> </figure>
       </li>
-      <li>Enter the <em>Website URL</em> from where your app will be served, which is supplied by your DNS provider. Enter the <em>Organization</em>, then click <strong>Scan Only</strong>.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/scan-website.png" alt="scan website">
-        </figure>
+      <li>Saisissez l'URL du<em> site Web</em> à partir de laquelle votre application sera diffusée, qui est fournie par votre fournisseur DNS. Entrez l'<em>organisation</em>, puis cliquez sur<strong> Numériser uniquement</strong>. <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/scan-website.png" alt="scanner le site Web"> </figure>
       </li>
-      <li>You will be returned to the <em>COOKIE COMPLIANCE</em> configuration page.</li>
-    </ol>
-  </section>
-
-  <section class="bcls-section">
-    <h2 id="Create_two_templates">Create three templates</h2>
-    <p>A template defines how your banner and preferences dialog appear, and function, for your users. In the following steps you will create two templates, one for CCPA, one for GDPR and a generic one for all other regions.</p>
-    <aside class="bcls-aside bcls-aside--tip language-editable">You may not need all templates. As stated earlier, generally CCPA is used for California and GDPR for EU and UK. If you are not targeting one of these regions the corresponding template may not be needed. You should investigate your targeted geographies to check on cookie compliance regulations. The step-by-step instructions will cover creating all three templates.</aside>
+      <li>Vous serez redirigé vers la page de<em> configuration</em> COOKIE COMPLIANCE.</li>
+    </ol>  </section><section class="bcls-section">
+    <h2 id="Create_two_templates">Créez trois modèles</h2>
+    <p>Un modèle définit la manière dont votre bannière et la boîte de dialogue de préférences apparaissent et fonctionnent pour vos utilisateurs. Au cours des étapes suivantes, vous allez créer deux modèles, l'un pour le CCPA, l'autre pour le RGPD et l'autre générique pour toutes les autres régions.</p> <aside class="bcls-aside bcls-aside--tip language-editable">Vous n'avez peut-être pas besoin de tous les modèles. Comme indiqué précédemment, le CCPA est généralement utilisé pour la Californie et le RGPD pour l'UE et le Royaume-Uni. Si vous ne ciblez pas l'une de ces régions, le modèle correspondant n'est peut-être pas nécessaire. Vous devez étudier les zones géographiques que vous ciblez pour vérifier la conformité aux réglementations en matière de cookies. Les instructions étape par étape aborderont la création des trois modèles.</aside>
     <ol class="bcls-tasklist">
-      <li>In the left navigation, click <strong>Templates</strong>.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/click-templates.png" alt="click templates">
-        </figure>
+      <li>Dans le volet de navigation de gauche, cliquez sur<strong> Modèles</strong>. <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/click-templates.png" alt="cliquez sur les modèles"> </figure>
       </li>
-      <li>Click <strong>Add New</strong>
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/add-new-template.png" alt="add new template">
-        </figure>
+      <li>Cliquez sur<strong> Ajouter un nouveau</strong> <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/add-new-template.png" alt="ajouter un nouveau modèle"> </figure>
       </li>
-      <li>Select the <strong>CCPA Template (California)</strong> for the <strong>Framework</strong>.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/select-ccpa-template.png" alt="select ccpa template">
-        </figure>
+      <li>Sélectionnez le modèle<strong> CCPA (Californie)</strong> pour le<strong> cadre</strong>. <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/select-ccpa-template.png" alt="sélectionner le modèle CCPA"> </figure>
       </li>
-      <li>Click <strong>Next</strong>.</li>
-      <li>Complete the form then click <strong>Create</strong>.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/name-the-template.png" alt="name the template">
-        </figure>
+      <li>Cliquez sur<strong> Suivant</strong>.</li>
+      <li>Remplissez le formulaire, puis cliquez sur<strong> Créer</strong>. <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/name-the-template.png" alt="nommez le modèle"> </figure>
       </li>
-      <li>The <em>Template Details</em> page opens to the <em>Banner</em> tab. Click <strong>Preference Center</strong>.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/details-banner-tab.png" alt="/details banner tab">
-        </figure>
+      <li>La<em> page Détails du</em> modèle s'ouvre sur l'<em>onglet</em> Bannière. Cliquez sur Centre de<strong> préférences</strong>. <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/details-banner-tab.png" alt="Onglet bannière /details"> </figure>
       </li>
-      <li>In the <em>Preference Center</em>:
+      <li>Dans le centre de<em> préférences</em>:
         <ol type="a">
-          <li>Open the <strong>Styling</strong> options</li>
-          <li>Enable <strong>Override Banner Styling</strong></li>
-          <li>Upload a new logo</li>
-        </ol>
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/upload-new-logo.png" alt="upload new logo">
-        </figure>
-        <aside class="bcls-aside bcls-aside--warning language-editable">There is no need to make any other styling changes here as the banner and preference center will automatically be styled based on the design of your Beacon app.</aside>
+          <li>Ouvrez les<strong> options de</strong> style</li>
+          <li>Activer le style de bannière de<strong> remplacement</strong></li>
+          <li>Téléchargez un nouveau logo</li>
+        </ol> <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/upload-new-logo.png" alt="télécharger un nouveau logo"> </figure> <aside class="bcls-aside bcls-aside--warning language-editable">Il n'est pas nécessaire d'apporter d'autres modifications de style ici, car la bannière et le centre de préférences seront automatiquement stylisés en fonction du design de votre application Beacon.</aside>
       </li>
-      <li>Note that the logo is updated in the preview.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/logo-updated.png" alt="logo updated">
-        </figure>
+      <li>Notez que le logo est mis à jour dans l'aperçu. <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/logo-updated.png" alt="logo mis à jour"> </figure>
       </li>
-      <li>Click <strong>Save Template</strong>.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/save-template.png" alt="Save template">
-        </figure>
+      <li>Cliquez sur<strong> Enregistrer le modèle</strong>. <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/save-template.png" alt="Enregistrer le modèle"> </figure>
       </li>
-      <li>Click <strong>Templates</strong> in the left navigation.</li>
-      <li>Click <strong>Add New</strong> to start creation of your second template.</li>
-      <li>Select the <strong>IAB Transparency and Consent Framework 2.0</strong> for the <em>Framework</em>.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/new-iab-framework.png" alt="new iab framework">
-        </figure>
+      <li>Cliquez sur<strong> Modèles</strong> dans le volet de navigation de gauche.</li>
+      <li>Cliquez sur<strong> Ajouter nouveau</strong> pour commencer la création de votre deuxième modèle.</li>
+      <li>Sélectionnez<strong> IAB Transparency and Consent Framework 2.0</strong> pour le<em> cadre</em>. <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/new-iab-framework.png" alt="nouveau framework iab"> </figure>
       </li>
-      <li>Click <strong>Next</strong>.</li>
-      <li>Read the <em>IAB TCF</em> information then click <strong>I Agree</strong>.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/iab-agree.png" alt="IAB Agree">
-        </figure>
+      <li>Cliquez sur<strong> Suivant</strong>.</li>
+      <li>Lisez les<em> informations TCF de l'</em>IAB, puis cliquez sur<strong> J'accepte</strong>. <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/iab-agree.png" alt="IAB d'accord"> </figure>
       </li>
-      <li>Complete the form then click <strong>Create Template</strong>.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/gdpr-form.png" alt="gdpr form">
-        </figure>
-        <aside class="bcls-aside bcls-aside--information language-editable">Note that using <strong>GDPR</strong> in the template name makes sense as IAB standards are GDPR compliant.</aside>
+      <li>Remplissez le formulaire, puis cliquez sur<strong> Créer un modèle</strong>. <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/gdpr-form.png" alt="formulaire GDPR"> </figure> <aside class="bcls-aside bcls-aside--information language-editable">Notez que l'utilisation<strong> du RGPD</strong> dans le nom du modèle est logique car les normes de l'IAB sont conformes au RGPD.</aside>
       </li>
-      <li>Supply your company's logo for the banner, as shown in steps 11-13 above.</li>
-      <li>While still in the <em>Preference Center</em>, open the <strong>Advanced Configuration</strong> options.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/advanced-configuration.png" alt="advanced configuration">
-        </figure>
+      <li>Fournissez le logo de votre entreprise pour la bannière, comme indiqué aux étapes 11 à 13 ci-dessus.</li>
+      <li>Tout en restant dans le centre de<em> préférences</em>, ouvrez les<strong> options de configuration</strong> avancée. <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/advanced-configuration.png" alt="configuration avancée"> </figure>
       </li>
-      <li>A number of changes must be made here for use with Brightcove Beacon. The changes are listed, then a video follows showing the process how to implement those changes.
+      <li>Un certain nombre de modifications doivent être apportées ici pour une utilisation avec Brightcove Beacon. Les modifications sont répertoriées, puis une vidéo montre le processus de mise en œuvre de ces modifications.
         <ol>
-          <li>Move <strong>Social Media Cookies</strong> to the <strong>Strictly Necessary Cookies</strong> subgroup.</li>
-          <li>Move <strong>Targeting Cookies</strong> to the <strong>Strictly Necessary Cookies</strong> subgroup.</li>
-          <li>Move <strong>Functional Cookies</strong> to the <strong>Strictly Necessary Cookies</strong> subgroup.</li>
-          <li>Move <strong>Performance Cookies</strong> to the <strong>Strictly Necessary Cookies</strong> subgroup.</li>
-          <li>From the <strong>Personalised ads and content, ad and content measurement, audience insights and product development</strong> group, perform the following:
+          <li>Déplacez les cookies des réseaux<strong> sociaux</strong> vers le<strong> sous-groupe des cookies</strong> strictement nécessaires.</li>
+          <li>Déplacez les cookies<strong> de</strong> ciblage vers le<strong> sous-groupe des cookies</strong> strictement nécessaires.</li>
+          <li>Déplacez les cookies<strong> fonctionnels</strong> vers le<strong> sous-groupe des cookies</strong> strictement nécessaires.</li>
+          <li>Déplacez les cookies<strong> de</strong> performance vers le<strong> sous-groupe des cookies</strong> strictement nécessaires.</li>
+          <li>Dans le<strong> groupe Publicités et contenu</strong> personnalisés, mesure des publicités et du contenu, informations sur l'audience et développement de produits, effectuez les opérations suivantes:
             <ol type="a">
-              <li>Remove <strong>Create a personalised content profile</strong> as a subgroup, then choose <strong>Disable IAB Purpose</strong>.</li>
-              <li>Remove <strong>Select personalised content</strong> as a subgroup, then choose <strong>Disable IAB Purpose</strong>.</li>
-              <li>Remove <strong>Measure content performance</strong> as a subgroup, but do NOT disable.</li>
-              <li>Remove <strong>Apply market research to generate audience insights</strong> as a subgroup, then choose <strong>Disable IAB Purpose</strong>.</li>
-              <li>Remove <strong>Develop and improve products</strong> as a subgroup, then choose <strong>Disable IAB Purpose</strong>.</li>
+              <li>Supprimez<strong> Créer un profil de contenu personnalisé</strong> en tant que sous-groupe, puis choisissez<strong> Désactiver l'objectif de l'IAB</strong>.</li>
+              <li>Supprimer<strong> Sélectionnez le contenu personnalisé</strong> en tant que sous-groupe, puis choisissez<strong> Désactiver l'objectif de l'IAB</strong>.</li>
+              <li>Supprimez<strong> Mesurer les performances du contenu</strong> en tant que sous-groupe, mais NE le désactivez PAS.</li>
+              <li>Retirez<strong> Appliquer l'étude de marché pour générer des informations d'audience</strong> en tant que sous-groupe, puis choisissez<strong> Désactiver l'objectif de l'IAB</strong>.</li>
+              <li>Supprimez<strong> Développer et améliorer les produits</strong> en tant que sous-groupe, puis choisissez<strong> Désactiver l'objectif de l'IAB</strong>.</li>
             </ol>
           </li>
-          <li>For <strong>Use precise geolocation data</strong>, choose <strong>Disable IAB Purpose</strong>.</li>
-          <li>For <strong>Actively scan device characteristics for identification</strong>, choose <strong>Disable IAB Purpose</strong>.</li>
-          <li>For <strong>Match and combine offline data sources</strong>, choose <strong>Disable IAB Purpose</strong>.</li>
-          <li>For <strong>Link different devices</strong>, choose <strong>Disable IAB Purpose</strong>.</li>
-          <li>For <strong>Receive and use automatically-sent device characteristics for identification</strong>, choose <strong>Disable IAB Purpose</strong></li>
+          <li>Pour<strong> Utiliser des données de géolocalisation précises</strong>, choisissez<strong> Disable IAB Purpose</strong>.</li>
+          <li>Pour Analyser<strong> activement les caractéristiques du périphérique à des fins d'identification</strong>, choisissez<strong> Disable IAB Purpose</strong>.</li>
+          <li>Pour<strong> Correspondance et combinaison de sources de données hors ligne</strong>, choisissez<strong> Disable IAB Purpose</strong>.</li>
+          <li>Pour<strong> Lier différents appareils</strong>, choisissez<strong> Disable IAB Purpose</strong>.</li>
+          <li>Pour<strong> Recevoir et utiliser les caractéristiques de l'appareil envoyées automatiquement à des fins d'identification</strong>, choisissez<strong> Désactiver l'objectif IAB</strong></li>
         </ol>
         <div style="position: relative; display: block; max-width: 1728px;">
           <div style="padding-top: 63%;"><iframe src="https://players.brightcove.net/1752604059001/Iud3D7lWiz_default/index.html?videoId=1723375706636721528" allowfullscreen="" allow="encrypted-media" style="position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; width: 100%; height: 100%;"></iframe></div>
         </div>
       </li>
-      <li>Check your configuration by comparing your results to the following, making corrections as needed:
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/adv-config-changes.png" alt="advanced b configuration changes">
-        </figure>
+      <li>Vérifiez votre configuration en comparant vos résultats aux suivants, en apportant les corrections nécessaires: <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/adv-config-changes.png" alt="modifications de la configuration avancée b"> </figure>
       </li>
-      <li>Click <strong>Save Template</strong>.</li>
-      <li>Click <strong>Templates</strong> in the left navigation.</li>
-      <li>Click <strong>Add New</strong> to start creation of your third template.</li>
-      <li>Select the <strong>Generic Cookie Banner</strong> for the <em>Framework</em>.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/generic-template2.png" alt="new iab framework">
-        </figure>
+      <li>Cliquez sur<strong> Enregistrer le modèle</strong>.</li>
+      <li>Cliquez sur<strong> Modèles</strong> dans le volet de navigation de gauche.</li>
+      <li>Cliquez sur<strong> Ajouter nouveau</strong> pour commencer la création de votre troisième modèle.</li>
+      <li>Sélectionnez la bannière<strong> générique de cookies</strong> pour le<em> cadre</em>. <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/generic-template2.png" alt="nouveau framework iab"> </figure>
       </li>
-      <li>Click <strong>Next</strong>.</li>
-      <li>Complete the form then click <strong>Create Template</strong>.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/name-the-template-generic.png" alt="name generic template">
-        </figure>
+      <li>Cliquez sur<strong> Suivant</strong>.</li>
+      <li>Remplissez le formulaire, puis cliquez sur<strong> Créer un modèle</strong>. <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/name-the-template-generic.png" alt="modèle générique de nom"> </figure>
       </li>
-      <li>Supply your company's logo for the banner, as shown in steps 11-13 above.</li>
-      <li>Note that your banner now contains three buttons.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/three-buttons.png" alt="three buttons">
-        </figure>
+      <li>Fournissez le logo de votre entreprise pour la bannière, comme indiqué aux étapes 11 à 13 ci-dessus.</li>
+      <li>Notez que votre bannière contient désormais trois boutons. <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/three-buttons.png" alt="trois boutons"> </figure>
       </li>
-      <li>You will now alter the look of your banner:
+      <li>Vous allez maintenant modifier l'apparence de votre bannière:
         <ol type="a">
-          <li>Click the <strong>Banner</strong> tab</li>
-          <li>Click <strong>Content</strong></li>
-          <li>Click <strong>Button Set</strong></li>
-        </ol>
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/banner-content-buttonset.png" alt="banner content buttonset">
-        </figure>
+          <li>Cliquez sur l'<strong>onglet</strong> Bannière</li>
+          <li>Cliquez sur<strong> Contenu</strong></li>
+          <li>Jeu de<strong> boutons de clic</strong></li>
+        </ol> <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/banner-content-buttonset.png" alt="boutonset de contenu de bannière"> </figure>
       </li>
-      <li>In the <em>Button Set</em> dialog, <strong>disable</strong> the following buttons:
+      <li>Dans la boîte de<em> dialogue Jeu de</em> boutons,<strong> désactivez</strong> les boutons suivants:
         <ul>
-          <li>Show Cookie Setting Button</li>
-          <li>Show Reject All Button</li>
-        </ul>
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/button-set-dialog.png" alt="button set dialog">
-        </figure>
+          <li>Afficher le bouton de configuration des cookies</li>
+          <li>Afficher le bouton Tout rejeter</li>
+        </ul> <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/button-set-dialog.png" alt="dialogue de jeu de boutons"> </figure>
       </li>
-      <li>Click <strong>Save</strong>.</li>
-      <li>Note that the banner contains only the <em>Accept All Cookies</em> button and the close button (<strong>X</strong>).
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/banner-two-buttons.png" alt="banner two buttons">
-        </figure>
+      <li>Cliquez sur<strong> Enregistrer</strong>.</li>
+      <li>Notez que la bannière contient uniquement le<em> bouton</em> Accepter tous les cookies et le bouton de fermeture (<strong>X</strong>). <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/banner-two-buttons.png" alt="deux boutons de bannière"> </figure>
       </li>
-      <li>Click <strong>Save Template</strong>.</li>
+      <li>Cliquez sur<strong> Enregistrer le modèle</strong>.</li>
     </ol>
-    <p>You have now created your three templates. Note that your Generic Global template will be used in regions NOT assigned to other templates.</p>
-  </section>
-
-  <section class="bcls-section">
-    <h2 id="Create_geolocation_rules">Create geolocation rules</h2>
-    <p>Creating geolocation rules first requires that you create a geolocation rule group. The group will act as a container for the rules you create. The actual geolocation rules define cookie compliance behaviors you wish for different geographic regions.</p>
+    <p>Vous avez maintenant créé vos trois modèles. Notez que votre modèle Generic Global sera utilisé dans les régions NON affectées à d'autres modèles.</p>  </section><section class="bcls-section">
+    <h2 id="Create_geolocation_rules">Créer des règles de géolocalisation</h2>
+    <p>Pour créer des règles de géolocalisation, vous devez d'abord créer un groupe de règles de géolocalisation. Le groupe servira de conteneur pour les règles que vous créez. Les règles de géolocalisation actuelles définissent les comportements de conformité des cookies que vous souhaitez pour différentes régions géographiques.</p>
     <ol class="bcls-tasklist">
-      <li>To start the process, create a new rule group by:
+      <li>Pour démarrer le processus, créez un nouveau groupe de règles en:
         <ol type="a">
-          <li>In the left navigation, click <strong>Geolocation Rules</strong>.</li>
-          <li>Click <strong>Create New</strong>.
-            <figure class="bcls-figure">
-              <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/geo-rules-index.png" alt="geo rules index">
-            </figure>
+          <li>Dans le volet de navigation de gauche, cliquez sur Règles<strong> de géolocalisation</strong>.</li>
+          <li>Cliquez sur<strong> Créer un nouveau</strong>. <figure class="bcls-figure">
+              <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/geo-rules-index.png" alt="index des règles géographiques"> </figure>
           </li>
         </ol>
       </li>
-      <li>In the <strong>Create New Rule Group</strong> dialog, supply a group name, organization and description.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/create-rule-group.png" alt="create rule group">
-        </figure>
+      <li>Dans la boîte de<strong> dialogue</strong> Créer un nouveau groupe de règles, indiquez un nom de groupe, une organisation et une description. <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/create-rule-group.png" alt="créer un groupe de règles"> </figure>
       </li>
-      <li>Click <strong>Create</strong>.</li>
-      <li>To set the <em>Global</em> rule, start by clicking the edit button.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/global-rule-edit.png" alt="edit global rule">
-        </figure>
+      <li>Cliquez sur<strong> Créer</strong>.</li>
+      <li>Pour définir la<em> règle</em> globale, commencez par cliquer sur le bouton Modifier. <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/global-rule-edit.png" alt="modifier la règle globale"> </figure>
       </li>
-      <li>Clear the <em>Template</em> input box and begin typing the name of your global template, created earlier, then select it.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/rule-generic-tempalte-selection.png" alt="select generic template">
-        </figure>
+      <li>Désactivez la zone de<em> saisie</em> Modèle et commencez à taper le nom de votre modèle global, créé précédemment, puis sélectionnez-le. <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/rule-generic-tempalte-selection.png" alt="sélectionner un modèle générique"> </figure>
       </li>
-      <li>For the <em>Cookie Categories</em>, select <strong>Opt-out</strong>.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/cookie-categories-opt-out.png" alt="opt out">
-        </figure>
+      <li>Pour les catégories de<em> cookies</em>, sélectionnez<strong> Opt-out</strong>. <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/cookie-categories-opt-out.png" alt="se désinscrire"> </figure>
       </li>
-      <li>For <em>Capture Records of Consent</em> change the following:
+      <li>Pour<em> Capture des enregistrements de consentement,</em> modifiez ce qui suit:
         <ul>
-          <li>Enable <em>Capture Records of Consent</em></li>
-          <li>Set <em>Advanced Analytics</em> to <strong>Strictly Necessary Cookies</strong></li>
-          <li>Consider checking the <em>Use this consent model if site visitor's IP address is unknown</em> checkbox if this rule acting in a global capacity.</li>
-        </ul>
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/capture-consent.png" alt="capture consent">
-        </figure>
+          <li>Activer la<em> capture des enregistrements de consentement</em></li>
+          <li>Régler<em> les analyses avancées</em> sur les cookies<strong> strictement nécessaires</strong></li>
+          <li>Envisagez de cocher la<em> case</em> Utiliser ce modèle de consentement si l'adresse IP du visiteur du site est inconnue si cette règle agit de manière globale.</li>
+        </ul> <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/capture-consent.png" alt="consentement de capture"> </figure>
       </li>
-      <li>Click <strong>Save</strong>.</li>
-      <li>To create your first actual geolocation rule, from the rule group details page, click <strong>Add Rule</strong>.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/geo-add-rule.png" alt="geo add rule">
-        </figure>
+      <li>Cliquez sur<strong> Enregistrer</strong>.</li>
+      <li>Pour créer votre première règle de géolocalisation réelle, sur la page des détails du groupe de règles, cliquez sur<strong> Ajouter une règle</strong>. <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/geo-add-rule.png" alt="règle d'ajout géo"> </figure>
       </li>
-      <li>You will now create the CCPA rule. The following table provides settings you need to make to be compatible with Beacon. Other changes can be made based on regulations for your targeted geographies.
-        <aside class="bcls-aside bcls-aside--tip language-editable">As with templates, you may not need all the rules based on locations your Beacon app is targeting.</aside>
+      <li>Vous allez maintenant créer la règle CCPA. Le tableau suivant fournit les paramètres que vous devez définir pour être compatible avec Beacon. D'autres modifications peuvent être apportées en fonction des réglementations applicables aux zones géographiques que vous ciblez. <aside class="bcls-aside bcls-aside--tip language-editable">Comme pour les modèles, vous n'avez peut-être pas besoin de toutes les règles basées sur les emplacements ciblés par votre application Beacon.</aside>
         <table class="bcls-table">
           <thead class="bcls-table__head">
             <tr>
-              <th>Form element</th>
-              <th>Value</th>
+              <th>Élément de formulaire</th>
+              <th>Valeur</th>
             </tr>
           </thead>
           <tbody class="bcls-table__body">
             <tr>
-              <td>Rule Name</td>
-              <td>Provide a name</td>
+              <td>Nom de la règle</td>
+              <td>Indiquez un nom</td>
             </tr>
             <tr>
-              <td>Regions</td>
-              <td>For CCPA, you would most likely want to include <em>California</em>, then any other desired regions.</td>
+              <td>Régions</td>
+              <td>Pour CCPA, vous souhaiterez probablement inclure la<em> Californie</em>, puis toutes les autres régions souhaitées.</td>
             </tr>
             <tr>
               <td>Template</td>
-              <td>Choose the template created that was based on the CCPA framework.</td>
+              <td>Choisissez le modèle créé basé sur le cadre CCPA.</td>
             </tr>
             <tr>
-              <td>Cookie Categories</td>
+              <td>Catégories de cookies</td>
               <td>Opt-out</td>
             </tr>
             <tr>
-              <td>Capture Records of Consent</td>
-              <td>Enabled</td>
+              <td>Capturez les enregistrements de consentement</td>
+              <td>Activé</td>
             </tr>
             <tr>
-              <td>Advanced Analytics</td>
-              <td>Strictly Necessary Cookies</td>
+              <td>Analyses avancées</td>
+              <td>Cookies strictement nécessaires</td>
             </tr>
           </tbody>
         </table>
       </li>
-      <li>Create the GDPR rule. Be sure to supply the following values to insure compatibility with Beacon. Other values can be set as needed to meet other regulations.
+      <li>Créez la règle GDPR. Veillez à fournir les valeurs suivantes pour garantir la compatibilité avec Beacon. D'autres valeurs peuvent être définies selon les besoins pour répondre à d'autres réglementations.
         <table class="bcls-table">
           <thead class="bcls-table__head">
             <tr>
-              <th>Form element</th>
-              <th>Value</th>
+              <th>Élément de formulaire</th>
+              <th>Valeur</th>
             </tr>
           </thead>
           <tbody class="bcls-table__body">
             <tr>
-              <td>Rule Name</td>
-              <td>Provide a name</td>
+              <td>Nom de la règle</td>
+              <td>Indiquez un nom</td>
             </tr>
             <tr>
-              <td>Regions</td>
-              <td>For GDPR, you would most likely want to include <em>Eu</em> and <em>United Kingdom</em>, then any other desired regions.</td>
+              <td>Régions</td>
+              <td>Pour le RGPD, vous souhaiterez probablement inclure l'<em>UE</em> et le<em> Royaume-Uni</em>, puis toutes les autres régions souhaitées.</td>
             </tr>
             <tr>
               <td>Template</td>
-              <td>Choose the template created that was based on the IAB framework.</td>
+              <td>Choisissez le modèle créé basé sur le framework IAB.</td>
             </tr>
             <tr>
-              <td>Cookie Categories</td>
-              <td>Opt-in</td>
+              <td>Catégories de cookies</td>
+              <td>Opt-In</td>
             </tr>
             <tr>
-              <td>Capture Records of Consent</td>
-              <td>Enabled</td>
+              <td>Capturez les enregistrements de consentement</td>
+              <td>Activé</td>
             </tr>
             <tr>
-              <td>Advanced Analytics</td>
-              <td>Strictly Necessary Cookies</td>
+              <td>Analyses avancées</td>
+              <td>Cookies strictement nécessaires</td>
             </tr>
           </tbody>
         </table>
       </li>
-      <li>Check to be sure your rules appear as follows, except of course, using your rule names.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/geo-rules.png" alt="geo rules">
-        </figure>
+      <li>Vérifiez que vos règles apparaissent comme suit, sauf, bien entendu, en utilisant vos noms de règles. <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/geo-rules.png" alt="règles géo"> </figure>
       </li>
       <!-- <li>You may wish to create a rule that can be applied to regions NOT selected for the CCPA or GDPR rules. It might be applied to all other regions, and because of this you might want to name this rule <strong>Global</strong>. Be sure to supply the following values to insure compatibility with Beacon. Other values can be set as needed to meet other regulations.
         <table class="bcls-table">
@@ -407,157 +317,129 @@
           </tbody>
         </table>
       </li> -->
-    </ol>
-  </section>
-
-  <section class="bcls-section">
-    <h2 id="Assign_geolocation_rules_to_domains">Assign geolocation rules to domains</h2>
+    </ol>  </section><section class="bcls-section">
+    <h2 id="Assign_geolocation_rules_to_domains">Attribuer des règles de géolocalisation aux domaines</h2>
     <p></p>
     <ol class="bcls-tasklist-restart">
-      <li>In the left navigation, click <strong>Geolocation Rules</strong>.</li>
-      <li>For the <em>Geolocation Rule Group</em> you created, click the ellipses icon and select <strong>Assign to Domains</strong>.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/rule-group-assign-to-domains.png" alt="rule group assign to domains">
-        </figure>
+      <li>Dans le volet de navigation de gauche, cliquez sur Règles<strong> de géolocalisation</strong>.</li>
+      <li>Pour le groupe de règles de<em> géolocalisation</em> que vous avez créé, cliquez sur l'icône représentant des points de suspension et sélectionnez<strong> Attribuer aux domaines</strong>. <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/rule-group-assign-to-domains.png" alt="groupe de règles assigner aux domaines"> </figure>
       </li>
-      <li>Select the appropriate domains, then click <strong>Assign</strong>. These domains should match the URLs supplied by your DNS provider.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/rule-group-assign-to-domains-confirm.png" alt="rule group assign to domains confirm">
-        </figure>
+      <li>Sélectionnez les domaines appropriés, puis cliquez sur<strong> Attribuer</strong>. Ces domaines doivent correspondre aux URL fournies par votre fournisseur DNS. <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/rule-group-assign-to-domains-confirm.png" alt="groupe de règles assigner aux domaines confirmer"> </figure>
       </li>
-    </ol>
-  </section>
-
-  <section class="bcls-section">
-    <h2 id="Create and copy scripts">Create and copy scripts</h2>
-    <p>You will go through the process of generating the scripts twice. Once for test scripts, which are used in the non-production test CDN. Then once for the production CDN.</p>
+    </ol>  </section><section class="bcls-section">
+    <h2 id="Create and copy scripts">Création et copie de scripts</h2>
+    <p>Vous allez passer deux fois par le processus de génération des scripts. Une fois pour les scripts de test, qui sont utilisés dans le CDN de test hors production. Puis une fois pour le CDN de production.</p>
     <ol class="bcls-tasklist">
-      <li>From the Cookie Compliance index page:
+      <li>Sur la page d'index Cookie Compliance:
         <ol type="a">
-          <li>In the left navigation, click <strong>Scripts</strong>.</li>
-          <li>Click the domain where your cookie compliance will be implemented.</li>
-          <figure class="bcls-figure">
-            <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/scripts-index.png" alt="scripts index">
-          </figure>
+          <li>Dans le volet de navigation de gauche, cliquez sur<strong> Scripts</strong>.</li>
+          <li>Cliquez sur le domaine dans lequel votre conformité aux cookies sera mise en œuvre.</li> <figure class="bcls-figure">
+            <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/scripts-index.png" alt="index des scripts"> </figure>
         </ol>
       </li>
-      <li>In the details screen for your domain, click <strong>Publish Test</strong>.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/publish-test.png" alt="publish test">
-        </figure>
+      <li>Dans l'écran des détails de votre domaine, cliquez sur<strong> Publier le test</strong>. <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/publish-test.png" alt="publier un test"> </figure>
       </li>
-      <li>In the <em>Test Website</em> dialog:
+      <li>Dans la boîte de<em> dialogue</em> Test Website:
         <ol type="a">
-          <li>Set the script version to <strong>6.32.0</strong> (or the latest version).</li>
-          <li>Click <strong>Confirm</strong>.</li>
-        </ol>
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/test-website-confirm.png" alt="test website confirm">
-        </figure>
+          <li>Définissez la version du script sur<strong> 6.32.0</strong> (ou la dernière version).</li>
+          <li>Cliquez sur<strong> Confirmer</strong>.</li>
+        </ol> <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/test-website-confirm.png" alt="tester le site Web confirmer"> </figure>
       </li>
-      <li>Ensure the settings are those in the following screenshot, then click <strong>Publish Test Scripts</strong>.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/publish-test-scripts-dialog.png" alt="publish test scripts dialog">
-        </figure>
+      <li>Vérifiez que les paramètres sont ceux de la capture d'écran suivante, puis cliquez sur<strong> Publier les scripts de test</strong>. <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/publish-test-scripts-dialog.png" alt="dialogue de publication des scripts de test"> </figure>
       </li>
-      <li>If a <em>Live Preview</em> dialog displays, click <strong>Cancel</strong>.</li>
-      <li>Now in the top-right of the screen, click <strong>Publish Production</strong>.</li>
-      <li>Update the script version to the latest, and click <strong>Confirm</strong>.</li>
-      <li>Confirm settings as show in step 56, then click <strong>Publish.</strong></li>
-      <li>Click the <strong>Test Scripts</strong> tab, if not already selected.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/test-scripts.png" alt="test scripts">
-        </figure>
+      <li>Si une boîte de<em> dialogue Aperçu</em> en direct s'affiche, cliquez sur<strong> Annuler</strong>.</li>
+      <li>Maintenant, en haut à droite de l'écran, cliquez sur<strong> Publier la production</strong>.</li>
+      <li>Mettez à jour la version du script vers la dernière version, puis cliquez sur<strong> Confirmer</strong>.</li>
+      <li>Confirmez les paramètres comme indiqué à l'étape 56, puis cliquez sur<strong> Publier.</strong></li>
+      <li>Cliquez sur l'<strong>onglet Scripts de</strong> test, s'il n'est pas déjà sélectionné. <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/test-scripts.png" alt="scripts de test"> </figure>
       </li>
-      <li>Click <strong>Copy Scripts</strong>.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/copy-scripts-by-download.png" alt="copy scripts">
-        </figure>
+      <li>Cliquez sur<strong> Copier les scripts</strong>. <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/copy-scripts-by-download.png" alt="scripts de copie"> </figure>
       </li>
-      <li>Provide the scripts to Brightcove's OTT Delivery Team for proper deployment.</li>
-    </ol>
-  </section>
-
-  <section class="bcls-section">
-    <h2 id="What_data_is_collected">What data is collected?</h2>
-    <p>Data is collected for the these main purposes:</p>
+      <li>Fournissez les scripts à l'équipe de livraison OTT de Brightcove pour un déploiement correct.</li>
+    </ol>  </section><section class="bcls-section">
+    <h2 id="What_data_is_collected">Quelles données sont collectées&nbsp;?</h2>
+    <p>Les données sont collectées aux fins principales suivantes:</p>
     <ul>
-      <li>App behavior</li>
-      <li>Analytics</li>
-      <li>Ad targeting</li>
+      <li>Comportement de</li>
+      <li>Analyses</li>
+      <li>Ciblage publicitaire</li>
     </ul>
-    <p>The steps above configured your system to address these general purposes:</p>
+    <p>Les étapes ci-dessus ont configuré votre système pour répondre aux objectifs généraux suivants:</p>
     <table class="bcls-table">
       <thead class="bcls-table__head">
         <tr>
-          <th>Data</th>
-          <th>Use(s)</th>
+          <th>Les données</th>
+          <th>Utilisation (s)</th>
         </tr>
       </thead>
       <tbody class="bcls-table__body">
         <tr>
-          <td>Geo-filtering</td>
-          <td>Location services</td>
+          <td>Géo-filtrage</td>
+          <td>Services de localisation</td>
         </tr>
         <tr>
-          <td>Device information (model, type, OS version)</td>
-          <td>Login, trace actions, analytics, record favorites, etc.</td>
+          <td>Informations sur l'appareil (modèle, type, version du système d'exploitation)</td>
+          <td>Connexion, suivi des actions, analyse, enregistrement des favoris, etc.</td>
         </tr>
         <tr>
-          <td>Ad targeting</td>
-          <td>Specified ads</td>
+          <td>Ciblage publicitaire</td>
+          <td>Annonces spécifiées</td>
         </tr>
         <tr>
           <td>Locale</td>
-          <td>Number and date formatting, currencies</td>
+          <td>Formatage des nombres et des dates, devises</td>
         </tr>
         <tr>
-          <td>App information (name, version, errors)</td>
-          <td>Reports on versions used, aggregated errors for proactive corrections, etc.</td>
+          <td>Informations sur l'application (nom, version, erreurs)</td>
+          <td>Rapports sur les versions utilisées, les erreurs agrégées pour des corrections proactives, etc.</td>
         </tr>
         <tr>
-          <td>User navigation and use patterns</td>
-          <td>Google analytics (navigation patterns), sign ups, count search, page opens, etc.</td>
+          <td>Navigation des utilisateurs et habitudes d'utilisation</td>
+          <td>Google Analytics (modèles de navigation), inscriptions, nombre de recherches, ouvertures de pages, etc.</td>
         </tr>
         <tr>
-          <td>Local storage</td>
-          <td>Persist credentials and login info, user application state, user settings, etc.</td>
+          <td>Stockage local</td>
+          <td>Conserver les informations d'identification et de connexion, l'état de l'application utilisateur, les paramètres utilisateur, etc.</td>
         </tr>
       </tbody>
     </table>
-    <h3>Standards body purpose definitions</h3>
-    <p>The purposes for cookie data collection are very thoroughly defined in the <em>IAB Europe Transparency & Consent Framework v2.0</em>. The definitions can be found in <a href="https://iabeurope.eu/iab-europe-transparency-consent-framework-policies/#Appendix_A_Purposes_and_Features_Definitions">Appendix A: Purposes and Features Definitions</a> of the <em>IAB Europe Transparency & Consent Framework Policies</em> document.</p>
-    <p>The IAB Europe Transparency & Consent Framework v2.0 defines 10 purposes. The following table displays those used by Beacon.</p>
+    <h3>Définitions de l'objectif des organismes</h3>
+    <p>Les finalités de la collecte des données des cookies sont définies de manière très détaillée dans le cadre de transparence et de consentement d'<em>IAB Europe v2.0</em>. Les définitions se trouvent à<a href="https://iabeurope.eu/iab-europe-transparency-consent-framework-policies/#Appendix_A_Purposes_and_Features_Definitions"> l'annexe A: Objectifs et caractéristiques Définitions</a> du<em> document</em> IAB Europe Transparency &amp; Consent Framework Policies.</p>
+    <p>L'IAB Europe Transparency &amp; Consent Framework v2.0 définit 10 objectifs. Le tableau suivant répertorie ceux utilisés par Beacon.</p>
     <table class="bcls-table">
       <thead class="bcls-table__head">
         <tr>
-          <th>Purpose</th>
-          <th>Name</th>
+          <th>But</th>
+          <th>Nom</th>
         </tr>
       </thead>
       <tbody class="bcls-table__body">
         <tr>
           <td>1</td>
-          <td>Store and/or access information on a device</td>
+          <td>Stocker et/ou accéder aux informations sur un appareil</td>
         </tr>
         <tr>
           <td>3</td>
-          <td>Create a personalised ads profile</td>
+          <td>Créez un profil publicitaire personnalisé</td>
         </tr>
         <tr>
           <td>4</td>
-          <td>Select personalised ads</td>
+          <td>Sélectionnez des publicités personnalisées</td>
         </tr>
         <tr>
           <td>7</td>
-          <td>Measure ad performance</td>
+          <td>Mesurer les performances publicitaires</td>
         </tr>
         <tr>
           <td>8</td>
-          <td>Measure content performance</td>
+          <td>Mesurez les performances</td>
         </tr>
       </tbody>
-    </table>
-  </section>
-
-</article>
+    </table>  </section></article>

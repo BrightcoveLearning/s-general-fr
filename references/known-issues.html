@@ -1,129 +1,107 @@
-<h1>{{ page.title }}</h1>
-<article class="bcls-article">
-  <summary>{{ page.description }}</summary>
-
-  <section class="bcls-section">
-    <h2 id="Beacon_Studio">Beacon Studio</h2>
-    <h3>Page availability - Locations</h3>
-    <p>You will see the <strong>World</strong> option listed twice for new pages, as well as pages that have not had any location availability set. Once a location is set you will not see the duplicate.</p>
-    <figure class="bcls-figure">
-      <img class="bcls-image" src="/assets/images/s-general-img/known-issues/double-word.png" alt="double word">
-    </figure>
-  </section>
-
-  <section class="bcls-section">
-    <h2 id="Generated_apps">Generated apps</h2>
-    <h3>General</h3>
+<h1>{{page.title}}</h1> <article class="bcls-article"> <summary>{{page.description}}</summary> <section class="bcls-section">
+    <h2 id="Beacon_Studio">Studio Beacon</h2>
+    <h3>Disponibilité des pages - Emplacements</h3>
+    <p>Vous verrez l'<strong>option</strong> Monde répertoriée deux fois pour les nouvelles pages, ainsi que pour les pages pour lesquelles aucune disponibilité d'emplacement n'est définie. Une fois qu'un emplacement est défini, vous ne verrez pas le doublon.</p> <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/s-general-img/known-issues/double-word.png" alt="double mot">   </figure></section><section class="bcls-section">
+    <h2 id="Generated_apps">Applications générées</h2>
+    <h3>Général</h3>
     <ul>
-      <li>Client-Side Ad Insertion (CSAI) is NOT supported.</li>
-      <li>DVR functionality is NOT supported.</li>
+      <li>L'insertion de publicités côté client (CSAI) n'est PAS prise en charge.</li>
+      <li>La fonctionnalité DVR n'est PAS prise en charge</li>
     </ul>
 
-    <h3>Stream limitations and rapid switching between videos</h3>
+    <h3>Limitation du flux et basculement rapide entre les vidéos</h3>
     <ul>
-      <li>If a viewer switches quickly between videos it is possible the error shown here may be displayed:
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-general-img/known-issues/stream-limitations.png" alt="stream-limitations">
-        </figure>
-        <p>This occurs because it takes a number of seconds for the stream to be released, and if the viewer tries to watch another video before the stream is released, a stream limitation occurs and the error is displayed.</p>
+      <li>Si un spectateur passe rapidement d'une vidéo à l'autre, il est possible que l'erreur affichée ici s'affiche: <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-general-img/known-issues/stream-limitations.png" alt="limites du flux"> </figure>
+        <p>Cela se produit parce qu'il faut un certain nombre de secondes pour que le flux soit diffusé, et si le spectateur essaie de regarder une autre vidéo avant la diffusion du flux, une limitation de diffusion se produit et l'erreur s'affiche.</p>
       </li>
     </ul>
 
-    <h3>Multi-language support</h3>
+    <h3>Prise en charge multilingue</h3>
     <ul>
-      <li>Parental control levels are not translated.</li>
-      <li>Player errors (stream fails to load, media type errors, etc) are not translated.</li>
+      <li>Les niveaux de contrôle parental ne sont pas traduits.</li>
+      <li>Les erreurs du lecteur (échec du chargement du flux, erreurs de type de média, etc.) ne sont pas traduites.</li>
     </ul>
 
-    <h3>Parental controls</h3>
+    <h3>Contrôle parental</h3>
     <ul>
-      <li>All content is displayed to end users (in lists, carousels, etc), but when trying to play the video the parental pin will be requested. </li>
-      <li>Multiple age classifications are NOT supported.</li>
+      <li>Tout le contenu est affiché aux utilisateurs finaux (dans des listes, des carrousels, etc.), mais lorsque vous essayez de lire la vidéo, le code PIN parental sera demandé. </li>
+      <li>Les classifications d'âge multiples ne sont PAS prises en charge</li>
     </ul>
 
-    <h3>Mobile web</h3>
+    <h3>Web mobile</h3>
     <ul>
-      <li>Mobile web has limited support. On devices with a width under 365px a message is displayed to install the appropriate native Brightcove Beacon app.</li>
-    </ul>
-  </section>
+      <li>La prise en charge du Web mobile est limitée. Sur les appareils dont la largeur est inférieure à 365 pixels, un message s'affiche pour installer l'application Brightcove Beacon native appropriée.</li>
+    </ul>  </section><section class="bcls-section">
+    <h2 id="Native_SDKs">Lecture hors ligne du SDK natif</h2>
+    <h3>Général</h3>
+    <h4>Publicité</h4>
+    <p>Ni la publicité côté client ni côté serveur n'est prise en charge avec la lecteur hors ligne.</p>
 
-  <section class="bcls-section">
-    <h2 id="Native_SDKs">Native SDK offline playback</h2>
-    <h3>General</h3>
-    <h4>Advertising</h4>
-    <p>Neither client-side nor server-side advertising is supported with offline playback.</p>
+    <h4>HSE</h4>
+    <p>Le contenu HLse n'est pas pris en charge lors de la lecteur hors ligne à l'aide du SDK natif Brightcove pour Android, iOS ou tvOS.</p>
 
-    <h4>HLSe</h4>
-    <p>HLSe content is not supported with offline playback using the Brightcove Native SDK for Android, iOS or tvOS.</p>
-
-    <h4>Low power mode</h4>
-    <p>Low power mode on devices may affect certain features, including downloading. For more information, see the following:</p>
+    <h4>Mode basse consommation</h4>
+    <p>Le mode basse consommation sur les appareils peut affecter certaines fonctionnalités, y compris le téléchargement. Pour plus d'informations, consultez les rubriques suivantes:</p>
     <ul>
-      <li><a href="https://developer.android.com/about/versions/pie/power">Power management Android 9 (API level 28)</a></li>
-      <li><a href="https://support.apple.com/en-us/HT205234">Low power mode on your iPhone</a></li>
-      <li><a href="https://developer.apple.com/library/archive/documentation/Performance/Conceptual/EnergyGuide-iOS/LowPowerMode.html">React to Low Power Mode on iPhones</a></li>
+      <li><a href="https://developer.android.com/about/versions/pie/power">Gestion de l'alimentation Android 9 (API niveau 28)</a></li>
+      <li><a href="https://support.apple.com/en-us/HT205234">Mode basse consommation sur votre iPhone</a></li>
+      <li><a href="https://developer.apple.com/library/archive/documentation/Performance/Conceptual/EnergyGuide-iOS/LowPowerMode.html">Réagir au mode basse consommation sur iPhone</a></li>
     </ul>
 
-    <h4>Shared videos</h4>
-    <p>Shared videos can be downloaded for offline viewing only if the original video can be. The property is inherited from the original video and cannot be changed for shared video only.</p>
+    <h4>Vidéos partagées</h4>
+    <p>Les vidéos partagées peuvent être téléchargées pour être visionnées hors ligne uniquement si la vidéo originale peut l'être. La propriété est héritée de la vidéo d'origine et ne peut pas être modifiée uniquement pour la vidéo partagée.</p>
 
-    <h4>Audio-only</h4>
-    <p>The Native SDKs support audio-only content with Offline Playback. You control what viewers see, whether it is a poster image or a custom screen.</p>
+    <h4>Audio uniquement</h4>
+    <p>Les SDK natifs prennent en charge le contenu audio uniquement avec la lecteur hors ligne. Vous contrôlez ce que voient les spectateurs, qu'il s'agisse d'une affiche ou d'un écran personnalisé.</p>
     <p>
-      The Native SDK for Android requires a <code translate="No">VideoView</code>, and the Native SDK for iOS requires a <code translate="No">UIView</code>. Because of this, background audio is not supported. This means that audio will not keep playing when a user sends the app to the background.
+      Le SDK natif pour Android nécessite un<code translate="No"> VideoView</code>, et le SDK natif pour iOS nécessite un<code translate="No"> UIView</code>. Pour cette raison, l'audio en arrière-plan n'est pas pris en charge. Cela signifie que l'audio ne continuera pas à être lu lorsqu'un utilisateur envoie l'application en arrière-plan.
     </p>
 
-    <h4>Android: App deletion</h4>
-    <p>When the app is deleted, all downloaded content is removed. This is true as long as the default storage location is not overridden.</p>
+    <h4>Android: Suppression d'applications</h4>
+    <p>Lorsque l'application est supprimée, tout le contenu téléchargé est supprimé. Cela est vrai tant que l'emplacement de stockage par défaut n'est pas remplacé.</p>
 
     <h4>iOS: AirPlay</h4>
-    <p>As a security feature, you cannot stream an offline HLS video to an AirPlay device for playback. This is confirmed by Apple to be an <code translate="No">AVFoundation</code> limitation.</p>
-    <h3>Native SDK for iOS</h3>
+    <p>Par mesure de sécurité, vous ne pouvez pas diffuser une vidéo HLS hors ligne sur un appareil AirPlay pour la lire. Apple confirme qu'il s'agit d'une<code translate="No"> limitation d'</code>AVFoundation.</p>
+    <h3>SDK natif pour iOS</h3>
     <ul>
-      <li>With iOS 12, setting the <code translate="No">kBCOVOfflineVideoManagerDisplayNameKey</code> field value with multibyte characters may cause a download error. This is because multibyte characters are encoded as longer string values, and iOS restricts the string length to 255bytes. This problem has been reported to Apple.</li>
-      <li>With iOS 12, the <code translate="No">didProgress</code> event may stop firing when your app is resumed from background to foreground while downloading. You will notice that the downloading status is no longer updated. This problem has been reported to Apple.</li>
-      <li>When playback is attempted for the same offline video two times in a row, the user may experience unexpected network activity. The <code translate="No">AVPlayer</code> may switch to playing the online version of the video. A bug report has been submitted to Apple. For work-around steps, see the <a href="https://github.com/brightcove/brightcove-player-sdk-ios/blob/master/OfflinePlayback.md#playing-the-same-offline-video-twice">Playing the Same Offline Video Twice</a> section of the reference document.</li>
-      <li>If your app is targeting iOS 11.0 - 11.2, we don't recommend concurrent downloads because pause and resume behavior is unreliable with multiple simultaneous downloads. The problem has been fixed with iOS 11.3.</li>
+      <li>Avec iOS 12, la définition de la valeur du<code translate="No"> champ</code> KBCOVOfflineVideoManagerDisplayNameKey avec des caractères codés sur plusieurs octets peut entraîner une erreur de téléchargement. Cela est dû au fait que les caractères codés sur plusieurs octets sont codés en tant que valeurs de chaîne plus longues et iOS limite la longueur de la chaîne à 255 octets. Ce problème a été signalé à Apple.</li>
+      <li>Avec iOS 12, l'<code translate="No">événement</code> DidProgress peut cesser de se déclencher lorsque votre application passe de l'arrière-plan au premier plan pendant le téléchargement. Vous remarquerez que l'état du téléchargement n'est plus mis à jour. Ce problème a été signalé à Apple.</li>
+      <li>Lorsque la lecteur de la même vidéo hors ligne est tentée deux fois de suite, l'utilisateur peut rencontrer une activité réseau inattendue. L'<code translate="No">AVPlayer</code> peut passer à la lecteur de la version en ligne de la vidéo. Un rapport de bogue a été soumis à Apple. Pour connaître les étapes de contournement, reportez-vous à la<a href="https://github.com/brightcove/brightcove-player-sdk-ios/blob/master/OfflinePlayback.md#playing-the-same-offline-video-twice"> section</a> Lecture deux fois de la même vidéo hors ligne du document de référence.</li>
+      <li>Si votre application cible iOS 11.0 - 11.2, nous ne recommandons pas les téléchargements simultanés, car le comportement de pause et de reprise n'est pas fiable avec plusieurs téléchargements simultanés. Le problème a été résolu avec iOS 11.3.</li>
     </ul>
-    <h3>Native SDK for Android</h3>
+    <h3>SDK natif pour Android</h3>
     <ul>
-      <li>To add support for downloading when the device is locked, either by going to sleep or with the power button, add the following permission to your <strong>AndroidManifest.xml</strong> file :
-        <pre><code class="language-XXXX" translate="No">&lt;uses-permission android:name=&quot;android.permission.ACCESS_NETWORK_STATE&quot;/&gt;</code></pre>
+      <li>Pour ajouter la prise en charge du téléchargement lorsque l'appareil est verrouillé, soit en se mettant en veille, soit à l'aide du bouton d'alimentation, ajoutez l'autorisation suivante à votre<strong> fichier</strong> AndroidManifest.xml:
+        <pre><code class="language-XXXX" translate="No">&lt;uses-permission android:name=&quot;Android.Permission.Access_Network_State-fr/ /&gt;</code></pre>
       </li>
-      <li>With Android 8.0 and above, it is possible to manage power settings when the app is moved to the background. This can cause the downloading process to stop if the device is disconnected from a power source. In most cases, when the app is brought back to the foreground, the download will continue. It is important to note that power management can be OS and vendor specific. Therefore, the Brightcove Native SDK for Android will not attempt to manage or override settings related to power management.</li>
+      <li>Avec Android 8.0 et versions ultérieures, il est possible de gérer les paramètres d'alimentation lorsque l'application est déplacée en arrière-plan. Cela peut entraîner l'arrêt du processus de téléchargement si l'appareil est déconnecté d'une source d'alimentation. Dans la plupart des cas, lorsque l'application revient au premier plan, le téléchargement se poursuit. Il est important de noter que la gestion de l'alimentation peut être spécifique au système d'exploitation et au fournisseur. Par conséquent, le SDK natif de Brightcove pour Android ne tentera pas de gérer ou de remplacer les paramètres liés à la gestion de l'alimentation.</li>
       <li>
-        When using Widevine Modular with Android 8.0.0 (and 8.1.0 on some devices), you may notice that a rental license is already expired when you acquire it. This is a known issue with the Widevine Modular CDM, and can not be addressed in either the Brightcove Android SDK or ExoPlayer. Although this issue is not reproducible for most devices using Android 8.1.0, there is no workaround for those devices using Android 8.0.0 or 8.1.0, where it does occur.</li>
-      <li>Observed only with Android 5.x devices: When releasing the Widevine license by calling the <code translate="No">OfflineLicenseManager.releaseLicense </code> method, a <code translate="No">MediaDrmStateException </code> error is thrown.</li>
+        Lorsque vous utilisez Widevine Modular avec Android 8.0.0 (et 8.1.0 sur certains appareils), vous remarquerez peut-être qu'une licence de location a déjà expiré lorsque vous l'acquérez. Il s'agit d'un problème connu avec le MDP modulaire Widevine, qui ne peut être résolu ni dans le SDK Android de Brightcove ni dans ExoPlayer. Bien que ce problème ne soit pas reproductible pour la plupart des appareils utilisant Android 8.1.0, il n'existe aucune solution de contournement pour les appareils utilisant Android 8.0.0 ou 8.1.0, où il se produit.</li>
+      <li>Observé uniquement avec les appareils Android 5.x: Lors de la libération de la licence Widevine en appelant la<code translate="No"> méthode</code> OfflineLicenseManager.releaseLicense, une<code translate="No"> erreur</code> MediaDRMStateException est renvoyée.</li>
       <li>
-        <p>In the <a href="https://github.com/BrightcoveOS/android-player-samples/tree/master/brightcove-exoplayer/OfflinePlaybackSampleApp">OfflinePlaybackSampleApp</a>, there are two Widevine license expiration periods.</p>
+        <p>Dans l'application<a href="https://github.com/BrightcoveOS/android-player-samples/tree/master/brightcove-exoplayer/OfflinePlaybackSampleApp"> OfflinePlaybackSampleApp</a>, il existe deux périodes d'expiration de licence Widevine.</p>
 
         <ul>
-          <li><code translate="No">absoluteExpiration</code> is an expiration date of the license to start playback of downloaded video</li>
-          <li><code translate="No">playDuration</code> is how long the video can be played</li>
+          <li><code translate="No">AbsoluteExpiration</code> est une date d'expiration de la licence permettant de démarrer la lecteur de la vidéo téléchargée</li>
+          <li><code translate="No">PlayDuration</code> est la durée pendant laquelle la vidéo peut être lue</li>
         </ul>
 
-        <p>When <code translate="No">playDuration</code> becomes less than 60 seconds, the Widevine CDM handles the license as expired and throws a <strong>Failed to get key request</strong> error. Playback will not start with this Widevine license exception.</p>
+        <p>Lorsque<code translate="No"> la durée de lecteur</code> est inférieure à 60 secondes, le CDM Widevine traite la licence comme expirée et génère une<strong> erreur de demande de clé</strong> Failed to get. La lecteur ne démarre pas avec cette exception de licence Widevine.</p>
 
-        <p>With the Brightcove Native SDK for Android v6.1.0+, you can try calling <code translate="No">AbstractOfflineCatalog.requestRentalLicense(Video, Date, long, EventListener)</code> or <code translate="No">AbstractOfflineCatalog.requestPurchaseLicense(Video, EventListener)</code> to retrieve a new license. Note: The device must be online to acquire a new license.</p>
+        <p>Avec le SDK natif Brightcove pour Android v6.1.0+, vous pouvez essayer d'appeler<code translate="No"> AbstractOfflineCatalog.RequestRentalLicense (Video, Date, long, EventListener)</code> ou<code translate="No"> AbstractOfflineCatalog.RequestPurchaseLicense (Video, EventListener) </code>pour récupérer une nouvelle licence. Remarque: L'appareil doit être en ligne pour pouvoir acquérir une nouvelle licence.</p>
       </li>
-    </ul>
-  </section>
-  <section class="bcls-section">
-    <h2 id="Live_events">Live events</h2>
-    <h3>Beacon does not track concurrent users for live events</h3>
-    <p>Beacon currently has a limitation where Beacon players do not fully support Live Analytics (CCU). The following analytics metrics are not currently tracked by Beacon:</p>
+    </ul>  </section><section class="bcls-section">
+    <h2 id="Live_events">Événements en direct</h2>
+    <h3>Beacon ne suit pas les utilisateurs simultanés pour les événements en direct</h3>
+    <p>Beacon a actuellement une limitation selon laquelle les lecteurs Beacon ne prennent pas entièrement en charge Live Analytics (CCU). Les mesures d'analyse suivantes ne sont actuellement pas suivies par Beacon:</p>
     <ul>
-      <li><code translate="no">video_impression</code> - video loaded into a player</li>
-      <li><code translate="no">video_engagement</code> - concurrent views over the video duration</li>
-      <li><code translate="no">alive_ss_ad_Start</code> - ad starts for Live events</li>
-    </ul>
-  </section>
-
-  <section class="bcls-section">
-    <h2 id="Smart_TVs">Smart TVs</h2>
+      <li><code translate="no">video_impression</code> - vidéo chargée dans un lecteur</li>
+      <li><code translate="no">video_engagement</code> - vues simultanées sur la durée de la vidéo</li>
+      <li><code translate="no">Alive_SS_AD_Start</code> - la publicité commence pour les événements en direct</li>
+    </ul>  </section><section class="bcls-section">
+    <h2 id="Smart_TVs">Téléviseurs intelligents</h2>
     <ul>
-      <li>Support for older models: Models at a maximum of three years old are supported. For example, if an app is submitted in 2021, the models supported are 2021, 2020 and 2019. If and app is submitted and next year's model are available, then that counts as a year. For example, if an app is submitted in 2021, but 2022 models are available, the the supported years are 2022, 2021 and 2020.</li>
-    </ul>
-  </section>
-
-</article>
+      <li>Prise en charge des anciens modèles: Les modèles âgés de trois ans maximum sont pris en charge. Par exemple, si une application est soumise en 2021, les modèles pris en charge sont 2021, 2020 et 2019. Si une application est soumise et que le modèle de l'année suivante est disponible, cela compte pour une année. Par exemple, si une application est soumise en 2021, mais que les modèles 2022 sont disponibles, les années prises en charge sont 2022, 2021 et 2020.</li>
+    </ul>  </section></article>

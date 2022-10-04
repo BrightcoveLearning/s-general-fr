@@ -1,10 +1,8 @@
 <article class="bcls-article">
-  <h1>{{ page.title }}</h1>
-  <summary>{{ page.description }}</summary>
-  <section class="bcls-section">
-    <p>When you upload your video, {{ site.product_short }} automatically transcodes your single video into a collection of renditions, each suitable for the typical range of your viewers’ bandwidth and resolution. Then, {{ site.product_short }} dynamically detects the screen size and connection speed from the environment where your video plays, and serves the right rendition of your video to maximize quality given the speed and power available to each individual viewer. This article offers best practices for recording, exporting, uploading and publishing your {{ site.product_short }} videos that assures optimum playback of your content everywhere it plays.</p>
-    <p>The tables below summarize the settings that you can use when creating video content:</p>
-    <h3 class="BCL_subsectionTitle">Video</h3>
+  <h1>{{page.title}}</h1> <summary>{{page.description}}</summary> <section class="bcls-section">
+    <p>Lorsque vous téléchargez votre vidéo, {{site.product_short}} transcode automatiquement votre vidéo individuelle en une collection de rendus, chacun adapté à la plage typique de bande passante et de résolution de vos visionneursâ €™. Ensuite, {{site.product_short}} détecte dynamiquement la taille de l'écran et la vitesse de connexion à partir de l'environnement dans lequel votre vidéo est lue, et propose le bon rendu de votre vidéo afin d'optimiser la qualité compte tenu de la vitesse et de la puissance disponibles pour chaque spectateur individuel. Cet article présente les meilleures pratiques pour l'enregistrement, l'exportation, le chargement et la publication de vos {{site.product_short}} vidéos qui garantissent une lecteur optimale de votre contenu partout où il est lu.</p>
+    <p>Les tableaux ci-dessous résument les paramètres que vous pouvez utiliser lors de la création de contenu vidéo:</p>
+    <h3 class="BCL_subsectionTitle">Vidéo</h3>
     <table class="bcls-table">
       <tbody class="bcls-table__body">
         <tr>
@@ -13,161 +11,148 @@
         </tr>
         <tr>
           <td ><strong>Codec</strong></td>
-          <td >H.264, H.265 (HEVC)<sup><strong><a href="#note1-1">[1-1]</a></strong></sup></td>
+          <td >H.264, H.265 (HEVC)<sup><strong><a href="#note1-1"> [1-1]</a></strong></sup></td>
         </tr>
         <tr>
-          <td ><strong>Bitrate</strong></td>
-          <td >2x the bitrate of the highest rendition</td>
+          <td ><strong>Débit binaire</strong></td>
+          <td >2 fois le débit binaire du rendu le plus élevé</td>
         </tr>
         <tr>
-          <td ><strong>Frame rate</strong></td>
-          <td >Constant, usually between 15 - 60 frames per second</td>
+          <td ><strong>Fréquence d'images</strong></td>
+          <td >Constante, généralement entre 15 et 60 images par seconde</td>
         </tr>
         <tr>
-          <td ><strong>Aspect ratio</strong></td>
-          <td >Your video aspect ratio will be preserved. An aspect ratio of 16:9 is common.</td>
+          <td ><strong>Rapport hauteur/largeur</strong></td>
+          <td >Le rapport hauteur/largeur de votre vidéo sera préservé. Un rapport hauteur/largeur de 16:9 est courant.</td>
         </tr>
       </tbody>
     </table>
-    <h4>Notes</h4>
+    <h4>Remarques</h4>
     <ul>
-      <li id="note1-1"><sup><strong>[1-1]</strong></sup> HEVC support is a paid add-on. Contact your Account Manager if you are interested in adding HEVC support to your account. See <a href="https://apis.support.brightcove.com/ingest-profiles/guides/hevc-video.html">HEVC Video</a> for more information. Also note that <strong>HDR video is not currently supported with any codec</strong>.</li>
+      <li id="note1-1"><sup><strong>[1-1]</strong></sup> Le support HEVC est un module complémentaire payant. Contactez votre responsable de compte si vous souhaitez ajouter la prise en charge HEVC à votre compte. Voir la vidéo<a href="https://apis.support.brightcove.com/ingest-profiles/guides/hevc-video.html"> HEVC</a> pour plus d'informations. Notez également que la vidéo<strong> HDR n'est actuellement prise en charge par aucun codec</strong>.</li>
     </ul>
     <h3 class="BCL_subsectionTitle">Audio</h3>
     <table class="bcls-table">
       <tbody class="bcls-table__body">
         <tr>
           <td  style="width:25%"><strong>Codec</strong></td>
-          <td  style="width:75%">AAC (Advanced Audio Codec)</td>
+          <td  style="width:75%">AAC (codec audio avancé)</td>
         </tr>
         <tr>
-          <td ><strong>Bit rate</strong></td>
-          <td >Constant, 128 kbps</td>
+          <td ><strong>Débit binaire</strong></td>
+          <td >Constante, 128 kbps</td>
         </tr>
         <tr>
-          <td ><strong>Channels</strong></td>
-          <td >Stereo</td>
+          <td ><strong>Chaînes</strong></td>
+          <td >stéréo</td>
         </tr>
       </tbody>
     </table>
     &nbsp;
-    <p>Now, you are ready to look further into the details of these settings:</p>
-    <p>The {{ site.product_short }} publication workflow includes the following processes:</p>
+    <p>Vous êtes maintenant prêt à examiner plus en détail ces paramètres:</p>
+    <p>Le flux de travail de publication {{site.product_short}} inclut les processus suivants:</p>
     <ul>
-      <li><a href="#beforerecord">Step 1: Before you Record</a></li>
-      <li><a href="#recording">Step 2: Recording</a></li>
-      <li><a href="#exporting">Step 3: Exporting</a></li>
-      <li><a href="#uploading">Step 4: Uploading</a></li>
-      <li><a href="#transcoding">Step 5: Transcoding</a></li>
-    </ul>
-  </section>
-  <section class="bcls-section">
-    <h2 id="beforerecord">Step 1: Before you Record</h2>
+      <li><a href="#beforerecord">Étape 1: Avant d'enregistrer</a></li>
+      <li><a href="#recording">Étape 2: Enregistrement</a></li>
+      <li><a href="#exporting">Étape 3: Exporter</a></li>
+      <li><a href="#uploading">Étape 4: Uploading</a></li>
+      <li><a href="#transcoding">Étape 5: Transcodage</a></li>
+    </ul>  </section><section class="bcls-section">
+    <h2 id="beforerecord">Étape 1: Avant d'enregistrer</h2>
     <div class="BCL_subsection">
-      <h3 class="BCL_subsectionTitle">Source Encoding</h3>
-      <p>There are many factors that impact the overall results of transcoded media. It is not realistic to provide a one-size-fits-all recommendation, so this step will list some of the more important considerations and how they affect the output.</p>
+      <h3 class="BCL_subsectionTitle">Encodage source</h3>
+      <p>De nombreux facteurs ont une incidence sur les résultats globaux des médias transcodés. Il n'est pas réaliste de fournir une recommandation unique. Cette étape énumérera donc certaines des considérations les plus importantes et la manière dont elles affectent le résultat.</p>
       <div class="BCL_subsection">
-        <h4 class="BCL_subsectionTitle">General</h4>
+        <h4 class="BCL_subsectionTitle">Général</h4>
         <ul>
-          <li>Try to start with the highest possible source media if possible. Successive transcode passes reduce the overall quality exponentially. If possible, start with the uncompressed source. Because of increased file transfer and ingestion times, it may not always make sense to send a raw source. In these cases, it is best to upload a source with 2-3x the bitrate of the highest rendition you expect to generate. So if you intend to have a top rendition with a video bitrate of 3 Mbps, the you would want to upload a source video with a bitrate of 6-9 Mbps.</li>
-          <li>If the raw source must be compressed before uploading, H.264 and AAC are the preferred video and audio codecs.</li>
-          <li>Do not use multiple video or audio streams. Occasionally we see source media that may have more than one audio or video stream. This is often the case with media copied directly from a DVD. While we make a best guess as to which stream to use, there is no way for us to know what stream was preferred.</li>
-          <li>Avoid stream delays. For example, some video editing tools will inject a start time for the audio stream such that the audio starts playing at some time after the video. We have found that some tools introduce audio sync issues during this process.</li>
+          <li>Essayez de commencer par le média source le plus élevé possible. Les passes de transcodage successives réduisent la qualité globale de manière exponentielle. Si possible, commencez par la source non compressée. En raison de l'allongement des temps de transfert et d'ingestion de fichiers, il n'est pas toujours judicieux d'envoyer une source brute. Dans ce cas, il est préférable de télécharger une source dont le débit binaire est 2 à 3 fois supérieur au rendu le plus élevé que vous vous attendez à générer. Donc, si vous avez l'intention d'avoir un meilleur rendu avec un débit vidéo de 3 Mbps, vous devriez télécharger une vidéo source avec un débit binaire de 6 à 9 Mbps.</li>
+          <li>Si la source brute doit être compressée avant le téléchargement, H.264 et AAC sont les codecs vidéo et audio préférés.</li>
+          <li>N'utilisez pas plusieurs flux vidéo ou audio. Parfois, nous voyons des médias sources qui peuvent contenir plus d'un flux audio ou vidéo. C'est souvent le cas des supports copiés directement à partir d'un DVD. Bien que nous sachions au mieux quel flux utiliser, il n'y a aucun moyen pour nous de savoir quel flux a été préféré.</li>
+          <li>Évitez les retards de diffusion. Par exemple, certains outils de montage vidéo injectent une heure de début pour le flux audio de telle sorte que le son commence à être lu quelque temps après la vidéo. Nous avons constaté que certains outils introduisent des problèmes de synchronisation audio au cours de ce processus.</li>
         </ul>
       </div>
       <div class="BCL_subsection">
-        <h4 class="BCL_subsectionTitle">Video</h4>
+        <h4 class="BCL_subsectionTitle">Vidéo</h4>
         <ul>
-          <li>The frame size should be at least as large as the largest anticipated rendition. However, do not scale media to a frame size larger than the original.</li>
-          <li>H.264 requires that frame sizes are multiples of 4 and is optimized for multiples of 16. We will scale transcodes to meet this requirement, but for best results source media should already be encoded in multiples of 16. Multiples of 8 or 4 will also work though with a slight performance decrease.</li>
-          <li>Avoid interlacing. Most web and mobile video players do not handle interlaced content well. While we will detect and remove interlacing, there can be a quality loss during the conversion.</li>
-          <li>Avoid anamorphic video. Anamorphic video, or video with a non-square Pixel Aspect Ratio, does not play correctly in some mobile and Web players. We attempt to detect anamorphic video and convert it, but occasionally the original source metadata is incorrect. This can prevent us from converting the material correctly.</li>
-          <li>If you are creating a screencast with a tool such as Camtasia, see <a href="/publish/creating-and-publishing-high-quality-screencasts.html">Creating and Publishing High Quality Screencasts</a> for some best practices and tips when exporting your screencast and uploading it to {{ site.product_short }}.</li>
+          <li>La taille du cadre doit être au moins aussi grande que le plus grand rendu prévu. Toutefois, ne mettez pas le support à une taille d'image supérieure à celle de l'original.</li>
+          <li>H.264 exige que les tailles de trame soient des multiples de 4 et est optimisé pour des multiples de 16. Nous mettrons à l'échelle les transcodes pour répondre à cette exigence, mais pour de meilleurs résultats, les médias sources doivent déjà être codés en multiples de 16. Des multiples de 8 ou 4 fonctionneront également avec une légère diminution des performances.</li>
+          <li>Évitez les entrelacs. La plupart des lecteurs vidéo Web et mobiles ne gèrent pas bien le contenu entrelacé. Bien que nous détections et supprimions l'entrelacement, il peut y avoir une perte de qualité lors de la conversion.</li>
+          <li>Évitez les vidéos anamorphiques. La vidéo anamorphique, ou la vidéo avec un rapport hauteur/largeur de pixels non carré, ne se lit pas correctement sur certains lecteurs mobiles et Web. Nous essayons de détecter la vidéo anamorphique et de la convertir, mais parfois les métadonnées de la source d'origine sont incorrectes. Cela peut nous empêcher de convertir correctement le matériau.</li>
+          <li>Si vous créez une capture d'écran avec un outil tel que Camtasia, consultez<a href="/publish/creating-and-publishing-high-quality-screencasts.html"> Création et publication de captures d'écran de haute qualité</a> pour connaître les meilleures pratiques et conseils lors de l'exportation de votre capture d'écran et de son téléchargement sur {{site.product_short}}.</li>
         </ul>
       </div>
       <div class="BCL_subsection">
         <h4 class="BCL_subsectionTitle">Audio</h4>
         <ul>
-          <li>For maximum compatibility, use stereo or mono audio and avoid 5.1.</li>
-          <li>Normalize the audio tracks to standard levels such that you avoid "clipping" while also avoiding a low volume.</li>
-          <li>Make sure that audio levels are consistent across media that might be viewed together.</li>
+          <li>Pour une compatibilité maximale, utilisez un son stéréo ou mono et évitez le 5.1.</li>
+          <li>Normalisez les pistes audio aux niveaux standard afin d'éviter les écrêtages-fr/ tout en évitant un faible volume.</li>
+          <li>Assurez-vous que les niveaux audio sont cohérents sur tous les supports susceptibles d'être visionnés ensemble.</li>
         </ul>
       </div>
-    </div>
-  </section>
-  <section class="bcls-section">
-    <h2 id="recording">Step 2: Recording</h2>
+    </div>  </section><section class="bcls-section">
+    <h2 id="recording">Étape 2: Enregistrement</h2>
     <div class="BCL_subsection">
-      <h3 class="BCL_subsectionTitle">What is my content and where will it play?</h3>
-      <p>In most cases, when you publish your videos using {{ site.product_short }}, they look great across all distribution targets, whether they are playing amid other content within a browser, in full-screen mode, in the confines of small mobile device screens, or spread out across large monitors. Still, it's best when recording your video to make a practice of considering both the nature of your content and the viewing conditions of your audience. You can take some measures when recording tricky content to show under challenging conditions, such as an instructional screen cast with small text you would like to make crisp and legible from both a player included with other browser content and as a full screen video, or an HD news cast shown to countries with populations having low bandwidth Internet access.</p>
-      <p>Here are some recommendations for recording practices to avoid issues with content and playback:</p>
+      <h3 class="BCL_subsectionTitle">Qu'est-ce que mon contenu et où sera-t-il diffusé&nbsp;?</h3>
+      <p>Dans la plupart des cas, lorsque vous publiez vos vidéos à l'aide de {{site.product_short}}, elles ont une belle apparence sur toutes les cibles de distribution, qu'elles soient lues dans d'autres contenus d'un navigateur, en mode plein écran, dans les limites de petits écrans d'appareils mobiles ou réparties sur de grands écrans. Néanmoins, lors de l'enregistrement de votre vidéo, il est préférable de prendre l'habitude de prendre en compte à la fois la nature de votre contenu et les conditions de visionnage de votre public. Vous pouvez prendre certaines mesures lorsque vous enregistrez du contenu délicat à diffuser dans des conditions difficiles, comme une diffusion d'écran d'instructions avec un petit texte que vous souhaitez rendre net et lisible à la fois à partir d'un lecteur inclus dans d'autres contenus de navigateur et sous forme de vidéo en plein écran, ou d'une diffusion d'actualités HD diffusée dans des pays avec les populations ayant un accès Internet à faible bande passante.</p>
+      <p>Voici quelques recommandations concernant les pratiques d'enregistrement afin d'éviter les problèmes de contenu et de lecteur:</p>
       <ul>
-        <li><strong>De-interlace at record-time</strong>. For the best quality playback, {{ site.product_short }} de-interlaces all content. When recording with a camcorder, set the record setting to progressive not interlace. If you are working with an already recorded interlaced video as a source file, opt to check the de-interlace setting within your video editing software at compression time in preparation for uploading to {{ site.product_short }}. If you do not transcode your video with {{ site.product_short }}, and you shot an interlaced video, de-interlace the video file before uploading it.</li>
-        <li><strong>Capture at a constant frame rate.</strong> To best avoid stuttering during playback, record video at a constant frame rate and avoid a variable frame rate when creating your source files. Also, shoot progressive and use the same frame-rate you will publish to - 30 fps is a good place to start.</li>
-        <li><strong>Adopt a strategy for screencasts.</strong> Creating recordings with clear, crisp, and legible text is especially challenging when creating software tutorial videos you intend to play both from a player within a browser and in a full-screen mode. See <a href="/publish/creating-and-publishing-high-quality-screencasts.html">Creating and Publishing High Quality Screencasts</a> for some best practices and tips when exporting your screencast and uploading it to {{ site.product_short }}.</li>
-        <li><strong>Avoid camera shake.</strong> While this may seem obvious for viewing, shaking actually impacts the encoder's ability to compress material using motion estimation algorithms. In other words, lower compression and lower quality.</li>
-        <li><strong>Avoid noisy backgrounds.</strong> This applies to video as well as audio. In the case of video, things like background movement (e.g. traffic) and complex background images (e.g. noisy wallpaper) all impact compression negatively. Similarly, background noise during an interview reduces audio compression.</li>
-        <li><strong>Use proper lighting.</strong> Darker scenes can be more difficult to encode without quality loss.</li>
+        <li><strong>Désentrelacement à un moment record</strong>. Pour une lecteur de la meilleure qualité, {{site.product_short}} désentrelace tout le contenu. Lorsque vous enregistrez avec un caméscope, réglez le paramètre d'enregistrement sur progressif et non sur entrelacement. Si vous travaillez avec une vidéo entrelacée déjà enregistrée en tant que fichier source, choisissez de vérifier le paramètre de désentrelacement dans votre logiciel de montage vidéo au moment de la compression en vue du téléchargement sur {{site.product_short}}. Si vous ne transcodez pas votre vidéo avec {{site.product_short}} et que vous avez tourné une vidéo entrelacée, désentrelacez le fichier vidéo avant de le télécharger.</li>
+        <li><strong>Capturez à une fréquence d'images constante.</strong> Pour éviter au mieux les saccades pendant la lecteur, enregistrez la vidéo à une fréquence d'images constante et évitez une fréquence d'images variable lors de la création de vos fichiers sources. De plus, prenez des photos progressives et utilisez la même fréquence d'images que celle que vous allez publier - 30 images par seconde est un bon point de départ.</li>
+        <li><strong>Adoptez une stratégie pour les screencasts.</strong> La création d'enregistrements avec du texte clair, net et lisible est particulièrement difficile lorsque vous créez des didacticiels vidéo logiciels que vous avez l'intention de lire à la fois à partir d'un lecteur dans un navigateur et en mode plein écran. Consultez<a href="/publish/creating-and-publishing-high-quality-screencasts.html"> Création et publication de captures d'écran de haute qualité</a> pour connaître les meilleures pratiques et conseils lors de l'exportation de votre capture d'écran et de sa mise en ligne sur {{site.product_short}}.</li>
+        <li><strong>Évitez de bouger l'appareil photo.</strong> Bien que cela puisse sembler évident pour la visualisation, le tremblement a en fait un impact sur la capacité du codeur à compresser le matériau à l'aide d'algorithmes d'estimation En d'autres termes, réduction de la compression et de la qualité.</li>
+        <li><strong>Évitez les arrière-plans bruyants.</strong> Cela s'applique aussi bien à la vidéo qu'à l'audio. Dans le cas d'une vidéo, des éléments tels que les mouvements d'arrière-plan (par exemple le trafic) et les images d'arrière-plan complexes (par exemple, le papier peint bruyant) ont tous un impact négatif De même, le bruit de fond pendant une interview réduit la compression audio.</li>
+        <li><strong>Utilisez un éclairage approprié.</strong> Les scènes plus sombres peuvent être plus difficiles à encoder sans perte de qualité.</li>
       </ul>
-    </div>
-  </section>
-  <section class="bcls-section">
-    <h2 id="exporting">Step 3: Exporting</h2>
-      <h3 class="BCL_subsectionTitle">What compression format do I upload to {{ site.product_short }}?</h3>
-      <p>Brightcove recommends uploading a video source file encoded as an H.264 format to leverage optimum quality for the widest range of delivery targets. The H.264 codec offers the maximum opportunity for {{ site.product_short }}'s transcoding engine to create the highest quality renditions for the range of resolutions and bandwidths where your video plays. See <a href="/general/supported-video-and-audio-formats-codecs-and-containers.html">Supported Video Codecs and Containers</a> for more on the distinction between codecs, containers, and file types. For detailed specifics on the best format for your {{ site.product_short }} video uploads, see <a href="/general/video-source-file-specifications-and-recommendations.html">Video Source File Specifications and Recommendations</a>.</p>
-      <h3 id="quicktime" class="BCL_subsectionTitle">Checking your video's codec</h3>
-      <p>To be sure your video source file is encoded in a H.264 format, you can verify the format in the QuickTime player's movie inspector:</p>
+    </div>  </section><section class="bcls-section">
+    <h2 id="exporting">Étape 3: Exporter</h2>
+      <h3 class="BCL_subsectionTitle">Quel format de compression dois-je télécharger sur {{site.product_short}}&nbsp;?</h3>
+      <p>Brightcove recommande de télécharger un fichier source vidéo codé au format H.264 afin de bénéficier d'une qualité optimale pour le plus grand nombre de cibles de diffusion. Le codec H.264 offre une opportunité maximale au moteur de transcodage de {{site.product_short}} de créer des rendus de la plus haute qualité pour la gamme de résolutions et de largeurs de bande dans lesquelles votre vidéo est lue. Consultez Codecs et conteneurs vidéo<a href="/general/supported-video-and-audio-formats-codecs-and-containers.html"> pris en charge</a> pour en savoir plus sur la distinction entre les codecs, les conteneurs et les types de fichiers. Pour plus de détails sur le meilleur format pour vos {{site.product_short}} vidéos mises en ligne, consultez Spécifications et recommandations relatives aux fichiers sources<a href="/general/video-source-file-specifications-and-recommendations.html"> vidéo</a>.</p>
+      <h3 id="quicktime" class="BCL_subsectionTitle">Vérification du codec de votre vidéo</h3>
+      <p>Pour être sûr que votre fichier source vidéo est encodé au format H.264, vous pouvez vérifier le format dans l'inspecteur vidéo du lecteur QuickTime:</p>
       <ol class="bcls-tasklist-restart">
-        <li>Open QuickTime Player. You can get QuickTime for free at <a href="https://www.apple.com/quicktime/download/">https://www.apple.com/quicktime/download/</a>.</li>
-        <li>Select <strong>File</strong> &gt; <strong>Open File... </strong>and choose your exported video file.</li>
-        <li>From your opened video in the QuickTime player, select <strong>Window </strong>&gt; <strong>Show Movie Inspector</strong>.
-          <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-general-img/node6187-inspector.png" /></figure>
+        <li>Ouvrez QuickTime Player. Vous pouvez obtenir QuickTime gratuitement sur<a href="https://www.apple.com/quicktime/download/"> https://www.apple.com/quicktime/download/</a>.</li>
+        <li>Sélectionnez<strong> Fichier</strong> &gt;<strong> Ouvrir un fichier... </strong>et choisissez votre fichier vidéo exporté.</li>
+        <li>À partir de la vidéo que vous avez ouverte dans le lecteur QuickTime, sélectionnez<strong> Fenêtre</strong> &gt;<strong> Afficher l'inspecteur de films</strong>. <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-general-img/node6187-inspector.png" /></figure>
         </li>
-        <li>In the movie inspector window for your video, check that the <strong>Format</strong> is H.264/MPEG-4 AVC (Advanced Video Coding).</li>
+        <li>Dans la fenêtre de l'inspecteur vidéo de votre vidéo, vérifiez que le<strong> format</strong> est H.264/MPEG-4 AVC (Advanced Video Coding).</li>
       </ol>
-      <p>The QuickTime movie inspector is a handy tool for reporting the format, resolution, frame rate, and other properties of your compressed video source file.</p>
-      <h3 id="principles" class="BCL_subsectionTitle">Guiding principles when exporting from video editing software</h3>
-      <p>When compressing and exporting videos from your favorite video editors, we recommend compressing your videos in using an H.264 codec and letting {{ site.product_short }} automatically create renditions best for multiple resolutions and bit rates. In addition, we recommend:</p>
+      <p>L'inspecteur vidéo QuickTime est un outil pratique pour signaler le format, la résolution, la fréquence d'images et d'autres propriétés de votre fichier source vidéo compressé.</p>
+      <h3 id="principles" class="BCL_subsectionTitle">Principes directeurs lors de l'exportation depuis un logiciel de montage vidéo</h3>
+      <p>Lors de la compression et de l'exportation de vidéos à partir de vos éditeurs vidéo préférés, nous vous recommandons de compresser vos vidéos à l'aide d'un codec H.264 et de laisser {{site.product_short}} créer automatiquement des rendus adaptés à plusieurs résolutions et débits binaires. En outre, nous recommandons:</p>
       <ul type="square">
-        <li><strong>Opt out of Flash</strong>. When rendering your videos from video production software, select an H.264 codec option, that is a codec, or container<em> other than</em> Flash or SWF.</li>
-        <li><strong>Avoid single-target formatting</strong>. Avoid the streamlined encoding options that come with your editing software offering a one-click solution to encode your video for a specific target such as the web, iPhone, YouTube, DVD, or BlueRay. To let {{ site.product_short }} take care of distribution for you, format your video using QuickTime conversion settings that creates the most flexible native H.264 codec, and let {{ site.product_short }} create multiple renditions from your single H.264 upload to serve to multiple distribution targets including the web, iPhone, and YouTube, as well as multiple resolutions and connection speeds.</li>
-        <li><strong>Multi-pass, if you have the time</strong>. Best practices advise uploading the highest quality video possible, and multi-pass processing is one of the best practices for creating a quality source file. Under some conditions, the marginally improved quality of your video might not justify the time it takes to encode using a two-pass process. Two-pass encoding can reduce the incidence of video artifacts and provides the most benefit to videos that have areas of high motion.</li>
-        <li><strong>Don't be stingy with file size.</strong> {{ site.product_short }} is built to handle large file uploads. If you're used to compressing files for the sake of successful uploads, don't. Be sure to upload a high quality source file.</li>
-        <li><strong>Get us a high quality file. </strong>We recommend a source with 2-3x the bitrate of the highest rendition you expect to generate. So if you intend to have a top rendition with a video bitrate of 3 Mbps, the you would want to upload a source video with a bitrate of 6-9 Mbps. Also remember, sometimes videos that have too much data do not stream via HTTP smoothly. Excessively high quality video can cause buffering.</li>
-        <li><strong>Stay consistent with the frame rate</strong>. Export at the frame rate you shot at to avoid stuttering. Also, if the export frame rate setting is not the same as the source, you risk asynchronous video and audio tracks.</li>
-        <li><strong>Keep a copy of your native file</strong>: It's a great practice to save your native video files in case you want to edit them, compress them anew, or re-encode them. Use a profile from the <a href="/admin/standard-ingest-profiles-dynamic-delivery-and-context-aware-encoding.html">list of Standard Ingest Profiles</a> that matches your target audience, or create your own ingest profile. </li>
-        <li><strong>Consider action and size when exporting for high resolution</strong>: High resolution videos especially benefit from using minimum bit rates while maintaining quality play. See <a href="video-source-file-specifications-and-recommendations.html#highres">High resolution encoding recommendations</a> for bit rate minimums when considering video size, aspect ratio, and the amount of action in the content.</li>
-        <li><strong>Adopt a mobile strategy</strong>. If you want to show your videos on mobile devices in addition to desktop monitors, you must encode your videos to the flexible H.264 format and consider other encoding options. </li>
+        <li><strong>Désabonnez-vous de Flash</strong>. Lors du rendu de vos vidéos à partir d'un logiciel de production vidéo, sélectionnez une option de codec H.264, c'est-à-dire un codec ou un conteneur<em> autre que</em> Flash ou SWF.</li>
+        <li><strong>Évitez le formatage à cible unique</strong>. Évitez les options d'encodage simplifiées de votre logiciel de montage qui offre une solution en un clic pour encoder votre vidéo pour une cible spécifique telle que le Web, l'iPhone, YouTube, DVD ou BlueRay. Pour laisser {{site.product_short}} s'occuper de la distribution pour vous, formatez votre vidéo à l'aide des paramètres de conversion QuickTime qui créent le codec H.264 natif le plus flexible, et laissez {{site.product_short}} créer plusieurs rendus à partir de votre chargement H.264 unique pour servir à plusieurs cibles de distribution, notamment le Web, iPhone et YouTube, ainsi que de multiples résolutions et vitesses de connexion.</li>
+        <li><strong>Multi-pass, si vous avez le temps</strong>. Les meilleures pratiques conseillent de télécharger des vidéos de la meilleure qualité possible, et le traitement multipasse est l'une des meilleures pratiques pour créer un fichier source de qualité. Dans certaines conditions, la légère amélioration de la qualité de votre vidéo peut ne pas justifier le temps nécessaire à l'encodage à l'aide d'un processus en deux passes. Le codage en deux passes peut réduire l'incidence des artéfacts vidéo et apporte le plus d'avantages aux vidéos comportant des zones de mouvement élevé.</li>
+        <li><strong>Ne soyez pas avare avec la taille du fichier. </strong>{{site.product_short}} est conçu pour gérer les chargements de fichiers volumineux. Si vous avez l'habitude de compresser des fichiers pour des téléchargements réussis, ne le faites pas. Veillez à télécharger un fichier source de haute qualité.</li>
+        <li><strong>Faites-nous parvenir un dossier de haute qualité. </strong>Nous recommandons une source dont le débit binaire est 2 à 3 fois supérieur au rendu le plus élevé que vous vous attendez à générer. Donc, si vous avez l'intention d'avoir un meilleur rendu avec un débit vidéo de 3 Mbps, vous devriez télécharger une vidéo source avec un débit binaire de 6 à 9 Mbps. N'oubliez pas non plus que parfois les vidéos contenant trop de données ne sont pas diffusées via HTTP de manière fluide. Une vidéo de qualité trop élevée peut entraîner une mise en mémoire tampon.</li>
+        <li><strong>Restez cohérent avec la fréquence d'images</strong>. Exportez à la fréquence d'images que vous avez prise pour éviter le bégaiement. En outre, si le paramètre de fréquence d'images d'exportation n'est pas le même que celui de la source, vous risquez de créer des pistes audio et vidéo asynchrones.</li>
+        <li><strong>Conservez une copie de votre fichier natif</strong>: Il est recommandé d'enregistrer vos fichiers vidéo natifs au cas où vous souhaiteriez les éditer, les compresser à nouveau ou les réencoder. Utilisez un profil de la<a href="/admin/standard-ingest-profiles-dynamic-delivery-and-context-aware-encoding.html"> liste des profils d'ingestion standard</a> qui correspond à votre public cible ou créez votre propre profil d'ingestion. </li>
+        <li><strong>Prenez en compte l'action et la taille lors de l'exportation en haute résolution</strong>: Les vidéos haute résolution bénéficient particulièrement de l'utilisation de débits binaires minimaux tout en conservant une qualité de lecteur. Reportez-vous aux recommandations de codage<a href="video-source-file-specifications-and-recommendations.html#highres"> haute résolution</a> pour connaître les débits binaires minimaux en tenant compte de la taille de la vidéo, du format d'image et de la quantité d'action dans le contenu.</li>
+        <li><strong>Adoptez une stratégie mobile</strong>. Si vous souhaitez diffuser vos vidéos sur des appareils mobiles en plus des écrans de bureau, vous devez les encoder au format H.264 flexible et envisager d'autres options de codage. </li>
       </ul>
-      <h3 class="BCL_subsectionTitle">Step-by-Step export instructions</h3>
-      <p>For recommended specific instructions for exporting videos from tools like Apple Final Cut Pro X, Telestream ScreenFlow, Adobe Premiere Pro or Techsmith Camtasia Studio, refer to the detailed instructions provided by these software packages.</p>
-  </section>
-    <section class="bcls-section">
-    <h2 id="uploading">Step 4: Uploading</h2>
+      <h3 class="BCL_subsectionTitle">Instructions détaillées pour l'exportation</h3>
+      <p>Pour obtenir des instructions spécifiques recommandées pour l'exportation de vidéos à partir d'outils tels que Apple Final Cut Pro X, Telestream ScreenFlow, Adobe Premiere Pro ou Techsmith Camtasia Studio, reportez-vous aux instructions détaillées fournies par ces progiciels.</p>  </section><section class="bcls-section">
+    <h2 id="uploading">Étape 4: Uploading</h2>
     <div class="BCL_subsection">
-      <h3 class="BCL_subsectionTitle">How do I get the flexibility I need from my source file?</h3>
-      <p>Upload your video or videos using the Upload module in {{ site.product_short }} Studio. &nbsp;See&nbsp;<a href="/media/uploading-videos-using-upload-module.html">Uploading Videos Using the Upload Module</a>&nbsp;for more information.&nbsp;Alternatively, you can upload a batch of videos using the <a href="https://apis.support.brightcove.com/dynamic-ingest/getting-started/overview-dynamic-ingest-api-dynamic-delivery.html">Dynamic Ingest API</a>.</p>
-      <p>When you upload a video to the {{ site.product_short }} platform, {{ site.product_short }} stores it as a digital master. This digital master is the source for all renditions {{ site.product_short }} creates. The digital master is also the source if you should ever elect to <a href="/media/retranscoding-videos-using-media-module.html">retranscode your video</a> in order to change your transcode settings.</p>
-    </div>
-  </section>
-  <section class="bcls-section">
-    <h2 id="transcoding">Step 5: Transcoding</h2>
+      <h3 class="BCL_subsectionTitle">Comment puis-je obtenir la flexibilité dont j'ai besoin dans mon fichier source&nbsp;?</h3>
+      <p>Téléchargez votre ou vos vidéos à l'aide du module Upload de {{site.product_short}} Studio. &nbsp;Consultez la section<a href="/media/uploading-videos-using-upload-module.html"> Chargement de vidéos à l'aide du module de téléchargement</a> pour plus d'informations.&nbsp;Vous pouvez également télécharger un lot de vidéos à l'aide de l'API<a href="https://apis.support.brightcove.com/dynamic-ingest/getting-started/overview-dynamic-ingest-api-dynamic-delivery.html"> Dynamic Ingest</a>.</p>
+      <p>Lorsque vous téléchargez une vidéo sur la plateforme {{site.product_short}}, {{site.product_short}} la stocke en tant que master numérique. Ce master numérique est la source de tous les rendus créés par {{site.product_short}}. Le master numérique est également la source si vous choisissez de<a href="/media/retranscoding-videos-using-media-module.html"> retranscoder votre vidéo</a> afin de modifier vos paramètres de transcodage.</p>
+    </div>  </section><section class="bcls-section">
+    <h2 id="transcoding">Étape 5: Transcodage</h2>
       <div class="BCL_subsection">
-      <h3 class="BCL_subsectionTitle">How long will it take to process my video?</h3>
-      <p>It can take up to three times the duration of the video for the transcoding process to complete.</p>
+      <h3 class="BCL_subsectionTitle">Combien de temps faudra-t-il pour traiter ma vidéo&nbsp;?</h3>
+      <p>Le processus de transcodage peut prendre jusqu'à trois fois la durée de la vidéo.</p>
     </div>
     <div class="BCL_subsection">
-      <h3 class="BCL_subsectionTitle">What is my content, where is my audience watching it, and what is my audience watching it on?</h3>
-      <p>If you want your videos to play beautifully across a range of screen sizes such as in the three screen strategy of publishing to desktop, mobile device, and wide monitor TVs, and if you want your videos to play smoothly across a range of connection speeds from dial-up, to cellular, to high speed cable, you must start with a video file that plays as optimally as possible in each of those environments. To assure that your video shows as beautifully as possible across the variety of the size and speed conditions of your viewers, {{ site.product_short }} creates a collection of video files, called multi-bitrate renditions, each of various sizes and qualities. When {{ site.product_short }} detects the resolution, bandwidth, and other conditions of the device requesting to play your video, it serves the best rendition of your video for that environment, be it a smaller and slower version to fit the constraints of a mobile device screen or low bandwidth connection, or be it a full-quality version that takes advantage of wide screen monitors with high speed, and high definition capabilities.</p>
-      <p>You have fine grain control of the speed, size, and encoding quality of these rendition files. If you know the connection rates, devices and screen resolutions of your audience, you can tailor each rendition file of your videos to create a collection of renditions that targets size and speed conditions of those viewers.</p>
-      <h3 class="BCL_subsectionTitle">Further reading on setting multi-bitrate renditions</h3>
+      <h3 class="BCL_subsectionTitle">Quel est mon contenu, où mon public le regarde et sur quoi mon public le regarde-t-il&nbsp;?</h3>
+      <p>Si vous souhaitez que vos vidéos puissent être lues de manière optimale sur toute une gamme de tailles d'écran, comme dans le cadre de la stratégie à trois écrans qui consiste à publier sur des ordinateurs de bureau, des appareils mobiles et des téléviseurs à écran large, et si vous souhaitez que vos vidéos soient lues en douceur sur une gamme de vitesses de connexion allant de l'accès commuté au réseau cellulaire en passant par le câble haute vitesse, vous devez commencez par un fichier vidéo qui sera lu de la manière la plus optimale possible dans chacun de ces environnements. Pour garantir que votre vidéo s'affiche de la manière la plus belle possible dans les différentes conditions de taille et de vitesse de vos spectateurs, {{site.product_short}} crée une collection de fichiers vidéo, appelés rendus multi-débits, chacun de différentes tailles et qualités. Lorsque {{site.product_short}} détecte la résolution, la bande passante et d'autres conditions de l'appareil demandant à lire votre vidéo, il fournit le meilleur rendu de votre vidéo pour cet environnement, qu'il s'agisse d'une version plus petite et plus lente pour répondre aux contraintes d'un écran d'appareil mobile ou d'une connexion à faible bande passante, ou c'est une version pleine qualité qui tire parti des moniteurs à écran large à haute vitesse et haute définition.</p>
+      <p>Vous avez un contrôle précis de la vitesse, de la taille et de la qualité d'encodage de ces fichiers de rendu. Si vous connaissez les taux de connexion, les appareils et les résolutions d'écran de votre public, vous pouvez personnaliser chaque fichier de rendu de vos vidéos pour créer une collection de rendus ciblant les conditions de taille et de vitesse de ces spectateurs.</p>
+      <h3 class="BCL_subsectionTitle">Pour en savoir plus sur la définition des rendus multi-débits</h3>
       <ul>
-        <li>See <a href="/general/overview-dynamic-delivery.html">Overview of Dynamic Delivery</a> for an overview of Dynamic Delivery transcoding</li>
-        <li>See <a href="/admin/standard-ingest-profiles-dynamic-delivery-and-context-aware-encoding.html">Standard Ingest Profiles</a> for detailed information on recommended transcode setting</li>
-        <li>See <a href="video-source-file-specifications-and-recommendations.html#highres">High resolution encoding recommendations</a> for best practices for setting renditions for high resolution videos</li>
-        <li>See <a href="https://player.support.brightcove.com/playback/determining-which-rendition-will-play.html">Determining Which Rendition Will Play</a> to learn how the Brightcove Player will determine which rendition will be played</li>
-        <li>See <a href="/general/optimal-video-dimensions.html">Optimal Video Dimensions</a> for recommended video width and height for 16:9 and 4:3 aspect ratio sizing</li>
+        <li>Voir<a href="/general/overview-dynamic-delivery.html"> Présentation de Dynamic Delivery</a> pour une vue d'ensemble du transcodage Dynamic Delivery</li>
+        <li>Voir Profils d'ingestion<a href="/admin/standard-ingest-profiles-dynamic-delivery-and-context-aware-encoding.html"> standard</a> pour obtenir des informations détaillées sur les paramètres de transcodage recommandés.</li>
+        <li>Consultez les recommandations d'encodage<a href="video-source-file-specifications-and-recommendations.html#highres"> haute résolution</a> pour connaître les meilleures pratiques en matière de définition des rendus pour les vidéos haute résolution</li>
+        <li>Reportez-vous à la section<a href="https://player.support.brightcove.com/playback/determining-which-rendition-will-play.html"> Déterminer quel rendu sera lu</a> pour savoir comment le lecteur Brightcove déterminera quel rendu sera lu.</li>
+        <li>Voir Dimensions vidéo<a href="/general/optimal-video-dimensions.html"> optimales</a> pour connaître la largeur et la hauteur vidéo recommandées pour le dimensionnement des formats 16:9 et 4:3</li>
       </ul>
-    </div>
-  </section>
-</article>
+    </div>   </section></article>

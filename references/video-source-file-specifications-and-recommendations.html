@@ -1,112 +1,95 @@
-<h1>{{ page.title }}</h1>
-<article class="bcls-article">
-  <summary>{{ page.description }}</summary>
-  <section class="bcls-section">
-    <h2 id="introduction">Introduction</h2>
-    <p>Brightcove recommends that you use the following encoding specifications for video files that you upload to your Media Library.</p>
-    <p>{{ site.product_short }} supports both H.264 and H.265 (see <a href="#hevc">HEVC</a> below) encoding. Generally, H.264 is recommended as it provides broader device support. H.264 video encoding will use AAC audio.</p>
-    <p>If you aren't familiar with the Media module for {{ site.product_short }}, read <a href="/media/getting-started-media-module.html">Getting Started with the Media Module</a>, which explains the basic functionality of the Media module and how to launch it. Read also, <a href="/media/uploading-videos-using-upload-module.html">Uploading Videos with the Upload Module</a>, to get the instructions on how to upload videos to the Media module.</p>
-    <p>See <a href="/general/supported-video-and-audio-formats-codecs-and-containers.html">Supported Video Formats, Codecs, and Containers</a> for information on video formats that Brightcove does <strong>not</strong> support (there aren't many).</p>
-    <p>Brightcove recommends that you use the following specifications for video files that you upload to your Media Library:</p>
+<h1>{{page.title}}</h1> <article class="bcls-article"> <summary>{{page.description}}</summary> <section class="bcls-section">
+    <h2 id="introduction">Présentation</h2>
+    <p>Brightcove vous recommande d'utiliser les spécifications d'encodage suivantes pour les fichiers vidéo que vous chargez dans votre médiathèque.</p>
+    <p>{{site.product_short}} prend en charge le codage H.264 et H.265 (voir<a href="#hevc"> HEVC</a> ci-dessous). En général, le H.264 est recommandé car il fournit une prise en charge plus large des périphériques. L'encodage vidéo H.264 utilisera l'audio AAC.</p>
+    <p>Si vous ne connaissez pas le module Media pour {{site.product_short}}, lisez<a href="/media/getting-started-media-module.html"> Premiers pas avec le module Media</a>, qui explique les fonctionnalités de base du module Media et comment le lancer. Lisez également la section<a href="/media/uploading-videos-using-upload-module.html"> Chargement de vidéos avec le module</a> de téléchargement pour obtenir des instructions sur la façon de télécharger des vidéos dans le module Médias.</p>
+    <p>Consultez<a href="/general/supported-video-and-audio-formats-codecs-and-containers.html"> Formats vidéo, codecs et conteneurs pris en charge</a> pour plus d'informations sur les formats vidéo que Brightcove ne prend<strong> pas</strong> en charge (il n'y en a pas beaucoup).</p>
+    <p>Brightcove vous recommande d'utiliser les spécifications suivantes pour les fichiers vidéo que vous chargez dans votre médiathèque:</p>
     <ul>
-      <li><a href="#source_file_naming">Source file naming</a></li>
-      <li><a href="#h264">H.264 (MPEG-4 Part 10) encoding recommendations</a></li>
-      <li><a href="#highres">High resolution encoding recommendations</a></li>
-      <li><a href="#mobile">Encoding for mobile applications</a></li>
-      <li><a href="#aspect">Maintaining aspect ratios</a></li>
+      <li><a href="#source_file_naming">Dénomination du fichier source</a></li>
+      <li><a href="#h264">Recommandations de codage H.264 (MPEG-4 Part 10)</a></li>
+      <li><a href="#highres">Recommandations d'encodage haute résolution</a></li>
+      <li><a href="#mobile">Encodage pour les applications mobiles</a></li>
+      <li><a href="#aspect">Maintien des ratios d'</a></li>
     </ul>
-    <h3 id="hevc">HEVC (H.265) video</h3>
-    <p>High Efficiency Video Coding (<a href="https://en.wikipedia.org/wiki/High_Efficiency_Video_Coding">HEVC</a>), also known as H.265, is a video compression standard, designed as a successor to the widely used <a href="https://en.wikipedia.org/wiki/Advanced_Video_Coding">Advanced Video Coding (AVC/H.264)</a>. In comparison to AVC, HEVC offers about 20% better data compression at the same level of video quality, or substantially improved video quality at the same bit rate.</p>
-    <p>The benefits of this improved compression include reduced bandwidth usage, enabling higher video quality at a lower bitrate, and reduced time to first frame (TTFF), all leading to increased end viewer satisfaction.</p>
-    <h3>Disadvantages</h3>
-    <p>The main disadvantage is that because it is a new technology, HEVC video is not yet widely supported by clients (meaning device + OS + browser/app). In addition, some clients are capable of switching between HEVC and AVC segments during playback, while others are not.</p>
-    <p>HEVC (H.265) video cannot be played on Windows 10 unless the viewer buys and installs <a href="https://www.microsoft.com/en-us/p/hevc-ビデオ拡張機能/9nmzlz57r3t7?activetab=pivot:overviewtab">this extension</a>. For compatibility with Windows, AVC (H.264) renditions are recommended. See <a href="https://www.microsoft.com/en-us/p/hevc-ビデオ拡張機能/9nmzlz57r3t7?activetab=pivot:overviewtab">HEVC Video</a> for more information on supported clients for HEVC video.</p>
+    <h3 id="hevc">Vidéo HEVC (H.265)</h3>
+    <p>Le codage vidéo à haute efficacité (<a href="https://en.wikipedia.org/wiki/High_Efficiency_Video_Coding">HEVC</a>), également connu sous le nom de H.265, est une norme de compression vidéo, conçue pour succéder au codage vidéo<a href="https://en.wikipedia.org/wiki/Advanced_Video_Coding"> avancé (AVC/H.264), largement utilisé</a>. Comparé à l'AVC, le HEVC offre une compression des données supérieure d'environ 20&nbsp;% au même niveau de qualité vidéo, ou une qualité vidéo sensiblement améliorée au même débit binaire.</p>
+    <p>Les avantages de cette compression améliorée incluent la réduction de l'utilisation de la bande passante, permettant une meilleure qualité vidéo à un débit binaire inférieur, et une réduction du temps de sortie de la première image (TTFF), ce qui se traduit par une satisfaction accrue du spectateur final.</p>
+    <h3>Désavantages</h3>
+    <p>Le principal inconvénient est qu'étant donné qu'il s'agit d'une nouvelle technologie, la vidéo HEVC n'est pas encore largement prise en charge par les clients (c'est-à-dire appareil+système d'exploitation+navigateur/application). En outre, certains clients sont capables de basculer entre les segments HEVC et AVC pendant la lecteur, tandis que d'autres ne le sont pas.</p>
+    <p>La vidéo HEVC (H.265) ne peut pas être lue sur Windows 10 à moins que le visionneur n'achète et n'installe<a href="https://www.microsoft.com/en-us/p/hevc-ãƒ“ãƒ‡ã‚ªæ‹¡å¼µæ©Ÿèƒ½/9nmzlz57r3t7?activetab=pivot:overviewtab"> cette extension</a>. Pour assurer la compatibilité avec Windows, les rendus AVC (H.264) sont recommandés. Voir Vidéo<a href="https://www.microsoft.com/en-us/p/hevc-ãƒ“ãƒ‡ã‚ªæ‹¡å¼µæ©Ÿèƒ½/9nmzlz57r3t7?activetab=pivot:overviewtab"> HEVC</a> pour plus d'informations sur les clients pris en charge pour la vidéo HEVC.</p>
 
-    <p>In addition, HEVC video takes about 2-4 times longer to transcode than H.264.</p>    
-    <h4>Availability</h4>
-    <p>HEVC support is a <strong><em>paid add-on</em></strong> for {{ site.product_short }}. If you are interested in HEVC support, contact your Account Manager.</p>
-  </section>
-  <section class="bcls-section">
-    <h2 id="source_file_naming">Source file naming</h2>
-    <p>During the ingestion process, the source file name will need to be passed as part of an API request URL. For that reason, the name must be URI compatible. Avoid the following in source file names for all videos and assets:</p>
+    <p>De plus, le transcodage vidéo HEVC prend environ 2 à 4 fois plus de temps que le H.264.</p>    
+    <h4>Disponibilité</h4>
+    <p>Le support HEVC est un module complémentaire<strong><em> payant</em></strong> pour {{site.product_short}}. Si vous êtes intéressé par l'assistance HEVC, contactez votre responsable de compte.</p>  </section><section class="bcls-section">
+    <h2 id="source_file_naming">Dénomination du fichier source</h2>
+    <p>Au cours du processus d'ingestion, le nom du fichier source devra être transmis dans le cadre d'une URL de demande d'API. Pour cette raison, le nom doit être compatible avec les URI. Évitez les informations suivantes dans les noms de fichiers sources pour toutes les vidéos et tous les éléments:</p>
     <ul>
-      <li><strong>Spaces</strong>: instead of <code translate="No">my video.mov</code>, use <code translate="No">my-video.mov</code> or <code translate="No">my_video.mov</code></li>
-      <li><strong>Special characters</strong>: do <strong>not</strong> use the following characters in source file names: <code translate="No">"!", "@", "#", "$", "%", "^", "&amp;", "*", "(", ")", "?", "/", "\", "{", "}", "[", "]"</code></li>
-    </ul>
-  </section>
-  <section class="bcls-section">
-    <h2 id="h264">H.264 encoding recommendations</h2>
+      <li><strong>Espaces</strong>: au lieu de<code translate="No"> mon video.mov</code>, utilisez<code translate="No"> my-video.mov</code> ou<code translate="No"> my_video.mov</code></li>
+      <li><strong>Caractères spéciaux</strong>: n'<strong>utilisez</strong> pas les caractères suivants dans les noms de fichiers sources:<code translate="No"> ! «, @-fr/, #-fr/, $-fr/, %-fr/, ^-fr/, &amp;-fr/, *-fr/, («, «)-fr/, ? «, «/», \-fr/, {», «}-fr/, [», «]-fr/</code></li>
+    </ul>  </section><section class="bcls-section">
+    <h2 id="h264">Recommandations pour le codage H.264</h2>
     <table class="bcls-table">
       <tbody class="bcls-table__body">
         <tr>
-          <td><strong>Video Codec:</strong></td>
+          <td><strong>Codec vidéo:</strong></td>
           <td>h264</td>
         </tr>
         <tr>
-          <td><strong>Encoding:</strong></td>
-          <td>2 pass H.264</td>
+          <td><strong>Encodage:</strong></td>
+          <td>H.264 2 passes</td>
         </tr>
         <tr>
-          <td><strong>Keyframe:</strong></td>
-          <td>At least every 6 seconds</td>
+          <td><strong>Image-clé:</strong></td>
+          <td>Au moins toutes les 6 secondes</td>
         </tr>
       </tbody>
-    </table>
-  </section>
-  <section class="bcls-section">
-    <h2 id="highres">High resolution encoding recommendations</h2>
-    <p>For high resolution video renditions, upload H.264 source files to {{ site.product_short }}. Brightcove has tested H.264 files at different sizes and aspect ratios. Each of the following cases assumes H.264 2-pass encodes with 16-bit AAC audio at a sampling frequency of 44.1kHz and a bit rate of 192 kbps. All bit rates do not include the audio bit rate, just the video. In the discussion, we compensate for the audio and give an approximate maximum length of the video for uploading to the server-side transcoding service. If video is interlaced, {{ site.product_short }} de-interlaces it during transcoding. If you have not transcoded your video using {{ site.product_short }}, de-interlace your video file before uploading it. Key frames should have a maximum distance of 6 seconds and do not need to be equidistant.</p>
+    </table>  </section><section class="bcls-section">
+    <h2 id="highres">Recommandations d'encodage haute résolution</h2>
+    <p>Pour les rendus vidéo haute résolution, téléchargez les fichiers sources H.264 sur {{site.product_short}}. Brightcove a testé des fichiers H.264 de différentes tailles et formats d'image. Chacun des cas suivants suppose un encodage H.264 à 2 passes avec audio AAC 16 bits à une fréquence d'échantillonnage de 44,1 kHz et un débit binaire de 192 kbit/s. Tous les débits binaires n'incluent pas le débit audio, mais uniquement la vidéo. Dans la discussion, nous compensons l'audio et donnons une longueur maximale approximative de la vidéo pour le téléchargement sur le service de transcodage côté serveur. Si la vidéo est entrelacée, {{site.product_short}} la désentrelace pendant le transcodage. Si vous n'avez pas transcodé votre vidéo à l'aide de {{site.product_short}}, désentrelacez votre fichier vidéo avant de le télécharger. Les images clés doivent avoir une distance maximale de 6 secondes et ne doivent pas nécessairement être équidistantes.</p>
     <table class="bcls-table">
       <thead class="bcls-table__head">
         <tr>
-          <th>Size</th>
-          <th>Aspect Ratio</th>
-          <th>Minimum Recommended Bit Rate</th>
+          <th>Taille</th>
+          <th>Rapport hauteur/largeur</th>
+          <th>Débit binaire minimum recommandé</th>
         </tr>
       </thead>
       <tbody class="bcls-table__body">
         <tr>
-          <td>640x480</td>
+          <td>640 x 480</td>
           <td>4:3</td>
-          <td>Video with little motion, such as talking heads, can go as low as 900 kbps with very good results. For overall high quality regardless of the level of motion, use at least 2672 kbps. This also refers to 720x480 sources as they are meant to be 640x480 but have a different pixel aspect ratio.</td>
+          <td>Les vidéos avec peu de mouvement, comme les têtes parlantes, peuvent descendre jusqu'à 900 kbps avec de très bons résultats. Pour une qualité globale élevée quel que soit le niveau de mouvement, utilisez au moins 2672 kbps. Cela fait également référence aux sources 720x480 car elles sont censées être 640 x 480 mais ont un rapport hauteur/largeur de pixels différent.</td>
         </tr>
         <tr>
-          <td>640x360</td>
+          <td>640 x 360</td>
           <td>16:9</td>
-          <td>Video bit rate can safely go as low as 2132 kbps in almost all cases.</td>
+          <td>Le débit binaire vidéo peut atteindre 2132 kbps en toute sécurité dans presque tous les cas.</td>
         </tr>
         <tr>
-          <td>1024x768</td>
+          <td>1 024 x 768</td>
           <td>4:3</td>
-          <td>This format is used principally in screencasts or cropped HD sources. In the case of video, 4864 kbps is sufficient. In the case of screencasts, we don't really need that much data, as very little changes from frame to frame. We can get away with the low end of what would do for 720p, which is 3136 kbps. That's actually quite a bit more than we'd need, but we recommend a higher bitrate to allow for more frequent keyframing. Because we don't want strange ghosting of the mouse, it's best to have very frequent keyframes placed equidistant and twice a second (so every 15 frames in the case of a very smooth screencast). If the frame rate of the screencast is not 30 (or 29.97), the data rate can be adjusted in parallel. So, if you have a screencast with a frame rate of 15, the data rate would be 1568 kbps. This is generous bandwidth for a screencast, but it's necessary to eliminate ghosting and page tearing that often occurs when moving to something like H.264.</td>
+          <td>Ce format est principalement utilisé dans les screencasts ou les sources HD recadrées. Dans le cas de la vidéo, 4864 kbps suffisent. Dans le cas des screencasts, nous n'avons pas vraiment besoin d'autant de données, car très peu de changements d'une image à l'autre. Nous pouvons nous en sortir avec le bas de gamme de ce qui ferait pour 720p, soit 3136 kbps. C'est en fait un peu plus que ce dont nous aurions besoin, mais nous recommandons un débit binaire plus élevé pour permettre une création d'images clés plus fréquente. Comme nous ne voulons pas d'étranges images fantômes de la souris, il est préférable d'avoir des images clés très fréquentes placées à égale distance et deux fois par seconde (donc toutes les 15 images dans le cas d'une capture d'écran très fluide). Si la fréquence d'images de la capture d'écran n'est pas de 30 (ou 29,97), le débit de données peut être ajusté en parallèle. Ainsi, si vous avez une capture d'écran avec une fréquence d'images de 15, le débit de données serait de 1568 kbps. C'est une bande passante généreuse pour une capture d'écran, mais elle est nécessaire pour éliminer les images fantômes et les déchirures de pages qui se produisent souvent lors du passage à quelque chose comme H.264.</td>
         </tr>
         <tr>
-          <td>1280x720</td>
+          <td>1 280 x 720</td>
           <td>16:9</td>
-          <td>The data rate for this format can go as low as 3136 kbps for a talking head. When motion increases, even a little, the bit rate must increase quite a bit to compensate. In instances of low motion (meaning the subjects move, but the camera/frame does not), assuming lighting is adequate or ideal, 4512 kbps is sufficient. For high motion, or to compensate for other factors, 5928 kbps is sufficient (with a little bit of breathing room).</td>
+          <td>Le débit de données pour ce format peut atteindre 3136 kbps pour une tête parlante. Lorsque le mouvement augmente, même légèrement, le débit binaire doit augmenter légèrement pour compenser. En cas de faible mouvement (c'est-à-dire que les sujets bougent, mais pas la caméra/le cadre), en supposant que l'éclairage soit adéquat ou idéal, 4512 kbps sont suffisants. Pour les mouvements élevés, ou pour compenser d'autres facteurs, 5928 kbps sont suffisants (avec un peu de marge de manœuvre).</td>
         </tr>
         <tr>
-          <td>1920x1080</td>
-          <td>16:9 stretched source</td>
-          <td>Many HDV and AVCHD cameras, even on the professional level, use 4:3 sensors and stretch the image from 1440x1080 to 1920x1080 in order to feign HD. In the end, this often results in an image that's almost equally as sharp at 960x540. With that in mind, there will be recommendations for this format at both 960x540 and 1920x1080. To compromise, upload in 720p, the previous 720p settings are applicable here. The 1920x1080 format will require a bit rate of 8024 kbps to handle high motion. A talking head can safely go as low as about 6000 kbps, but 8024 kbps should cover most cases. That will allow for a little over a half an hour. Using the 960x540 format, you can use the same 3136 kbps rate as a 720p talking head if you are not upscaling to a larger size and if the motion is not too heavy.</td>
+          <td>1920 x 1080</td>
+          <td>Source étirée 16:9</td>
+          <td>De nombreuses caméras HDV et AVCHD, même au niveau professionnel, utilisent des capteurs 4:3 et étirent l'image de 1440x1080 à 1920x1080 afin de simuler la HD. Au final, cela donne souvent une image presque aussi nette à 960 x 540. Dans cet esprit, il y aura des recommandations pour ce format à la fois 960x540 et 1920x1080. Pour faire des compromis, téléchargez en 720p, les paramètres 720p précédents sont applicables ici. Le format 1920x1080 nécessitera un débit binaire de 8024 kbps pour gérer les mouvements élevés. Une tête parlante peut descendre en toute sécurité jusqu'à environ 6000 kbps, mais 8024 kbps devrait couvrir la plupart des cas. Cela permettra un peu plus d'une demi-heure. En utilisant le format 960x540, vous pouvez utiliser le même débit de 3136 kbps qu'une tête parlante 720p si vous ne passez pas à une taille supérieure et si le mouvement n'est pas trop important.</td>
         </tr>
       </tbody>
-    </table>
-  </section>
-  <section class="bcls-section">
-    <h2 id="mobile">Encoding for mobile applications</h2>
-    <p>H.264 is currently the best encoding standard for mobile applications. Mobile devices support H.264's Baseline profile. In addition to the actual video playback capabilities of the device, also consider network conditions and their effect on download speed. We recommend having at least one rendition under 130 kbps for reliable playback on cellular networks. This should perform reliably for most users while maintaining as much quality as possible.</p>
-  </section>
-  <section class="bcls-section">
-    <h2 id="aspect">Maintaining aspect ratios</h2>
-    <p>When {{ site.product_short }} transcodes your videos, it maintains the same aspect ratio as the source file. For source files that are anamorphic, sometimes referred to as having non-square pixels, {{ site.product_short }} will detect and correct this so that the output videos have square pixels to ensure proper playback on desktops and mobile devices.</p>
-  </section>
-  <section class="bcls-section">
+    </table>  </section><section class="bcls-section">
+    <h2 id="mobile">Encodage pour les applications mobiles</h2>
+    <p>H.264 est actuellement la meilleure norme d'encodage pour les applications mobiles. Les appareils mobiles prennent en charge le profil Baseline H.264. Outre les capacités de lecteur vidéo réelles de l'appareil, tenez également compte des conditions du réseau et de leur effet sur la vitesse de téléchargement. Nous recommandons d'avoir au moins un rendu inférieur à 130 kbps pour une lecteur fiable sur les réseaux cellulaires. Cela devrait fonctionner de manière fiable pour la plupart des utilisateurs tout en maintenant la meilleure qualité possible.</p>  </section><section class="bcls-section">
+    <h2 id="aspect">Maintien des ratios d'</h2>
+    <p>Lorsque {{site.product_short}} transcode vos vidéos, il conserve le même rapport hauteur/largeur que le fichier source. Pour les fichiers sources anamorphiques, parfois appelés pixels non carrés, {{site.product_short}} détectera et corrigera cela afin que les vidéos de sortie aient des pixels carrés pour garantir une lecteur correcte sur les ordinateurs de bureau et les appareils mobiles.</p>  </section><section class="bcls-section">
     <h2 id="audio">Audio</h2>
-    <p>For audio, we recommend AAC format. In addition, the duration of the audio track should be the same as the video track - if they do not match, the video will still be ingested, but you will likely see playback failures in some situations.</p>
-    <h3>Audio Tracks</h3>
-    <p>Only one audio track is supported unless your account is enabled for <a href="https://player.support.brightcove.com/general/multiple-audio-tracks.html">Multiple Audio Tracks</a>, in which case multiple audio tracks are treated as alternatives. Otherwise, {{ site.product_short }} uses the first audio track in the video file and skips any others.</p>
-    <h3>Audio Channels</h3>
-    <p>1 or 2 audio channels are supported. If there are additional audio channels, they will be merged into 2 - the results are often unsatisfying.</p>
-  </section>
-</article>
+    <p>Pour l'audio, nous recommandons le format AAC. En outre, la durée de la piste audio doit être la même que celle de la piste vidéo. Si elles ne correspondent pas, la vidéo sera toujours ingérée, mais vous verrez probablement des échecs de lecteur dans certaines situations.</p>
+    <h3>Pistes audio</h3>
+    <p>Une seule piste audio est prise en charge, sauf si votre compte est activé pour<a href="https://player.support.brightcove.com/general/multiple-audio-tracks.html"> plusieurs pistes audio</a>, auquel cas plusieurs pistes audio sont traitées comme des alternatives. Sinon, {{site.product_short}} utilise la première piste audio du fichier vidéo et ignore toutes les autres.</p>
+    <h3>Canaux audio</h3>
+    <p>1 ou 2 canaux audio sont pris en charge. S'il existe des canaux audio supplémentaires, ils seront fusionnés en 2 - les résultats sont souvent insatisfaisants.</p>   </section></article>

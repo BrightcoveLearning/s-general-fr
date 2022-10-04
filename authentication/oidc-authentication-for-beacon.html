@@ -1,142 +1,112 @@
-<h1>{{ page.title }}</h1>
-<article class="bcls-article">
-  <summary>{{ page.description }}</summary>
-
-
-  <section class="bcls-section">
-    <h2 id="Introduction">Introduction</h2>
-    <p>This document details the configuration of how you can use your OIDC based identity provider to authenticate your viewers in Brightcove Beacon apps. Before you jump into details, a big picture of the process is helpful. Think of your Beacon app as a bank ATM machine. What the user needs is a bank card to access the money in the ATM. Likewise, your viewer needs an ID to access the videos in your Beacon app. Here's a table relating entities in the analogy:</p>
+<h1>{{page.title}}</h1> <article class="bcls-article"> <summary>{{page.description}}</summary> <section class="bcls-section">
+    <h2 id="Introduction">Présentation</h2>
+    <p>Ce document détaille la configuration de la manière dont vous pouvez utiliser votre fournisseur d'identité basé sur OIDC pour authentifier vos spectateurs dans les applications Brightcove Beacon. Avant d'entrer dans les détails, il est utile d'avoir une vue d'ensemble du processus. Considérez votre application Beacon comme un guichet automatique bancaire. Ce dont l'utilisateur a besoin, c'est d'une carte bancaire pour accéder à l'argent au guichet automatique. De même, votre spectateur a besoin d'un identifiant pour accéder aux vidéos de votre application Beacon. Voici un tableau reliant les entités dans l'analogie:</p>
     <table class="bcls-table">
       <thead class="bcls-table__head">
         <tr>
-          <th>ATM/Bank Card</th>
-          <th>Beacon App</th>
+          <th>ATM/carte bancaire</th>
+          <th>Application Beacon</th>
         </tr>
       </thead>
       <tbody class="bcls-table__body">
         <tr>
-          <td>ATM</td>
-          <td>Beacon App</td>
+          <td>GUICHET AUTOMATIQUE</td>
+          <td>Application Beacon</td>
         </tr>
         <tr>
-          <td>Functionality/connectivity ATM to authorize transaction</td>
+          <td>Fonctionnalité/connectivité ATM pour autoriser la transaction</td>
           <td>OAuth 2.0</td>
         </tr>
         <tr>
-          <td>Bank card</td>
-          <td>JSON Web Token (JWT) from OIDC </td>
+          <td>Carte bancaire</td>
+          <td>Jeton Web JSON (JWT) d'OIDC </td>
         </tr>
         <tr>
-          <td>Process to issue bank card</td>
+          <td>Procédure d'émission d'une carte bancaire</td>
           <td>OIDC</td>
         </tr>
       </tbody>
     </table>
-    <p>Just as the bank card must have the ATM and underlying functionality of that device, so OIDC must have OAuth to function. It is often stated that OIDC "sits on top of" OAuth.</p>
-  </section>
-
-
-  <section class="bcls-section">
-    <h2 id="section-name">Setting up and testing authentication</h2>
-    <p>Perform the following tasks to configure and test your OIDC identity provider with Beacon:</p>
+    <p>Tout comme la carte bancaire doit avoir le guichet automatique et les fonctionnalités sous-jacentes de cet appareil, OIDC doit disposer d'OAuth pour fonctionner. On dit souvent que l'OIDC se trouve au-dessus-fr/ d'OAuth.</p>  </section><section class="bcls-section">
+    <h2 id="section-name">Configuration et test de l'authentification</h2>
+    <p>Effectuez les tâches suivantes pour configurer et tester votre fournisseur d'identité OIDC avec Beacon:</p>
     <ol class="bcls-tasklist">
-      <li>Obtain from Brightcove the callback URLs to be added to the OIDC provider as allowed redirect URIs. The identity provider uses these URIs to redirect viewers with their authorization code Sign-in URL to QA and Test environments. Both environments specify the redirect URIs to redirect the User with their authorization code.</li>
-      <li>Implement and provide API endpoints to the OTT Delivery Team for the following responses:
+      <li>Obtenez auprès de Brightcove les URL de rappel à ajouter au fournisseur OIDC en tant qu'URI de redirection autorisés. Le fournisseur d'identité utilise ces URI pour rediriger les utilisateurs avec leur code d'autorisation URL de connexion vers des environnements d'assurance qualité et de test. Les deux environnements spécifient les URI de redirection pour rediriger l'utilisateur avec son code d'autorisation.</li>
+      <li>Mettre en œuvre et fournir des points de terminaison d'API à l'équipe de livraison OTT pour les réponses suivantes:
         <ul>
-          <li>Access Token (JWT)</li>
-          <li>ID Token (JWT)</li>
-          <li>Refresh Token</li>
-          <li>User Info</li>
-          <li>Authorize</li>
-          <li>Pairing codes - required only if Smart TV, Android TV, Fire TV or Apple TV are in scope; see notes for Roku</li>
+          <li>Jeton d'accès (JWT)</li>
+          <li>Jeton d'identification (JWT)</li>
+          <li>jeton d'actualisation</li>
+          <li>Info utilisateur</li>
+          <li>Autoriser</li>
+          <li>Codes de couplage - requis uniquement si Smart TV, Android TV, Fire TV ou Apple TV font partie du champ d'application&nbsp;; voir les notes relatives à Roku</li>
           <li>JWKS</li>
-          <li>Logout</li>
-          <li>OpenID Connect Discovery (/.well-known/openid-configuration) - If this is configured properly and provided, the OTT Delivery Team can discover the endpoints and provide Beacon engineering ticket as noted in step f. Below</li>
+          <li>Déconnexion</li>
+          <li>OpenID Connect Discovery (/.well-known/openid-configuration) - S'il est correctement configuré et fourni, l'équipe de livraison OTT peut découvrir les points de terminaison et fournir un ticket d'ingénierie Beacon comme indiqué à l'étape f. Ci-dessous</li>
         </ul>
       </li>
-      <li>Configure redirect URLs for login and logout as allowed redirect URLs, if required by by your identity provider.</li>
-      <li>Create a client ID for all apps in scope and provides them to the OTT Delivery Team.</li>
-      <li>Creates test users in your identity provider and supply test credentials to the OTT Delivery Team.</li>
+      <li>Configurez les URL de redirection pour la connexion et la déconnexion en tant qu'URL de redirection autorisées, si votre fournisseur d'identité l'exige.</li>
+      <li>Créez un ID client pour toutes les applications concernées et transmettez-les à l'équipe de livraison OTT.</li>
+      <li>Crée des utilisateurs de test dans votre fournisseur d'identité et fournit des identifiants de test à l'équipe de livraison OTT.</li>
     </ol>
-    <p>For your information, Brightcove entities will then:</p>
+    <p>Pour votre information, les entités Brightcove vont ensuite:</p>
     <ol class="bcls-tasklist">
-      <li>OTT Delivery Team creates a ticket with data from steps 2 and 5 above for Beacon CMS in OTT board.</li>
-      <li>OTT Delivery Team creates a ticket with data from steps 4 and 5 above for Beacon Beacon apps in OTT board.</li>
-      <li>Beacon CMS team configures Beacon CMS with URLs from step 6 above.</li>
-      <li>Beacon apps teams configure apps with client ID from step 5 above and dev-tests with provided test users.</li>
-      <li>OTT Delivery Team QA teams validate end-to-end authentication before qualifying the builds for UAT release.</li>
-    </ol>
-  </section>
-
-
-  <section class="bcls-section">
-    <h2 id="Tokens">Tokens and user response</h2>
-    <p>Three tokens are involved in having your OIDC based identity provider authenticate your viewers, those being:</p>
+      <li>L'équipe de livraison OTT crée un ticket avec les données des étapes 2 et 5 ci-dessus pour Beacon CMS dans le tableau OTT.</li>
+      <li>L'équipe de livraison OTT crée un ticket avec les données des étapes 4 et 5 ci-dessus pour les applications Beacon Beacon dans le tableau OTT.</li>
+      <li>L'équipe Beacon CMS configure Beacon CMS avec les URL de l'étape 6 ci-dessus.</li>
+      <li>Les équipes d'applications Beacon configurent les applications avec l'ID client de l'étape 5 ci-dessus et testent le développement avec les utilisateurs de test fournis.</li>
+      <li>Les équipes QA de l'équipe de livraison OTT valident l'authentification de bout en bout avant de qualifier les versions pour la version UAT.</li>
+    </ol>  </section><section class="bcls-section">
+    <h2 id="Tokens">Tokens et réponse des utilisateurs</h2>
+    <p>Trois jetons sont impliqués pour que votre fournisseur d'identité basé sur OIDC authentifie vos spectateurs, à savoir:</p>
     <ul>
-      <li>access_token</li>
+      <li>jeton d'accès</li>
       <li>id_token</li>
-      <li>refresh_token</li>
+      <li>jeton refresh_token</li>
     </ul>
 
-    <h3>Access token</h3>
-    <p>The access token must have the following claims for authentication support alone:</p>
+    <h3>Jeton d'accès</h3>
+    <p>Le jeton d'accès doit avoir les revendications suivantes pour la prise en charge de l'authentification uniquement:</p>
     <ul>
-      <li>sub</li>
-      <li>iss</li>
+      <li>sous</li>
+      <li>baiser</li>
       <li>exp</li>
       <li>iat</li>
-      <li>aud (only if requested)</li>
+      <li>AUD (uniquement si demandé)</li>
     </ul>
-    <p>Here is an example access token response that your OIDC provider token endpoint may provide:</p>
-    <figure class="bcls-figure">
-      <img class="bcls-image" src="/assets/images/s-general-img/oidc-authentication/access-token-raw.png" alt="access token raw">
-    </figure>
-    <p>Here is the access token decoded:</p>
-    <figure class="bcls-figure">
-      <img class="bcls-image" src="/assets/images/s-general-img/oidc-authentication/access-token-decoded.png" alt="access token decoded">
-    </figure>
+    <p>Voici un exemple de réponse de jeton d'accès que votre point de terminaison de jeton de fournisseur OIDC peut fournir:</p> <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/s-general-img/oidc-authentication/access-token-raw.png" alt="jeton d'accès brut"> </figure>
+    <p>Voici le jeton d'accès décodé:</p> <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/s-general-img/oidc-authentication/access-token-decoded.png" alt="jeton d'accès décodé"> </figure>
 
-    <h3>ID Token</h3>
-    <p>The id token must have the following claims for authentication support alone:</p>
+    <h3>Jeton d'identification</h3>
+    <p>Le jeton d'identification doit avoir les revendications suivantes pour la prise en charge de l'authentification uniquement:</p>
     <ul>
-      <li>sub</li>
-      <li>iss</li>
+      <li>sous</li>
+      <li>baiser</li>
       <li>exp</li>
       <li>iat</li>
-      <li>aud</li>
+      <li>dollar australien</li>
       <li>nonce</li>
     </ul>
-    <p>Here is an example ID token response that your OIDC provider token endpoint may provide:</p>
-    <figure class="bcls-figure">
-      <img class="bcls-image" src="/assets/images/s-general-img/oidc-authentication/id-token-raw.png" alt="id token raw">
-    </figure>
-    <p>Here is the ID token decoded:</p>
-    <figure class="bcls-figure">
-      <img class="bcls-image" src="/assets/images/s-general-img/oidc-authentication/id-token-decoded.png" alt="id token decoded">
-    </figure>
+    <p>Voici un exemple de réponse de jeton d'identification que votre point de terminaison de jeton de fournisseur OIDC peut fournir:</p> <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/s-general-img/oidc-authentication/id-token-raw.png" alt="jeton d'identification brut"> </figure>
+    <p>Voici le jeton d'identification décodé:</p> <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/s-general-img/oidc-authentication/id-token-decoded.png" alt="jeton d'identification décodé"> </figure>
 
-    <h3>Refresh token</h3>
-    <p>The refresh token is just an identifier. It does not contain any data. The data is the token itself.</p>
+    <h3>jeton d'actualisation</h3>
+    <p>Le jeton d'actualisation n'est qu'un identifiant. Il ne contient aucune donnée. Les données sont le jeton lui-même.</p>
 
-    <h3>User info response</h3>
-    <p>The user info response is a JSON object and must have the following fields for authentication support alone:</p>
+    <h3>Réponse aux informations utilisateur</h3>
+    <p>La réponse aux informations utilisateur est un objet JSON et doit comporter les champs suivants pour la prise en charge de l'authentification uniquement:</p>
     <ul>
-      <li>sub</li>
-      <li>name/nickname/full_name/displayName (one or more)</li>
-      <li>email</li>
+      <li>sous</li>
+      <li>Nom/Surnom/Full_Name/DisplayName (un ou plusieurs)</li>
+      <li>courriel</li>
     </ul>
-    <p>Here is an example user info response:</p>
-    <figure class="bcls-figure">
-      <img class="bcls-image" src="/assets/images/s-general-img/oidc-authentication/user-info-response.png" alt="user info response">
-    </figure>
-  </section>
-
-  <section class="bcls-section">
-    <h2 id="Known issues">Known issues</h2>
+    <p>Voici un exemple de réponse aux informations utilisateur:</p> <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/s-general-img/oidc-authentication/user-info-response.png" alt="réponse aux informations utilisateur">   </figure></section><section class="bcls-section">
+    <h2 id="Known issues">Problèmes connus</h2>
     <ul>
-      <li>For Roku implementations, a custom engagement with Brightcove Global Services is required. This is due to Roku's certification requirements. Failure to do this will result in Roku rejecting the channel from being published in the Roku store. For more information see Roku's <a href="https://developer.roku.com/docs/developer-program/authentication/on-device-authentication.md">On-device authentication</a> document.</li>
-    </ul>
-  </section>
-
-
-</article>
+      <li>Pour les implémentations Roku, un engagement personnalisé auprès de Brightcove Global Services est requis. Cela est dû aux exigences de certification de Roku. Si vous ne le faites pas, Roku refusera la publication de la chaîne dans la boutique Roku. Pour plus d'informations, consultez le<a href="https://developer.roku.com/docs/developer-program/authentication/on-device-authentication.md"> document d'authentification</a> sur l'appareil de Roku.</li>
+    </ul>  </section></article>

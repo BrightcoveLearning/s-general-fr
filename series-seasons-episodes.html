@@ -1,183 +1,173 @@
-<h1>{{ page.title }}</h1>
-<article class="bcls-article">
-    <summary>{{ page.description }}</summary>
-    <section class="bcls-section">
-        <h2 id="Overview">Overview</h2>
-        <p>A <strong>series</strong> is a collection of related videos shown in a particular order, that usually share a common theme. When creating a series, you must define the relationships between the series, its seasons, and the associated episodes.</p>
-        <p>A <strong>season</strong> is a group of videos that cover a set period of time. Each series can have one or more seasons.</p>
-        <p>An <strong>episode</strong> is an individual video. You can think of this as a specific movie.</p>
-        <p>Once you have defined your series and seasons, and ingested your episodes, they can be used in your Brightcove Beacon app. To do this, follow these steps:</p>
+<h1>{{page.title}}</h1> <article class="bcls-article"> <summary>{{page.description}}</summary> <section class="bcls-section">
+        <h2 id="Overview">Aperçu</h2>
+        <p>Une<strong> série</strong> est une collection de vidéos connexes présentées dans un ordre particulier, qui partagent généralement un thème commun. Lorsque vous créez une série, vous devez définir les relations entre la série, ses saisons et les épisodes associés.</p>
+        <p>Une<strong> saison</strong> est un ensemble de vidéos qui couvrent une période déterminée. Chaque série peut comporter une ou plusieurs saisons.</p>
+        <p>Un<strong> épisode</strong> est une vidéo individuelle. Vous pouvez voir ça comme un film en particulier.</p>
+        <p>Une fois que vous avez défini votre série et vos saisons, et que vous avez intégré vos épisodes, ils peuvent être utilisés dans votre application Brightcove Beacon. Pour ce faire, procédez comme suit:</p>
         <ol class="bcls-tasklist">
             <li>
-                <h4>Series (Brightcove Beacon)</h4>
-                <p>In Brightcove Beacon, create the series. Here, you will name the series, and provide information including availability and images.</p>
+                <h4>Série (Brightcove Beacon)</h4>
+                <p>Dans Brightcove Beacon, créez la série. Ici, vous nommerez la série et fournirez des informations, y compris la disponibilité et les images.</p>
             </li>
             <li>
-                <h4>Seasons (Brightcove Beacon)</h4>
-                <p>In Brightcove Beacon, create the seasons related to the series. You will provide information similar to the series, in addition to selecting the series to which the season belongs.</p>
+                <h4>Seasons (balise Brightcove)</h4>
+                <p>Dans Brightcove Beacon, créez les saisons liées à la série. Vous fournirez des informations similaires à la série, en plus de sélectionner la série à laquelle appartient la saison.</p>
             </li>
             <li>
-                <h4>Episodes (Video Cloud)</h4>
-                <p>The truth of Brightcove Beacon episode content resides in Video Cloud.</p>
+                <h4>Épisodes (Video Cloud)</h4>
+                <p>La vérité sur le contenu des épisodes de Brightcove Beacon se trouve dans Video Cloud.</p>
                 <p>
-                    In Video Cloud Studio, assign the video episodes to the corresponding season using values supplied to custom fields. These custom fields include: </p>
+                    Dans Video Cloud Studio, attribuez les épisodes vidéo à la saison correspondante à l'aide des valeurs fournies dans les champs personnalisés. Ces champs personnalisés incluent: </p>
                 <ul>
-                    <li><code translate="No">beacon.episode.number</code></li>
-                    <li><code translate="No">beacon.episode.seasonNumber</code></li>
-                    <li><code translate="No">beacon.episode.serieName</code></li>
+                    <li><code translate="No">Beacon. Numéro de l'épisode</code></li>
+                    <li><code translate="No">Beacon. Épisode. Numéro de la saison</code></li>
+                    <li><code translate="No">Beacon. Épisode. Nom de la série</code></li>
                 </ul>
             </li>
             <li>
-                <p>Return to Brightcove Beacon and ingest your video episodes.</p>
+                <p>Revenez à Brightcove Beacon et récupérez vos épisodes vidéo.</p>
             </li>
-        </ol>
-    </section>
-    <section class="bcls-section">
-        <h2 id="Relationship">Relationship</h2>
+        </ol>  </section><section class="bcls-section">
+        <h2 id="Relationship">Relation</h2>
         <p>
-            The following diagram shows the relationship between a series and its seasons and episodes.
-        </p>
-        <figure class="bcls-figure">
-            <img class="bcls-image" src="/assets/images/syncing-with-vc/vc-custom-fields/beacon-series-season-episode.png" alt="" /> </figure>
-    </section>
-    <section class="bcls-section">
-        <h2 id="Creating_a_series">Creating a series</h2>
-        <p>To create a series, follow these steps:</p>
+            Le diagramme suivant montre la relation entre une série et ses saisons et épisodes.
+        </p>     <figure class="bcls-figure"><img class="bcls-image" src="/assets/images/syncing-with-vc/vc-custom-fields/beacon-series-season-episode.png" alt="" /></figure></section><section class="bcls-section">
+        <h2 id="Creating_a_series">Création d'une série</h2>
+        <p>Pour créer une série, procédez comme suit:</p>
         <ol class="bcls-tasklist-restart">
-            <li>Log in to Brightcove Beacon and select <strong>Programs</strong>.</li>
-            <li>In the left navigation, select <strong>Series</strong>.</li>
-            <li>Click the <strong>Add new series</strong> button.</li>
+            <li>Connectez-vous à Brightcove Beacon et sélectionnez<strong> Programmes</strong>.</li>
+            <li>Dans le menu de navigation de gauche, sélectionnez<strong> Série</strong>.</li>
+            <li>Cliquez sur le<strong> bouton</strong> Ajouter une nouvelle série.</li>
             <li>
-                <p>On the <strong>Basic Data</strong> tab, fill in the following:</p>
+                <p>Dans l'<strong>onglet Données</strong> de base, remplissez les champs suivants:</p>
                 <table class="bcls-table">
                     <thead class="bcls-table__head">
                         <tr>
-                            <th>Form Field Name</th>
-                            <th>Description / Requirements</th>
+                            <th>Nom du champ du formulaire</th>
+                            <th>Description/Exigences</th>
                         </tr>
                     </thead>
                     <tbody class="bcls-table__body">
                         <tr>
-                            <td>Name</td>
+                            <td>Nom</td>
                             <td>
-                                The identifier of the series, the customer facing name is provided later in the <strong>Textual Data</strong> section </td>
+                                L'identifiant de la série, le nom du client, est fourni plus loin dans la<strong> section Données</strong> textuelles </td>
                         </tr>
                         <tr>
-                            <td>Production Year</td>
+                            <td>Année de production</td>
                             <td>
-                                The year the series was produced; this information will appear in the the <strong>More Info</strong> screen </td>
+                                L'année de production de la série&nbsp;; ces informations apparaîtront dans l'<strong>écran</strong> Plus d'informations </td>
                         </tr>
                         <tr>
-                            <td>Production Country</td>
+                            <td>Pays de production</td>
                             <td>
-                                The country where the series is produced; this information will appear in the the <strong>More Info</strong> screen </td>
+                                Le pays dans lequel la série est produite&nbsp;; ces informations apparaîtront dans l'<strong>écran</strong> Plus d'informations </td>
                         </tr>
                         <tr>
                             <td>Genres</td>
                             <td>
-                                The genres of the series; note that you can create genres as needed:
-                                <figure class="bcls-figure">
-                                    <img class="bcls-image" src="/assets/images/s-general-img/series-seasons-episodes/make-genres.png" alt="make genres" /> </figure>
+                                Les genres de la série&nbsp;; notez que vous pouvez créer des genres selon vos besoins: <figure class="bcls-figure">
+                                    <img class="bcls-image" src="/assets/images/s-general-img/series-seasons-episodes/make-genres.png" alt="créer des genres" /> </figure>
                             </td>
                         </tr>
                         <tr>
-                            <td>Sub-Genres</td>
-                            <td>Do not complete, this data is not used</td>
+                            <td>Sous-genres</td>
+                            <td>Ne pas compléter, ces données ne sont pas utilisées</td>
                         </tr>
                         <tr>
-                            <td>Genre Language Preview</td>
-                            <td>The language of the preview</td>
+                            <td>Aperçu des langues de genre</td>
+                            <td>La langue de l'aperçu</td>
                         </tr>
                         <tr>
-                            <td>Episode Sort type</td>
-                            <td>How to sort episodes in the app user interface</td>
+                            <td>Type de tri des épisodes</td>
+                            <td>Comment trier les épisodes dans l'interface utilisateur de l'application</td>
                         </tr>
                         <tr>
-                            <td>Cast</td>
+                            <td>Casting</td>
                             <td>
-                                The metadata under <strong>CAST</strong> will appear in the the <strong>More Info</strong> screen.
+                                Les métadonnées sous<strong> CAST</strong> apparaîtront dans l'<strong>écran</strong> Plus d'informations.
                             </td>
                         </tr>
                     </tbody>
                 </table>
             </li>
-            <li>Click on the <strong>Textual Data</strong> tab.</li>
+            <li>Cliquez sur l'<strong>onglet</strong> Textual Data (Données textuelles).</li>
             <li>
-                Fill in the <em>Title</em> (which is the viewer facing name for the series), <em>Description</em> and <em>Synopsis</em>. This data will be displayed in the Brightcove Beacon app.
+                Remplissez le<em> Titre</em> (qui est le nom du spectateur de la série), la<em> Description</em> et le<em> Synopsis</em>. Ces données seront affichées dans l'application Brightcove Beacon.
             </li>
-            <li>Click on the <strong>Non-Textual Data</strong> tab.</li>
+            <li>Cliquez sur l'<strong>onglet Données</strong> non textuelles.</li>
             <li>
-                Supply an image for the following (matching the requirements below) : <ul>
-                    <li><strong>Portrait Poster</strong> (required)</li>
-                    <li><strong>Landscape Poster</strong> (required)</li>
-                    <li><strong>Thumbnail</strong></li>
-                    <li><strong>Wide banner</strong> (required)</li>
+                Fournissez une image pour les éléments suivants (correspondant aux exigences ci-dessous): <ul>
+                    <li><strong>Poster portrait</strong> (obligatoire)</li>
+                    <li><strong>Poster paysage</strong> (obligatoire)</li>
+                    <li><strong>Miniature</strong></li>
+                    <li><strong>Bannière large</strong> (obligatoire)</li>
                 </ul>
-                <p>If not provided, the Thumbnail image will be generated from the Portrait Poster.</p>
+                <p>Si elle n'est pas fournie, l'image miniature sera générée à partir de l'affiche du portrait.</p>
                 <table class="bcls-table">
                     <thead class="bcls-table__head">
                         <tr>
                             <th>Image</th>
-                            <th>Requirements</th>
+                            <th>Exigences</th>
                         </tr>
                     </thead>
                     <tbody class="bcls-table__body">
                         <tr>
-                            <td>Portrait Poster</td>
+                            <td>Poster Portrait</td>
                             <td>
-                                <p>JPEG image (2:3)</p>
+                                <p>Image JPEG (2:3)</p>
                                 <table>
                                     <tr>
-                                        <td>Minimum</td>
-                                        <td>Width: 1000px</td>
-                                        <td>Height: 1500px</td>
+                                        <td>Au minimum</td>
+                                        <td>Largeur: 1000 px</td>
+                                        <td>Hauteur: 1500 px</td>
                                     </tr>
                                     <tr>
                                         <td>Maximum</td>
-                                        <td>Width: 2000px</td>
-                                        <td>Height: 3000px</td>
+                                        <td>Largeur: 2000 px</td>
+                                        <td>Hauteur: 3000 px</td>
                                     </tr>
                                 </table>
                             </td>
                         </tr>
                         <tr>
-                            <td>Landscape Poster</td>
+                            <td>Poster paysage</td>
                             <td>
-                                <p>JPEG image (16:9)</p>
+                                <p>Image JPEG (16:9)</p>
                                 <table>
                                     <tr>
-                                        <td>Minimum</td>
-                                        <td>Width: 1000px</td>
-                                        <td>Height: 563px</td>
+                                        <td>Au minimum</td>
+                                        <td>Largeur: 1000 px</td>
+                                        <td>Hauteur: 563 px</td>
                                     </tr>
                                     <tr>
                                         <td>Maximum</td>
-                                        <td>Width: 4000px</td>
-                                        <td>Height: 2250px</td>
+                                        <td>Largeur: 4000 px</td>
+                                        <td>Hauteur: 2 250 px</td>
                                     </tr>
                                 </table>
                             </td>
                         </tr>
                         <tr>
-                            <td>Thumbnail</td>
+                            <td>Miniature</td>
                             <td>
-                                JPEG image (4:3)
+                                Image JPEG (4:3)
                             </td>
                         </tr>
                         <tr>
-                            <td>Wide Banner</td>
+                            <td>Bannière large</td>
                             <td>
-                                JPEG image (21:9)
+                                Image JPEG (21:9)
                                 <table>
                                     <tr>
-                                        <td>Minimum</td>
-                                        <td>Width: 1000px</td>
-                                        <td>Height: 428px</td>
+                                        <td>Au minimum</td>
+                                        <td>Largeur: 1000 px</td>
+                                        <td>Hauteur: 428 px</td>
                                     </tr>
                                     <tr>
                                         <td>Maximum</td>
-                                        <td>Width: 4000px</td>
-                                        <td>Height: 1714px</td>
+                                        <td>Largeur: 4000 px</td>
+                                        <td>Hauteur: 1714 px</td>
                                     </tr>
                                 </table>
                             </td>
@@ -186,266 +176,257 @@
                 </table>
             </li>
             <li>
-                The information on the <strong>Tags</strong> tab is not used at this time, so do not enter information on this tab.
+                Les informations de l'<strong>onglet</strong> Balises ne sont pas utilisées pour le moment, donc n'entrez pas d'informations dans cet onglet.
             </li>
             <li>
-                The information on the <strong>Metadata</strong> tab is not used at this time, so do not enter information on this tab.
+                Les informations de l'<strong>onglet</strong> Métadonnées ne sont pas utilisées pour le moment, donc n'entrez pas d'informations dans cet onglet.
             </li>
             <li>
-                Click on the <strong>Streams</strong> tab, where you will select a trailer for the series. The following screenshot will help guide you through the process of selecting that trailer.
-                <figure class="bcls-figure">
-                    <img class="bcls-image" src="/assets/images/s-general-img/series-seasons-episodes/streams-tab.png" alt="streams tab" /> </figure>
+                Cliquez sur l'<strong>onglet</strong> Streams, où vous allez sélectionner la bande annonce de la série. La capture d'écran suivante vous guidera tout au long du processus de sélection de cette bande-annonce. <figure class="bcls-figure">
+                    <img class="bcls-image" src="/assets/images/s-general-img/series-seasons-episodes/streams-tab.png" alt="onglet Streams" /> </figure>
             </li>
             <li>
-                Select your <strong>Provider</strong>. You will most likely only have one provider, which references your Brightcove Video Cloud account.
+                Sélectionnez votre<strong> fournisseur</strong>. Vous n'aurez probablement qu'un seul fournisseur, qui fait référence à votre compte Brightcove Video Cloud.
             </li>
             <li>
-                For the <strong>Stream Video ID</strong>, obtain the video ID for the trailer from Studio and place it in the text box.
+                Pour l'ID<strong> Stream Video</strong>, récupérez l'ID vidéo de la bande-annonce auprès de Studio et placez-le dans la zone de texte.
             </li>
             <li>
-                Be sure the <strong>Stream Type</strong> is set to <em>Trailer</em>.
+                Assurez-vous que le<strong> Stream Type</strong> est défini sur<em> Trailer</em>.
             </li>
             <li>
-                Click on the <strong>Rights & Scheduling</strong> tab, as shown here: <figure class="bcls-figure">
-                    <img class="bcls-image" src="/assets/images/s-general-img/series-seasons-episodes/rights-scheduling-tab.png" alt="Rights and Scheduling" /> </figure>
+                Cliquez sur l'<strong>onglet</strong> Droits et planification, comme indiqué ici: <figure class="bcls-figure">
+                    <img class="bcls-image" src="/assets/images/s-general-img/series-seasons-episodes/rights-scheduling-tab.png" alt="Droits et calendrier" /> </figure>
             </li>
             <li>
                 <p>
-                    Add values for the following fields:
+                    Ajoutez des valeurs pour les champs suivants:
                 </p>
                 <table class="bcls-table">
                     <thead class="bcls-table__head">
                         <tr>
-                            <th>Field</th>
-                            <th>Required</th>
-                            <th>Notes</th>
+                            <th>terrain</th>
+                            <th>Requis</th>
+                            <th>Remarques</th>
                         </tr>
                     </thead>
                     <tbody class="bcls-table__body">
                         <tr>
-                            <td>Status</td>
-                            <td>Yes</td>
+                            <td>Statut</td>
+                            <td>Oui</td>
                             <td>
-                                Select one of the following types:
+                                Sélectionnez l'un des types suivants:
                                 <ul>
                                     <li>
-                                        Published
+                                        Publié
                                     </li>
                                     <li>
-                                        Unpublished
+                                        Non publié
                                     </li>
                                 </ul>
                             </td>
                         </tr>
                         <tr>
-                          <td>Allow Downloads</td>
-                          <td>Yes</td>
+                          <td>Autoriser les téléchargements</td>
+                          <td>Oui</td>
                           <td>
-                              Set to <strong>Yes</strong> to allow this series to be downloaded by the user for offline playback. For details, see the <a href="https://beacon-help.support.brightcove.com/media/offline-playback-beacon.html">Offline Playback with Brightcove Beacon Apps</a> document.
+                              Définissez cette<strong> option</strong> sur Oui pour permettre à l'utilisateur de télécharger cette série pour une lecteur hors ligne. Pour plus de détails, consultez le<a href="https://beacon-help.support.brightcove.com/media/offline-playback-beacon.html"> document Lecture</a> hors ligne avec les applications Brightcove Beacon.
                           </td>
                         </tr>
                         <tr>
-                          <td>Asset roles</td>
-                          <td>No</td>
+                          <td>Rôles des actifs</td>
+                          <td>Non</td>
                           <td>
-                              Associate user roles with this series. Contact your account manager if you are interested in this feature. For details, see the <a href="/using-brightcove-beacon/roles-as-rights.html">Controlling Viewer Access with Roles</a> document.
+                              Associez les rôles d'utilisateurs à cette série. Contactez votre responsable de compte si cette fonctionnalité vous intéresse. Pour plus de détails, consultez le<a href="/using-brightcove-beacon/roles-as-rights.html"> document</a> Contrôle de l'accès des visionneuses avec des rôles
                           </td>
                         </tr>
                         <tr>
-                            <td>Rights Type</td>
-                            <td>Yes</td>
+                            <td>Type de droits</td>
+                            <td>Oui</td>
                             <td>
-                                Choose the appropriate value for your series, from the options: <ul>
-                                    <li>Advertising - AVOD</li>
-                                    <li>Free</li>
-                                    <li>Subscription - SVOD</li>
+                                Choisissez la valeur appropriée pour votre série parmi les options suivantes: <ul>
+                                    <li>Publicité - AVOD</li>
+                                    <li>Gratuit</li>
+                                    <li>Abonnement - SVOD</li>
                                 </ul>
                             </td>
                         </tr>
                         <tr>
-                            <td>Start Time</td>
-                            <td>Yes</td>
-                            <td>Schedule a starting date your series will be available</td>
+                            <td>Heure de début</td>
+                            <td>Oui</td>
+                            <td>Fixez une date de début pour que votre série soit disponible</td>
                         </tr>
                         <tr>
-                            <td>End Time</td>
-                            <td>Yes</td>
+                            <td>Heure de fin</td>
+                            <td>Oui</td>
                             <td>
-                                Schedule an ending date when your series will no longer be available
+                                Fixez une date de fin à laquelle votre série ne sera plus disponible
                             </td>
                         </tr>
                         <tr>
-                            <td>Max Streams</td>
-                            <td>Yes</td>
+                            <td>Flux Max</td>
+                            <td>Oui</td>
                             <td>
-                                Set the maximum number of streams that can be watching the series from the same account
+                                Définissez le nombre maximum de flux pouvant regarder la série à partir d'un même compte
                             </td>
                         </tr>
                         <tr>
-                            <td>Devices to publish</td>
-                            <td>Yes</td>
+                            <td>Appareils à publier</td>
+                            <td>Oui</td>
                             <td>
-                                Add the devices to which you wish to publish. Select the <strong>Select / Unselect All Devices</strong> to see a list of available devices
+                                Ajoutez les appareils sur lesquels vous souhaitez publier. Sélectionnez<strong> Sélectionner/Désélectionner tous les appareils</strong> pour afficher la liste des appareils disponibles
                             </td>
                         </tr>
                         <tr>
-                            <td>Permitted locations</td>
-                            <td>Yes</td>
+                            <td>Lieux autorisés</td>
+                            <td>Oui</td>
                             <td>
-                                <p>Select the locations where you want to stream your content, if no restrictions enter <em>World</em>.</p>
-                                <aside class="bcls-aside bcls-aside--information">
-                                    <p>If you don't specify at least 1 permitted location, then you may see this message from your app:</p>
-                                    <figure class="bcls-figure">
-                                        <img class="bcls-image" src="/assets/images/s-general-img/series-seasons-episodes/no-content.jpg" alt="No content" /> </figure>
-                                </aside>
+                                <p>Sélectionnez les emplacements où vous souhaitez diffuser votre contenu, si aucune restriction n'entre dans<em> World</em>.</p> <aside class="bcls-aside bcls-aside--information">
+                                    <p>Si vous ne spécifiez pas au moins un emplacement autorisé, le message suivant peut s'afficher dans votre application:</p> <figure class="bcls-figure">
+                                        <img class="bcls-image" src="/assets/images/s-general-img/series-seasons-episodes/no-content.jpg" alt="Aucun contenu" />  </figure></aside>
                             </td>
                         </tr>
                         <tr>
-                            <td>Denied locations</td>
-                            <td>No</td>
+                            <td>Lieux refusés</td>
+                            <td>Non</td>
                             <td>
-                                Select the locations where you DO NOT want to stream your content
+                                Sélectionnez les emplacements où vous NE SOUHAITEZ PAS diffuser votre contenu
                             </td>
                         </tr>
                     </tbody>
                 </table>
             </li>
             <li>
-                Be sure to click the <strong>Create New Series</strong> button to save the series information.
+                Assurez-vous de cliquer sur le<strong> bouton</strong> Créer une nouvelle série pour enregistrer les informations relatives à la série.
             </li>
         </ol>
         <p>
-            You have now created your series. The next step is to create one or more seasons that belong to this series. The next section leads you through that process.
-        </p>
-    </section>
-    <section class="bcls-section">
-        <h2 id="Creating_seasons">Creating seasons</h2>
-        <p>To create a season, follow these steps:</p>
+            Vous venez de créer votre série. L'étape suivante consiste à créer une ou plusieurs saisons appartenant à cette série. La section suivante vous guide tout au long de ce processus.
+        </p>  </section><section class="bcls-section">
+        <h2 id="Creating_seasons">Créer des saisons</h2>
+        <p>Pour créer une saison, procédez comme suit:</p>
         <ol class="bcls-tasklist-restart">
-            <li>Log in to Brightcove Beacon and select <strong>Programs</strong>.</li>
-            <li>In the left navigation, select <strong>Seasons</strong>.</li>
-            <li>Click the <strong>Add new season</strong> button.</li>
+            <li>Connectez-vous à Brightcove Beacon et sélectionnez<strong> Programmes</strong>.</li>
+            <li>Dans le menu de navigation de gauche, sélectionnez<strong> Seasons</strong>.</li>
+            <li>Cliquez sur le<strong> bouton</strong> Ajouter une nouvelle saison.</li>
             <li>
-                On the <strong>Basic Data</strong> tab, fill in the following: <table class="bcls-table">
+                Dans l'<strong>onglet Données</strong> de base, remplissez les champs suivants: <table class="bcls-table">
                     <thead class="bcls-table__head">
                         <tr>
-                            <th>Form Field Name</th>
-                            <th>Description / Requirements</th>
+                            <th>Nom du champ du formulaire</th>
+                            <th>Description/Exigences</th>
                         </tr>
                     </thead>
                     <tbody class="bcls-table__body">
                         <tr>
-                            <td>Select a Series</td>
+                            <td>Sélectionnez une série</td>
                             <td>
-                                The dropdown will be populated with the series you have created.
-                                Choose the series to which this season belongs.
+                                La liste déroulante sera remplie avec la série que vous avez créée. Choisissez la série à laquelle appartient cette saison.
                             </td>
                         </tr>
                         <tr>
-                            <td>Name</td>
+                            <td>Nom</td>
                             <td>
-                                The identifier of the series, the customer facing name is provided later in the <strong>Textual Data</strong> section </td>
+                                L'identifiant de la série, le nom du client, est fourni plus loin dans la<strong> section Données</strong> textuelles </td>
                         </tr>
                         <tr>
-                            <td>Season Number</td>
+                            <td>Numéro de saison</td>
                             <td>
-                                This must be an integer number representing the season sequence in the series. This number will be used when ingesting episode videos from Video Cloud.
+                                Il doit s'agir d'un nombre entier représentant la séquence des saisons de la série. Ce numéro sera utilisé lors de l'acquisition de vidéos d'épisodes à partir de Video Cloud.
                             </td>
                         </tr>
                         <tr>
-                            <td>Production Year</td>
+                            <td>Année de production</td>
                             <td>
-                                The year the season was produced; this information will appear in the the <strong>More Info</strong> screen.
+                                L'année de production de la saison&nbsp;; ces informations apparaîtront dans l'<strong>écran</strong> Plus d'informations.
                             </td>
                         </tr>
                         <tr>
-                            <td>Production Country</td>
+                            <td>Pays de production</td>
                             <td>
-                                The country where the season is produced; this information will appear in the the <strong>More Info</strong> screen.
+                                Le pays dans lequel la saison est produite&nbsp;; ces informations apparaîtront dans l'<strong>écran</strong> Plus d'informations.
                             </td>
                         </tr>
                     </tbody>
                 </table>
             </li>
-            <li>Click on the <strong>Textual Data</strong> tab.</li>
+            <li>Cliquez sur l'<strong>onglet</strong> Textual Data (Données textuelles).</li>
             <li>
-                Fill in the <em>Title</em>, <em>Description</em> and <em>Synopsis</em> for the season. This data will be displayed in the Brightcove Beacon app.
-                <aside class="bcls-aside bcls-aside--tip"> For the season <em>Title</em>, you can enter a name like <em>Season 1</em>, but if a series has topics for distinct seasons that may be a better choice. For instance, a series on the continents where each season focuses on a continent, good names for the seasons would be <em>Europe</em>, <em>Africa</em>, <em>Asia</em>, etc.
-                </aside>
+                Remplissez le<em> titre</em>, la<em> description</em> et le<em> synopsis</em> de la saison. Ces données seront affichées dans l'application Brightcove Beacon. <aside class="bcls-aside bcls-aside--tip"> Pour le<em> titre de la saison</em>, vous pouvez saisir un nom tel que<em> Saison 1</em>, mais si une série comporte des sujets pour des saisons distinctes, cela peut être un meilleur choix. Par exemple, une série sur les continents où chaque saison se concentre sur un continent, les bons noms des saisons seraient<em> l'Europe</em>, l'<em>Afrique</em>,<em> l'Asie</em>, etc. </aside>
             </li>
-            <li>Click on the <strong>Non-Textual Data</strong> tab.</li>
+            <li>Cliquez sur l'<strong>onglet Données</strong> non textuelles.</li>
             <li>
-                For your season, supply an image for the following (matching the requirements below) : <ul>
-                    <li><strong>Portrait Poster</strong> (required)</li>
-                    <li><strong>Landscape Poster</strong> (required)</li>
-                    <li><strong>Thumbnail</strong></li>
-                    <li><strong>Wide banner</strong> (required)</li>
+                Pour votre saison, fournissez une image pour les éléments suivants (correspondant aux exigences ci-dessous): <ul>
+                    <li><strong>Poster portrait</strong> (obligatoire)</li>
+                    <li><strong>Poster paysage</strong> (obligatoire)</li>
+                    <li><strong>Miniature</strong></li>
+                    <li><strong>Bannière large</strong> (obligatoire)</li>
                 </ul>
-                <p>If not provided, the Thumbnail image will be generated from the Portrait Poster.</p>
+                <p>Si elle n'est pas fournie, l'image miniature sera générée à partir de l'affiche du portrait.</p>
                 <table class="bcls-table">
                     <thead class="bcls-table__head">
                         <tr>
                             <th>Image</th>
-                            <th>Requirements</th>
+                            <th>Exigences</th>
                         </tr>
                     </thead>
                     <tbody class="bcls-table__body">
                         <tr>
-                            <td>Portrait Poster</td>
+                            <td>Poster Portrait</td>
                             <td>
-                                <p>JPEG image (2:3)</p>
+                                <p>Image JPEG (2:3)</p>
                                 <table>
                                     <tr>
-                                        <td>Minimum</td>
-                                        <td>Width: 1000px</td>
-                                        <td>Height: 1500px</td>
+                                        <td>Au minimum</td>
+                                        <td>Largeur: 1000 px</td>
+                                        <td>Hauteur: 1500 px</td>
                                     </tr>
                                     <tr>
                                         <td>Maximum</td>
-                                        <td>Width: 2000px</td>
-                                        <td>Height: 3000px</td>
+                                        <td>Largeur: 2000 px</td>
+                                        <td>Hauteur: 3000 px</td>
                                     </tr>
                                 </table>
                             </td>
                         </tr>
                         <tr>
-                            <td>Landscape Poster</td>
+                            <td>Poster paysage</td>
                             <td>
-                                <p>JPEG image (16:9)</p>
+                                <p>Image JPEG (16:9)</p>
                                 <table>
                                     <tr>
-                                        <td>Minimum</td>
-                                        <td>Width: 1000px</td>
-                                        <td>Height: 563px</td>
+                                        <td>Au minimum</td>
+                                        <td>Largeur: 1000 px</td>
+                                        <td>Hauteur: 563 px</td>
                                     </tr>
                                     <tr>
                                         <td>Maximum</td>
-                                        <td>Width: 4000px</td>
-                                        <td>Height: 2250px</td>
+                                        <td>Largeur: 4000 px</td>
+                                        <td>Hauteur: 2 250 px</td>
                                     </tr>
                                 </table>
                             </td>
                         </tr>
                         <tr>
-                            <td>Thumbnail</td>
+                            <td>Miniature</td>
                             <td>
-                                JPEG image (4:3)
+                                Image JPEG (4:3)
                             </td>
                         </tr>
                         <tr>
-                            <td>Wide Banner</td>
+                            <td>Bannière large</td>
                             <td>
-                                JPEG image (21:9)
+                                Image JPEG (21:9)
                                 <table>
                                     <tr>
-                                        <td>Minimum</td>
-                                        <td>Width: 1000px</td>
-                                        <td>Height: 428px</td>
+                                        <td>Au minimum</td>
+                                        <td>Largeur: 1000 px</td>
+                                        <td>Hauteur: 428 px</td>
                                     </tr>
                                     <tr>
                                         <td>Maximum</td>
-                                        <td>Width: 4000px</td>
-                                        <td>Height: 1714px</td>
+                                        <td>Largeur: 4000 px</td>
+                                        <td>Hauteur: 1714 px</td>
                                     </tr>
                                 </table>
                             </td>
@@ -454,225 +435,205 @@
                 </table>
             </li>
             <li>
-                The information on the <strong>Tags</strong> tab is not used at this time, so do not enter information on this tab.
+                Les informations de l'<strong>onglet</strong> Balises ne sont pas utilisées pour le moment, donc n'entrez pas d'informations dans cet onglet.
             </li>
             <li>
-                The information on the <strong>Metadata</strong> tab is not used at this time, so do not enter information on this tab.
+                Les informations de l'<strong>onglet</strong> Métadonnées ne sont pas utilisées pour le moment, donc n'entrez pas d'informations dans cet onglet.
             </li>
             <li>
-                Click on the <strong>Streams</strong> tab, where you will select a trailer for the season.
+                Cliquez sur l'<strong>onglet</strong> Streams, où vous allez sélectionner une bande-annonce pour la saison.
             </li>
             <li>
-                Select your <strong>Provider</strong>. You will most likely only have one provider, which references your Brightcove Video Cloud account.
+                Sélectionnez votre<strong> fournisseur</strong>. Vous n'aurez probablement qu'un seul fournisseur, qui fait référence à votre compte Brightcove Video Cloud.
             </li>
-            <li>Click the <strong>Add new stream</strong> button.</li>
+            <li>Cliquez sur le<strong> bouton</strong> Ajouter un nouveau flux.</li>
             <li>
-                For the <strong>Stream Video ID</strong>, obtain the video ID for the trailer from Studio and place it in the text box.
-            </li>
-            <li>
-                Be sure the <strong>Stream Type</strong> is set to <em>Trailer</em>.
+                Pour l'ID<strong> Stream Video</strong>, récupérez l'ID vidéo de la bande-annonce auprès de Studio et placez-le dans la zone de texte.
             </li>
             <li>
-                Click on the <strong>Rights & Scheduling</strong> tab, as shown here.
-                <figure class="bcls-figure">
-                    <img class="bcls-image" src="/assets/images/s-general-img/series-seasons-episodes/rights-scheduling-tab-season.png" alt="Rights and Scheduling" /> </figure>
+                Assurez-vous que le<strong> Stream Type</strong> est défini sur<em> Trailer</em>.
+            </li>
+            <li>
+                Cliquez sur l'<strong>onglet</strong> Droits et planification, comme illustré ici. <figure class="bcls-figure">
+                    <img class="bcls-image" src="/assets/images/s-general-img/series-seasons-episodes/rights-scheduling-tab-season.png" alt="Droits et calendrier" /> </figure>
             </li>
             <li>
                 <p>
-                    Add values for the following fields:
+                    Ajoutez des valeurs pour les champs suivants:
                 </p>
                 <table class="bcls-table">
                     <thead class="bcls-table__head">
                         <tr>
-                            <th>Field</th>
-                            <th>Required</th>
-                            <th>Notes</th>
+                            <th>terrain</th>
+                            <th>Requis</th>
+                            <th>Remarques</th>
                         </tr>
                     </thead>
                     <tbody class="bcls-table__body">
                         <tr>
-                            <td>Status</td>
-                            <td>Yes</td>
+                            <td>Statut</td>
+                            <td>Oui</td>
                             <td>
-                                Select one of the following types:
+                                Sélectionnez l'un des types suivants:
                                 <ul>
                                     <li>
-                                        Published
+                                        Publié
                                     </li>
                                     <li>
-                                        Unpublished
+                                        Non publié
                                     </li>
                                 </ul>
                             </td>
                         </tr>
                         <tr>
-                          <td>Allow Downloads</td>
-                          <td>Yes</td>
+                          <td>Autoriser les téléchargements</td>
+                          <td>Oui</td>
                           <td>
-                              Set to <strong>Yes</strong> to allow this season to be downloaded by the user for offline playback. For details, see the <a href="https://beacon-help.support.brightcove.com/media/offline-playback-beacon.html">Offline Playback with Brightcove Beacon Apps</a> document.
+                              Réglez sur<strong> Oui</strong> pour permettre à l'utilisateur de télécharger cette saison pour une lecteur hors ligne. Pour plus de détails, consultez le<a href="https://beacon-help.support.brightcove.com/media/offline-playback-beacon.html"> document Lecture</a> hors ligne avec les applications Brightcove Beacon.
                           </td>
                         </tr>
                         <tr>
-                          <td>Asset roles</td>
-                          <td>No</td>
+                          <td>Rôles des actifs</td>
+                          <td>Non</td>
                           <td>
-                              Associate user roles with this season. Contact your account manager if you are interested in this feature. For details, see the <a href="/using-brightcove-beacon/roles-as-rights.html">Controlling Viewer Access with Roles</a> document.
+                              Associez des rôles d'utilisateurs à cette saison. Contactez votre responsable de compte si cette fonctionnalité vous intéresse. Pour plus de détails, consultez le<a href="/using-brightcove-beacon/roles-as-rights.html"> document</a> Contrôle de l'accès des visionneuses avec des rôles
                           </td>
                         </tr>
                         <tr>
-                            <td>Rights Type</td>
-                            <td>Yes</td>
+                            <td>Type de droits</td>
+                            <td>Oui</td>
                             <td>
-                                Choose the appropriate value for your season, from the options: <ul>
-                                    <li>Advertising - AVOD</li>
-                                    <li>Free</li>
-                                    <li>Inherit</li>
-                                    <li>Subscription - SVOD</li>
+                                Choisissez la valeur appropriée pour votre saison parmi les options suivantes: <ul>
+                                    <li>Publicité - AVOD</li>
+                                    <li>Gratuit</li>
+                                    <li>Hériter</li>
+                                    <li>Abonnement - SVOD</li>
                                 </ul>
-                                <p>
-                                    <em>Inherit</em> means that the rights will be inherited from the series to which this season belongs.
+                                <p> <em>Inherit</em> signifie que les droits seront hérités de la série à laquelle appartient cette saison.
                                 </p>
                             </td>
                         </tr>
                         <tr>
-                            <td>Start Time</td>
-                            <td>Yes</td>
-                            <td>Schedule a starting date this season will be available</td>
+                            <td>Heure de début</td>
+                            <td>Oui</td>
+                            <td>Planifier une date de début cette saison sera disponible</td>
                         </tr>
                         <tr>
-                            <td>End Time</td>
-                            <td>Yes</td>
+                            <td>Heure de fin</td>
+                            <td>Oui</td>
                             <td>
-                                Schedule an ending date when this season will no longer be available
+                                Fixez une date de fin lorsque cette saison ne sera plus disponible
                             </td>
                         </tr>
                         <tr>
-                            <td>Max Streams</td>
-                            <td>Yes</td>
+                            <td>Flux Max</td>
+                            <td>Oui</td>
                             <td>
-                                The maximum number of streams that can be watching the season from the same account
+                                Le nombre maximum de diffusions pouvant regarder la saison à partir d'un même compte
                             </td>
                         </tr>
                         <tr>
-                            <td>Devices to publish</td>
-                            <td>Yes</td>
+                            <td>Appareils à publier</td>
+                            <td>Oui</td>
                             <td>
-                                Add the devices you wish to publish to. Select the <strong>Select / Unselect All Devices</strong> to see a list of available devices.
+                                Ajoutez les appareils sur lesquels vous souhaitez publier. Sélectionnez<strong> Sélectionner/Désélectionner tous les appareils</strong> pour afficher la liste des appareils disponibles.
                             </td>
                         </tr>
                         <tr>
-                            <td>Permitted locations</td>
-                            <td>Yes</td>
+                            <td>Lieux autorisés</td>
+                            <td>Oui</td>
                             <td>
-                                <p>Select the locations where you want to stream your content, if no restrictions enter <em>World</em>.</p>
-                                <aside class="bcls-aside bcls-aside--information">
-                                    <p>If you don't specify at least 1 permitted location, then you may see this message from your app:</p>
-                                    <figure class="bcls-figure">
-                                        <img class="bcls-image" src="/assets/images/s-general-img/series-seasons-episodes/no-content.jpg" alt="No content" /> </figure>
-                                </aside>
+                                <p>Sélectionnez les emplacements où vous souhaitez diffuser votre contenu, si aucune restriction n'entre dans<em> World</em>.</p> <aside class="bcls-aside bcls-aside--information">
+                                    <p>Si vous ne spécifiez pas au moins un emplacement autorisé, le message suivant peut s'afficher dans votre application:</p> <figure class="bcls-figure">
+                                        <img class="bcls-image" src="/assets/images/s-general-img/series-seasons-episodes/no-content.jpg" alt="Aucun contenu" />  </figure></aside>
                             </td>
                         </tr>
                         <tr>
-                            <td>Denied locations</td>
-                            <td>No</td>
+                            <td>Lieux refusés</td>
+                            <td>Non</td>
                             <td>
-                                Select the locations where you DO NOT want to stream your content. Enter <em>World</em> if you have no restrictions.
+                                Sélectionnez les emplacements où vous NE SOUHAITEZ PAS diffuser votre contenu en continu. Entrez dans<em> World</em> si vous n'avez aucune restriction.
                             </td>
                         </tr>
                     </tbody>
                 </table>
             </li>
             <li>
-                Be sure to click the <strong>Create New Season</strong> button to save the season information.
+                N'oubliez pas de cliquer sur le<strong> bouton</strong> Créer une nouvelle saison pour enregistrer les informations de la saison.
             </li>
         </ol>
         <p>
-            You have now created one of your seasons. If needed, create more seasons for the series. The next step is to ingest episode videos from Video Cloud into Brightcove Beacon. The next section leads you through that process.
-        </p>
-    </section>
-    <section class="bcls-section">
-        <h2 id="Ingesting_episodes">Ingesting episodes</h2>
+            Vous venez de créer l'une de vos saisons. Si nécessaire, créez d'autres saisons pour la série. L'étape suivante consiste à intégrer les vidéos des épisodes de Video Cloud dans Brightcove Beacon. La section suivante vous guide tout au long de ce processus.
+        </p>  </section><section class="bcls-section">
+        <h2 id="Ingesting_episodes">Ingestion d'épisodes</h2>
         <p>
-            While creating the series and associated seasons is done in Brightcove Beacon, the creation of episodes for the series is done in Video Cloud Studio. You will assign values about the series and seasons in custom fields for each episode video, then ingest those videos into Brightcove Beacon.
-        </p>
-        <aside class="bcls-aside bcls-aside--tip">Remember, the truth of Brightcove Beacon episode content resides in Video Cloud. Any changes you make to episodes in Brightcove Beacon will be overwritten when you ingest content from Video Cloud.</aside>
-        <h3>Prerequisites</h3>
-        <p>Before continuing with the steps below, make sure that you have completed the following:</p>
+            Alors que la création de la série et des saisons associées se fait dans Brightcove Beacon, la création des épisodes de la série se fait dans Video Cloud Studio. Vous attribuerez des valeurs concernant les séries et les saisons dans des champs personnalisés pour chaque vidéo d'épisode, puis vous intégrerez ces vidéos dans Brightcove Beacon.
+        </p> <aside class="bcls-aside bcls-aside--tip">N'oubliez pas que la vérité sur le contenu des épisodes de Brightcove Beacon se trouve dans Video Cloud. Toute modification que vous apportez aux épisodes dans Brightcove Beacon sera écrasée lorsque vous intégrerez du contenu à partir de Video Cloud.</aside>
+        <h3>Prérequis</h3>
+        <p>Avant de poursuivre les étapes ci-dessous, assurez-vous d'avoir effectué les opérations suivantes:</p>
         <ol class="bcls-tasklist-restart">
-            <li>Log in to Video Cloud Studio.</li>
+            <li>Connectez-vous à Video Cloud Studio.</li>
             <li>
-                <p>From the dropdown menu at the top of the page, select <strong>UPLOAD</strong>.</p>
-                <figure class="bcls-figure">
-                    <img class="bcls-image" src="/assets/images/s-general-img/series-seasons-episodes/upload-module.png" alt="Upload module" /> </figure>
+                <p>Dans le menu déroulant en haut de la page, sélectionnez<strong> UPLOAD</strong>.</p> <figure class="bcls-figure">
+                    <img class="bcls-image" src="/assets/images/s-general-img/series-seasons-episodes/upload-module.png" alt="Module de téléversement" /> </figure>
             </li>
-            <li>Upload your episode videos.</li>
+            <li>Téléchargez les vidéos de vos épisodes.</li>
             <li>
-                <p>From the dropdown menu at the top of the page, select <strong>MEDIA</strong>.</p>
-                <figure class="bcls-figure">
-                    <img class="bcls-image" src="/assets/images/s-general-img/series-seasons-episodes/media-module.png" alt="Media module" /> </figure>
+                <p>Dans le menu déroulant en haut de la page, sélectionnez<strong> MEDIA</strong>.</p> <figure class="bcls-figure">
+                    <img class="bcls-image" src="/assets/images/s-general-img/series-seasons-episodes/media-module.png" alt="Module média" /> </figure>
             </li>
-            <li>Update your episode video images as specified in the <a href="/references/image-requirements.html">Images and Their Specifications</a> document.</li>
+            <li>Mettez à jour les images vidéo de vos épisodes comme indiqué dans le<a href="/references/image-requirements.html"> document</a> Images et leurs spécifications.</li>
             <li>
-                <p>In the navigation header, click <strong>ADMIN</strong> and then <strong>Video Fields</strong>.</p>
-                <aside class="bcls-aside bcls-aside--information"> You must be an account administrator to access the <strong>ADMIN</strong> menu.
-                </aside>
-                <figure class="bcls-figure">
-                    <img class="bcls-image" src="/assets/images/s-general-img/series-seasons-episodes/video-fields.png" alt="Video fields" /> </figure>
+                <p>Dans l'en-tête de navigation, cliquez sur<strong> ADMIN,</strong> puis sur Champs<strong> vidéo</strong>.</p> <aside class="bcls-aside bcls-aside--information"> Vous devez être administrateur de compte pour accéder au<strong> menu</strong> ADMIN. </aside> <figure class="bcls-figure">
+                    <img class="bcls-image" src="/assets/images/s-general-img/series-seasons-episodes/video-fields.png" alt="Champs vidéo" /> </figure>
             </li>
-            <li>Create the required custom fields needed to ingest videos to Brightcove Beacon. For details, see the <a href="/syncing-with-video-cloud/vc-custom-fields.html">Creating Video Cloud Custom Fields</a> document.</li>
+            <li>Créez les champs personnalisés requis pour intégrer des vidéos dans Brightcove Beacon. Pour plus de détails, consultez le<a href="/syncing-with-video-cloud/vc-custom-fields.html"> document</a> Création de champs personnalisés Video Cloud.</li>
         </ol>
-        <h3>Steps</h3>
-        <p>To ingest episode videos into Brightcove Beacon, follow these steps:</p>
+        <h3>Étapes</h3>
+        <p>Pour intégrer des vidéos d'épisode dans Brightcove Beacon, procédez comme suit:</p>
         <ol class="bcls-tasklist-restart">
-            <li>Return to Video Cloud Studio.</li>
+            <li>Revenir à la page Video Cloud Studio.</li>
             <li>
-                From the dropdown menu at the top of the page, select <strong>MEDIA</strong>.
+                Dans le menu déroulant en haut de la page, sélectionnez<strong> MEDIA</strong>.
             </li>
             <li>
-                <p>Click on the title of one of the episode videos to enter the video's properties page.</p>
-                <figure class="bcls-figure">
-                    <img class="bcls-image" src="/assets/images/s-general-img/series-seasons-episodes/video-link.png" alt="Video link" /> </figure>
+                <p>Cliquez sur le titre de l'une des vidéos de l'épisode pour accéder à la page des propriétés de la vidéo.</p> <figure class="bcls-figure">
+                    <img class="bcls-image" src="/assets/images/s-general-img/series-seasons-episodes/video-link.png" alt="Lien vidéo" /> </figure>
             </li>
             <li>
-                Scroll down until you see on the right-hand side the <strong>CUSTOM FIELDS</strong> section.
+                Faites défiler vers le bas jusqu'à ce que vous voyiez sur le côté droit la<strong> section CHAMPS</strong> PERSONNALISÉS.
             </li>
-            <li>Click the <strong>Edit</strong> button.</li>
+            <li>Cliquez sur le<strong> bouton</strong> Modifier.</li>
             <li>
-                Locate the three custom fields that are associated with episodes.
-                <figure class="bcls-figure">
-                    <img class="bcls-image" src="/assets/images/s-general-img/series-seasons-episodes/vc-custom-fields.png" alt="episode custom fields" /> </figure>
-            </li>
-            <li>
-                For the episode video, enter the episode number, season number and series name, in the corresponding custom fields.
+                Localisez les trois champs personnalisés associés aux épisodes. <figure class="bcls-figure">
+                    <img class="bcls-image" src="/assets/images/s-general-img/series-seasons-episodes/vc-custom-fields.png" alt="champs personnalisés de l'épisode" /> </figure>
             </li>
             <li>
-                Be sure to click the <strong>Save</strong> button after entering the appropriate values for the video.
+                Pour la vidéo de l'épisode, saisissez le numéro de l'épisode, le numéro de saison et le nom de la série, dans les champs personnalisés correspondants.
             </li>
             <li>
-                Repeat entering values in the custom fields for all your episode videos.
-            </li>
-            <li>Log in to Brightcove Beacon.</li>
-            <li>
-                Click on the <strong>Tools</strong> option (<strong>wrench</strong> icon) in the top menu.
+                Assurez-vous de cliquer sur le<strong> bouton</strong> Enregistrer après avoir saisi les valeurs appropriées pour la vidéo.
             </li>
             <li>
-                <p>Be sure the <strong>Ingestion</strong> option is selected on the left menu.</p>
-                <figure class="bcls-figure">
-                    <img class="bcls-image" src="/assets/images/s-general-img/series-seasons-episodes/beacon-ingest.png" alt="Brightcove Beacon ingestion" /> </figure>
+                Répétez la saisie des valeurs dans les champs personnalisés pour toutes vos vidéos d'épisodes.
+            </li>
+            <li>Connectez-vous à Brightcove Beacon.</li>
+            <li>
+                Cliquez sur l'<strong>option</strong> Outils (<strong>icône en forme de</strong> clé) dans le menu supérieur.
             </li>
             <li>
-                Click the <strong>Update Brightcove Videos</strong> button to ingest the newly configured episode videos.
+                <p>Assurez-vous que l'<strong>option</strong> Ingestion est sélectionnée dans le menu de gauche.</p> <figure class="bcls-figure">
+                    <img class="bcls-image" src="/assets/images/s-general-img/series-seasons-episodes/beacon-ingest.png" alt="Ingestion des balises Brightcove" /> </figure>
+            </li>
+            <li>
+                Cliquez sur le<strong> bouton</strong> Mettre à jour les vidéos Brightcove pour intégrer les vidéos des épisodes nouvellement configurées.
             </li>
             <li>
                 <p>
-                    To make the videos immediately available in your apps, clear Brightcove Beacon's cache by clicking on the <strong>Cache</strong> option in the left navigation, then click the <strong>Cache Purge</strong> button.
-                </p>
-                <aside class="bcls-aside bcls-aside--information"> For more details on using the Brightcove Beacon Tools options, see the <a href="/using-brightcove-beacon/tools.html">Using the Tools</a> document.
-                </aside>
+                    Pour rendre les vidéos immédiatement disponibles dans vos applications, effacez le cache de Brightcove Beacon en cliquant sur l'<strong>option</strong> Cache dans le volet de navigation de gauche, puis cliquez sur le<strong> bouton Purger le</strong> cache.
+                </p> <aside class="bcls-aside bcls-aside--information"> Pour plus de détails sur l'utilisation des options des outils Brightcove Beacon, consultez le<a href="/using-brightcove-beacon/tools.html"> document</a> Utilisation des outils. </aside>
             </li>
         </ol>
         <p>
-            This concludes information on creating series and its associated seasons and episodes.
-        </p>
-    </section>
-</article>
+            Ceci conclut les informations sur la création de séries et ses saisons et épisodes associés.
+        </p>  </section></article>

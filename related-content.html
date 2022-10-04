@@ -1,58 +1,33 @@
-<h1>{{ page.title }}</h1>
-<article class="bcls-article">
-  <summary>{{ page.description }}</summary>
-
-  <section class="bcls-section">
-    <h2 id="Overview">Overview</h2>
-    <p>When a movie is displayed in a Brightcove Beacon app, you will also see related content displayed along with the video.</p>
-    <figure class="bcls-figure">
-      <img class="bcls-image" src="/assets/images/s-general-img/related-content/movie-player.png" alt="movie player with related content">
-    </figure>
-    <p>In this document you will learn:</p>
+<h1>{{page.title}}</h1> <article class="bcls-article"> <summary>{{page.description}}</summary> <section class="bcls-section">
+    <h2 id="Overview">Aperçu</h2>
+    <p>Lorsqu'un film est affiché dans une application Brightcove Beacon, le contenu associé s'affiche également en même temps que la vidéo.</p> <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/s-general-img/related-content/movie-player.png" alt="lecteur vidéo avec contenu associé"> </figure>
+    <p>Dans ce document, vous apprendrez:</p>
     <ul>
-      <li>How Beacon determines what content is related to a specific movie, series, live event and player.</li>
-      <li>Where related content is displayed.</li>
-    </ul>
-
-    <section class="bcls-section">
-      <h2 id="How_is_related_content_determined">How is related content determined?</h2>
-      <p>The following determines how content can be defined as related:</p>
+      <li>Comment Beacon détermine quel contenu est lié à un film, une série, un événement en direct et un lecteur spécifiques.</li>
+      <li>Où le contenu associé est affiché.</li>
+    </ul> <section class="bcls-section">
+      <h2 id="How_is_related_content_determined">Comment le contenu associé est-il déterminé&nbsp;?</h2>
+      <p>Les éléments suivants déterminent comment le contenu peut être défini comme étant lié:</p>
       <ul>
-        <li>Only assets of the same asset type can be related. This means only other movies can be related to a movie, only other series can be related to a series, etc.</li>
-        <li>Within those assets types, the genre defines related. So movies assigned the genre <strong>Action</strong> will be related content to other movies assigned the genre <strong>Action</strong>.</li>
-        <li>If you do not assign a genre, the asset is automatically assigned the genre <strong>No Genre</strong>. All <strong>No Genre</strong> assets are defined as related content.</li>
-        <li>Genres can be defined to create a related content relationship. For instance, perhaps you want movies assigned the <strong>Action</strong> genre to be related to <strong>Adventure</strong> movies, and vice versa. This can be done by associating those two different genres as related. Contact customer support to create such a relationship.</li>
-      </ul>
-      <aside class="bcls-aside bcls-aside--information language-editable">The related content is not returned in any special order and you CANNOT define the order in which related content is displayed.</aside>
-    </section>
-
-    <section class="bcls-section">
-      <h2 id="Where_is_related_content_displayed">Where is related content displayed?</h2>
-      <p>You see related videos displayed in the following locations:</p>
+        <li>Seuls les actifs du même type d'actif peuvent être liés. Cela signifie que seuls les autres films peuvent être liés à un film, que seules les autres séries peuvent être liées à une série, etc.</li>
+        <li>Au sein de ces types d'actifs, le genre définit les éléments liés. Ainsi, les films assignés au genre<strong> Action</strong> seront liés au contenu des autres films auxquels le genre<strong> Action est attribué</strong>.</li>
+        <li>Si vous n'attribuez aucun genre, le genre<strong> Aucun genre est automatiquement attribué à la ressource</strong>. Toutes les<strong> ressources</strong> No Genre sont définies comme du contenu associé.</li>
+        <li>Les genres peuvent être définis pour créer une relation de contenu connexe. Par exemple, vous voulez peut-être que les films assignés au<strong> genre</strong> Action soient liés aux<strong> films</strong> d'aventure, et vice versa. Cela peut être fait en associant ces deux genres différents comme étant liés. Contactez le support client pour créer une telle relation.</li>
+      </ul> <aside class="bcls-aside bcls-aside--information language-editable">Le contenu associé n'est renvoyé dans aucun ordre spécial et vous NE POUVEZ PAS définir l'ordre dans lequel le contenu associé est affiché.</aside> </section> <section class="bcls-section">
+      <h2 id="Where_is_related_content_displayed">Où le contenu associé est-il affiché&nbsp;?</h2>
+      <p>Vous pouvez voir des vidéos similaires affichées aux emplacements suivants:</p>
       <ul>
-        <li>Movie Details pages A, F, G and H (G shown as an example)
-          <figure class="bcls-figure">
-            <img class="bcls-image" src="/assets/images/s-general-img/related-content/movie-details-g.png" alt="movie details g">
-          </figure>
+        <li>Pages de détails du film A, F, G et H (G illustré à titre d'exemple) <figure class="bcls-figure">
+            <img class="bcls-image" src="/assets/images/s-general-img/related-content/movie-details-g.png" alt="détails du film g"> </figure>
         </li>
-        <li>Series Details pages
-          <figure class="bcls-figure">
-            <img class="bcls-image" src="/assets/images/s-general-img/related-content/series-details.png" alt="series details">
-          </figure>
+        <li>Pages Détails de la série <figure class="bcls-figure">
+            <img class="bcls-image" src="/assets/images/s-general-img/related-content/series-details.png" alt="détails de la série"> </figure>
         </li>
-        <li>Live Event Details
-          <figure class="bcls-figure">
-            <img class="bcls-image" src="/assets/images/s-general-img/related-content/live-event-details.png" alt="live event details">
-          </figure>
+        <li>Détails des événements en direct <figure class="bcls-figure">
+            <img class="bcls-image" src="/assets/images/s-general-img/related-content/live-event-details.png" alt="détails des événements en direct"> </figure>
         </li>
-        <li>Player A
-          <figure class="bcls-figure">
-            <img class="bcls-image" src="/assets/images/s-general-img/related-content/player-a.png" alt="Player A">
-          </figure>
+        <li>Joueur A <figure class="bcls-figure">
+            <img class="bcls-image" src="/assets/images/s-general-img/related-content/player-a.png" alt="Joueur A"> </figure>
         </li>
-      </ul>
-
-    </section>
-
-  </section>
-</article>
+      </ul>   </section></section></article>

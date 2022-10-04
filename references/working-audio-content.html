@@ -1,54 +1,29 @@
-<!-- <link rel="stylesheet" href="/assets/css/audio-content/audio-content.css" /> -->
-<article class="bcls-article">
-  <h1>{{ page.title }}</h1>
-  <summary>{{ page.description }}</summary>
-  <section class="bcls-section">
-    <h2 id="Ingestion">Ingesting audio files</h2>
-    <p>Audio source files can be in MP3, M4A, or WAV format and are uploaded using the Upload module. Audio files can be added to your {{ site.product_short }} account using the <a href="/media/uploading-videos-using-upload-module.html">Upload module</a>. Your source file can be in MP3, M4A, or WAV format. </p>
-    <h3>Creating an Ingest Profile </h3>
-    <p>You should create a custom ingest profile for audio-only content that only contains audio renditions. For information on creating custom ingest profiles, see <a href="/admin/creating-ingest-profiles-dynamic-delivery.html">Creating Ingest Profiles for Dynamic Delivery</a>. Audio assets can be published and played in a Brightcove Player just like a video, as explained <a href="#Creating_a_custom_audio_player">below</a>.</p>
-  </section>
-  <section class="bcls-section">
-    <h2 id="Poster_and_thumbnail">Uploading poster and thumbnail images</h2>
-    <p>Poster and/or thumbnail images can be added to  audio files. The poster image will be displayed in the Brightcove Player during playback and the thumbnail image will be displayed in any playlists that the item is added to. Note that on iOS devices, the native iOS player is used so the poster image will not display.</p>
-    <p>For information on uploading poster and thumbnail images, see <a href="/media/uploading-poster-and-thumbnail-images.html">Uploading Poster and Thumbnail Images</a>.</p>
-  </section>
-  <section class="bcls-section">
-    <h2 id="Audio_player">Publishing audio files</h2>
-    <p>Audio files  will play in any Brightcove Player. During playback, the video screen will either be blank or display the poster image if you <a href="#Poster_and_thumbnail">added one</a>.</p>
-    <p>If you prefer to use a more minimal audio player without the video screen, you can create a player for that purpose. After creating the player, configure the size in the following manner:</p>
+<!-- <link rel="stylesheet" href="/assets/css/audio-content/audio-content.css" /> --> <article class="bcls-article">
+  <h1>{{page.title}}</h1> <summary>{{page.description}}</summary> <section class="bcls-section">
+    <h2 id="Ingestion">Ingestion de fichiers audio</h2>
+    <p>Les fichiers sources audio peuvent être au format MP3, M4A ou WAV et sont téléchargés à l'aide du module Upload. Les fichiers audio peuvent être ajoutés à votre compte {{site.product_short}} à l'aide du module<a href="/media/uploading-videos-using-upload-module.html"> Upload</a>. Votre fichier source peut être au format MP3, M4A ou WAV. </p>
+    <h3>Création d'un profil d'ingestion </h3>
+    <p>Vous devez créer un profil d'acquisition personnalisé pour le contenu uniquement audio qui ne contient que des rendus audio. Pour plus d'informations sur la création de profils d'acquisition personnalisés, consultez la section<a href="/admin/creating-ingest-profiles-dynamic-delivery.html"> Création de profils d'ingestion pour la diffusion dynamique</a>. Les ressources audio peuvent être publiées et lues dans un lecteur Brightcove comme une vidéo, comme expliqué<a href="#Creating_a_custom_audio_player"> ci-dessous</a>.</p>  </section><section class="bcls-section">
+    <h2 id="Poster_and_thumbnail">Téléchargement d'affiches et de vignettes</h2>
+    <p>Des affiches et/ou des vignettes peuvent être ajoutées aux fichiers audio. L'image de l'affiche sera affichée dans le lecteur Brightcove pendant la lecteur et l'image miniature sera affichée dans toutes les listes de lecteur auxquelles l'élément est ajouté. Notez que sur les appareils iOS, le lecteur iOS natif est utilisé afin que l'image de l'affiche ne s'affiche pas.</p>
+    <p>Pour plus d'informations sur le téléchargement d'affiches et de vignettes, consultez la section<a href="/media/uploading-poster-and-thumbnail-images.html"> Chargement d'images d'affiches et de vignettes</a>.</p>  </section><section class="bcls-section">
+    <h2 id="Audio_player">Publication de fichiers audio</h2>
+    <p>Les fichiers audio seront lus dans n'importe quel lecteur Brightcove. Pendant la lecteur, l'écran vidéo sera vide ou affichera l'image de l'affiche si vous en avez<a href="#Poster_and_thumbnail"> ajouté une</a>.</p>
+    <p>Si vous préférez utiliser un lecteur audio plus minimal sans écran vidéo, vous pouvez créer un lecteur à cet effet. Après avoir créé le lecteur, configurez la taille de la manière suivante:</p>
     <ul>
-      <li>Use a fixed size</li>
-      <li>Use a custom aspect ratio</li>
-      <li>Set the height to 80px (the width can be whatever you like)</li>
-    </ul>
-    <figure> <img alt="player sizing" src="/assets/images/s-general-img/audio-player-sizing.png" /></figure>
-  </section>
-  <section class="bcls-section">
-    <h2 id="Creating_a_custom_audio_player">Creating a custom audio player</h2>
-    <p>It is also possible to create a custom audio player. A sample audio player is displayed below. For information on creating a custom audio player, see <a href="https://player.support.brightcove.com/playback/audio-only-player.html">Audio Only with Brightcove Player</a>.</p>
+      <li>Utilisez une taille fixe</li>
+      <li>Utiliser un rapport hauteur/largeur personnalisé</li>
+      <li>Réglez la hauteur sur 80 px (la largeur peut être celle que vous voulez)</li>
+    </ul> <figure> <img alt="dimensionnement des lecteur
+s" src="/assets/images/s-general-img/audio-player-sizing.png" /></figure>  </section><section class="bcls-section">
+    <h2 id="Creating_a_custom_audio_player">Création d'un lecteur audio personnalisé</h2>
+    <p>Il est également possible de créer un lecteur audio personnalisé. Un exemple de lecteur audio est affiché ci-dessous. Pour plus d'informations sur la création d'un lecteur audio personnalisé, voir<a href="https://player.support.brightcove.com/playback/audio-only-player.html"> Audio uniquement avec Brightcove Player</a>.</p>
 
-    <div style="max-width: 640px;">
-      <video-js 
-        id="myPlayerID"
-        data-account="1752604059001" 
-        data-player="GjkNfCUHx" 
-        data-embed="default" 
-        controls="" 
-        data-video-id="1730750848976252324" 
-        data-playlist-id="" 
-        data-application-id="" 
-        class="vjs-fluid">
-      </video-js>
-    </div>
-    <script src="https://players.brightcove.net/1752604059001/GjkNfCUHx_default/index.min.js"></script>
-
-    <script translate="no">
+    <div style="max-width: 640px;">  <video-js         id="myPlayerID"         data-account="1752604059001"         data-player="GjkNfCUHx"         data-embed="default"         controls=""         data-video-id="1730750848976252324"         data-playlist-id=""         data-application-id=""         class="vjs-fluid"></video-js>
+    </div>     <script src="https://players.brightcove.net/1752604059001/GjkNfCUHx_default/index.min.js"></script><script translate="no">
       videojs.getPlayer('myPlayerID').ready(function() {
         var myPlayer = this;
         myPlayer.audioOnlyMode(true);
         // myPlayer.audioPosterMode(true);
       });
-    </script>
-  </section>
-</article>
+    </script></section></article>

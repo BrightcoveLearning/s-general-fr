@@ -1,91 +1,80 @@
-<h1>{{ page.title }}</h1>
-<article class="bcls-article">
-  <summary>{{ page.description }}</summary>
-  <section class="bcls-section">
-    <h2 id="terms">Understanding codecs, containers, and file extensions</h2>
-    <p>Codecs, containers and file extensions are not equivalent but are often confused with one another. For example, H.264 video does not just mean a file with the extension <code translate="No">.mp4</code>. Video files contain both metadata (duration, dimensions, etc.) as well as the encoded and often compressed audio and video data.</p>
+<h1>{{page.title}}</h1> <article class="bcls-article"> <summary>{{page.description}}</summary> <section class="bcls-section">
+    <h2 id="terms">Comprendre les codecs, les conteneurs et les extensions de fichiers</h2>
+    <p>Les codecs, les conteneurs et les extensions de fichiers ne sont pas équivalents mais sont souvent confondus entre eux. Par exemple, une vidéo H.264 ne signifie pas simplement un fichier avec l'extension<code translate="No"> .mp4</code>. Les fichiers vidéo contiennent à la fois des métadonnées (durée, dimensions, etc.) ainsi que des données audio et vidéo codées et souvent compressées.</p>
     <ul>
-      <li>The <em>container</em> format defines how the metadata is stored along with the audio and video data. It does not define the coding or compression of the data.</li>
-      <li><em>Codecs</em> are responsible for encoding and decoding the video and audio streams in a video file. They can be lossy or lossless and are usually optimized for certain types of transmission. Note that there are some cases where the codec and container share a single definition, but these are uncommon.</li>
+      <li>Le<em> format</em> conteneur définit la manière dont les métadonnées sont stockées avec les données audio et vidéo. Il ne définit ni le codage ni la compression des données.</li>
+      <li><em>Les codecs</em> sont responsables de l'encodage et du décodage des flux vidéo et audio d'un fichier vidéo. Ils peuvent être avec ou sans perte et sont généralement optimisés pour certains types de transmission. Notez que dans certains cas, le codec et le conteneur partagent une seule définition, mais ceux-ci sont rares.</li>
     </ul>
-    <p>Other terms that are often confused are encoding/decoding and muxing/demuxing.</p>
+    <p>D'autres termes souvent confondus sont l'encodage/décodage et le multiplexage/démultiplexage.</p>
     <ul>
-      <li><em>Encoding </em>and <em>decoding </em>refer to converting the encoded video and audio data to and from streams that can be played.</li>
-      <li><em>Muxing </em>and <em>demuxing </em>refers to the writing and reading of audio and video streams into and from various container formats.</li>
+      <li><em>Le codage</em> et le<em> décodage</em> font référence à la conversion des données vidéo et audio codées vers et depuis des flux pouvant être lus.</li>
+      <li><em>Le multiplexage</em> et le<em> démultiplexage</em> font référence à l'écriture et à la lecteur de flux audio et vidéo dans et à partir de divers formats de conteneurs.</li>
     </ul>
-    <p>For more information see:</p>
+    <p>Pour plus d'informations, voir:</p>
     <ul>
-      <li>Containers are described in this <a class="external-link" rel="nofollow" href="http://en.wikipedia.org/wiki/Comparison_of_container_formats">article</a>.</li>
-      <li>More details on codecs can be found in this <a class="external-link" rel="nofollow" href="http://en.wikipedia.org/wiki/Video_codec">article</a>.</li>
-      <li>Additional references for codec IDs and codes can be found <a class="external-link" rel="nofollow" href="http://www.fourcc.org/codecs.php">here</a> and <a class="external-link" rel="nofollow" href="http://mp4ra.org/#/codecs">here</a>.</li>
+      <li>Les conteneurs sont décrits dans cet<a class="external-link" rel="nofollow" href="http://en.wikipedia.org/wiki/Comparison_of_container_formats"> article</a>.</li>
+      <li>Vous trouverez plus de détails sur les codecs dans cet<a class="external-link" rel="nofollow" href="http://en.wikipedia.org/wiki/Video_codec"> article</a>.</li>
+      <li>Des références supplémentaires pour les ID et codes de codec peuvent être trouvées<a class="external-link" rel="nofollow" href="http://www.fourcc.org/codecs.php"> ici</a> et<a class="external-link" rel="nofollow" href="http://mp4ra.org/#/codecs"> ici</a>.</li>
+    </ul>  </section><section class="bcls-section">
+    <h2 id="supported_source_formats">Types de vidéos sources pris en charge</h2>
+    <p>Étant donné<span translate="No"> que Brightcove gère</span> généralement la complexité de la création de rendus avec des codecs et des formats adaptés aux différentes plateformes, navigateurs et applications d'appareils, ce qui vous préoccupe le plus est de savoir quels types de vidéos sources nous pouvons transcoder pour vous.</p>
+    <p>Comme<span translate="No"> Brightcove</span> prend en charge de nombreux types d'entrée vidéo, il est en fait plus utile de parler des formats que nous ne prenons pas en charge. Pour le moment, il n'y en a que quelques-uns. La liste ci-dessous montre les formats<strong><em> non</em></strong> pris en charge par<a href="https://zencoder.support.brightcove.com"><span translate="No"> Zencoder</span> </a>, le module de<span translate="No"> chargement</span> <a href="/media/uploading-videos-using-upload-module.html"> {{site.product_short}}</a> et <a href="https://apis.support.brightcove.com/dynamic-ingest/"><span translate="No">API Dynamic Ingest</span></a>. Notez que si un format<strong> n'est pas</strong> inclus dans la liste ci-dessous, vous pouvez supposer qu'il<strong> est pris en charge</strong>.</p>
+    <ul>
+      <li><code translate="No">Intermédiaire Apple</code></li>
+      <li><code translate="No">HDV 720p 60</code></li>
+      <li><code translate="No">Réunion 3 (G2M3)</code></li>
+      <li><code translate="No">Avid Meridien non compressé</code></li>
+      <li><code translate="No">Windows Media Audio sans perte</code></li>
+      <li><code translate="No">CineForm</code> - partiellement pris en charge&nbsp;; certaines variantes peuvent provenir du logiciel utilisé pour encoder la source, ou du système d'exploitation, qui rendent la source inutilisable par Zencoder. Nous essayons toujours d'identifier les facteurs exacts à l'origine des problèmes.</li>
+      <li><code translate="No">SWF</code> - partiellement pris en charge par<span translate="No"> Zencoder</span>&nbsp;; si le<code translate="No"> fichier SWF</code> contient une piste vidéo ou audio, celles-ci peuvent être traitées, mais de nombreux<code translate="No"> fichiers SWF</code> ne le faites pas.</li>
+      <li><code translate="No">.gif animé</code> - Officiellement non pris en charge, mais ils peuvent fonctionner</li>
     </ul>
-  </section>
-  <section class="bcls-section">
-    <h2 id="supported_source_formats">Supported source video types</h2>
-    <p>Since <span translate="No">Brightcove</span> generally handles the complexity of creating renditions with codecs and formats appropriate to different platforms, browsers, and device apps, what concerns you most is what kinds of source videos we can transcode for you.</p>
-    <p>Since <span translate="No">Brightcove</span> supports so many video input types, it is actually more helpful to talk about the formats we do not support. At the moment, there are only a few. The list below shows the formats <strong><em>not</em></strong> supported by <a href="https://zencoder.support.brightcove.com"><span translate="No">Zencoder</span> </a>, the <span translate="No">{{ site.product_short }}</span> <a href="/media/uploading-videos-using-upload-module.html">Upload module</a> and <a href="https://apis.support.brightcove.com/dynamic-ingest/"><span translate="No">Dynamic Ingest API</span></a>. Note that if a format is <strong>not</strong>  included in the list below, you can assume it <strong>is supported</strong>.</p>
+    <h3>Cas spéciaux</h3>
     <ul>
-      <li><code translate="No">Apple Intermediate</code></li>
-      <li><code translate="No">HDV 720p60</code></li>
-      <li><code translate="No">Go2Meeting3 (G2M3)</code></li>
-      <li><code translate="No">Avid Meridien Uncompressed</code></li>
-      <li><code translate="No">Windows Media Audio Lossless</code></li>
-      <li><code translate="No">CineForm</code> - partly supported; there are variants that can come from the software used to encode the source, or from OS, that make the source unusable by Zencoder. We are still trying to identify the exact factors that cause problems.</li>
-      <li><code translate="No">SWF</code> - partly supported by <span translate="No">Zencoder</span>; if the <code translate="No">SWF</code> contains a video or audio track, those can be processed, but many <code translate="No">SWFs</code> do not.</li>
-      <li><code translate="No">Animated .gif</code> - Officially not supported but they may work</li>
-    </ul>
-    <h3>Special cases</h3>
-    <ul>
-      <li>
-        <aside class="bcls-aside bcls-aside--information">Note: <code translate="No">AVdh (DNxHQ)</code> also does not work for <strong>422 10-bit and 444 12-bit sources (only)</strong> - this is a bug, and this note will be removed when it is fixed.</aside>
+      <li> <aside class="bcls-aside bcls-aside--information">Remarque: <code translate="No">AvDH (DNxHQ)</code> ne fonctionne pas non plus pour<strong> 422 sources 10 bits et 444 sources 12 bits (uniquement)</strong> - il s'agit d'un bogue, et cette note sera supprimée lorsqu'elle sera corrigée.</aside>
       </li>
-      <li>Content encrypted with KMS is supported but requires that you pre-sign your object URLs, ala what is outlined here: <a href="https://aws.amazon.com/blogs/developer/generating-amazon-s3-pre-signed-urls-with-sse-kms-part-2/">https://aws.amazon.com/blogs/developer/generating-amazon-s3-pre-signed-urls-with-sse-kms-part-2/</a>.
-        <p>Steps to implement:</p>
+      <li>Le contenu chiffré avec KMS est pris en charge, mais vous devez pré-signer les URL de vos objets, comme indiqué ici:<a href="https://aws.amazon.com/blogs/developer/generating-amazon-s3-pre-signed-urls-with-sse-kms-part-2/"> https://aws.amazon.com/blogs/developer/generating-amazon-s3-pre-signed-urls-with-sse-kms-part-2/</a>.
+        <p>Étapes à mettre en œuvre:</p>
         <ol>
-          <li>Create a KMS managed encrypted bucket</li>
-          <li>Add the {{ site.product_short }}/Zencoder Ingest Policy</li>
-          <li>Create a pre-signed URL using the KMS key</li>
-          <li>Use this URL when ingesting the video</li>
+          <li>Créer un compartiment crypté géré par KMS</li>
+          <li>Ajoutez la politique d'acquisition de {{site.product_short}} /Zencoder</li>
+          <li>Créer une URL pré-signée à l'aide de la clé KMS</li>
+          <li>Utilisez cette URL lors de l'acquisition de la vidéo</li>
         </ol>
       </li>
     </ul>
-    <p>Aside from those listed above, we believe we support pretty much all known video formats. If you have problems with another video format, please <a href="https://supportportal.brightcove.com">Contact <span translate="No">Brightcove</span> Support</a> and also let <a href="mailto:docs@brightcove.com"><span translate="No">Brightcove</span> Learning Services</a> know.</p>
-  </section>
-  <section class="bcls-section">
-    <h2 id="audio_concerns">Audio formats</h2>
+    <p>Hormis ceux listés ci-dessus, nous pensons que nous prenons en charge presque tous les formats vidéo connus. Si vous rencontrez des problèmes avec un autre format vidéo,<a href="https://supportportal.brightcove.com"> contactez le<span translate="No"> support</span> Brightcove</a> et laissez également les services de<a href="mailto:docs@brightcove.com"><span translate="No"> formation</span> Brightcove </a> savoir.</p>  </section><section class="bcls-section">
+    <h2 id="audio_concerns">Formats audio</h2>
     <h3>Ingestion</h3>
-    <p>On the ingestion side, most formats are supported, except when they get over 8 channels of audio. (And the audio must either be configured as a single multichannel track, or multiple mono tracks.)</p>
-    <aside class="bcls-aside bcls-aside--information">Note: For {{ site.product_short }} ingestion, if your sources have multi-channel audio, you need to have support create custom audio renditions to correctly map the channels.</aside>
-    <h3>Encoding and transcoding</h3>
+    <p>Du côté de l'ingestion, la plupart des formats sont pris en charge, sauf lorsqu'ils reçoivent plus de 8 canaux audio. (Et l'audio doit être configuré comme une seule piste multicanal ou plusieurs pistes mono.)</p> <aside class="bcls-aside bcls-aside--information">Remarque: Pour l'ingestion de {{site.product_short}}, si vos sources disposent d'un son multicanal, vous devez avoir la prise en charge de créer des rendus audio personnalisés pour mapper correctement les canaux.</aside>
+    <h3>Encodage et transcodage</h3>
     <ul>
-      <li>For Multichannel audio, both AC-3 (Dolby Digital) and EAC-3 (Dolby Digital Plus) are supported, up to 5.1 channels.</li>
-      <li>For Stereo and mono, AAC is supported.</li>
+      <li>Pour l'audio multicanal, AC-3 (Dolby Digital) et EAC-3 (Dolby Digital Plus) sont pris en charge, jusqu'à 5,1 canaux.</li>
+      <li>Pour les formats stéréo et mono, l'AAC est pris en charge.</li>
     </ul>
-    <h3>Playback (in the Brightcove Player)</h3>
+    <h3>Lecture (dans le lecteur Brightcove)</h3>
     <ul>
-      <li>AAC, in mono or stereo. 5.1 channel audio support depends on browser capability.</li>
-      <li>Safari is the only current browser that supports it natively, and will select 5.1 audio tracks when available.</li>
-      <li>The Brightcove Player will check for support and automatically select 2.0 stereo AAC when 5.1 support is unavailable.</li>
+      <li>AAC, en mono ou stéréo. La prise en charge audio 5.1 canaux dépend de la capacité du navigateur.</li>
+      <li>Safari est le seul navigateur actuel qui le prend en charge en mode natif et sélectionne les pistes audio 5.1 lorsqu'elles sont disponibles.</li>
+      <li>Le lecteur Brightcove vérifie la prise en charge et sélectionne automatiquement l'AAC stéréo 2.0 lorsque la prise en charge 5.1 n'est pas disponible.</li>
     </ul>
-    <h3>Playback (in the SDK Native Players)</h3>
+    <h3>Lecture (dans le SDK Native Players)</h3>
     <ul>
-      <li>AAC, in mono or stereo.</li>
-      <li>iOS, iPadOS, and tvOS devices support EAC-3 and AC-3 5.1 audio, and stereo AAC.</li>
-      <li>Most Android devices support EAC-3 and AC-3 5.1 audio, and will fall back to stereo AAC renditions when available.</li>
+      <li>AAC, en mono ou stéréo.</li>
+      <li>Les appareils iOS, iPadOS et tvOS prennent en charge l'audio EAC-3 et AC-3 5.1, ainsi que le format AAC stéréo.</li>
+      <li>La plupart des appareils Android prennent en charge l'audio EAC-3 et AC-3 5.1 et reprennent les rendus AAC stéréo lorsqu'ils sont disponibles.</li>
     </ul>
-    <h3>Playback (other devices)</h3>
+    <h3>Lecture (autres appareils)</h3>
     <ul>
-      <li>Chromecast supports EAC-3 and AC-3 5.1 audio, and stereo AAC.</li>
-      <li>AirPlay to Apple TV will leverage tvOS 5.1/stereo capability.</li>
+      <li>Chromecast prend en charge l'audio 5.1 EAC-3 et AC-3, ainsi que le format AAC stéréo.</li>
+      <li>AirPlay sur Apple TV tirera parti de la capacité stéréo de tvOS 5.1/stéréo.</li>
     </ul>
-    <h3>Notes</h3>
+    <h3>Remarques</h3>
     <ul>
-      <li>When providing 5.1 audio, Brightcove recommends including both EAC-3 and AC-3 encoding types.</li>
-      <li>Some devices support 5.1 AAC, but these are uncommon, and AAC 5.1 should never be provided as the only multichannel format unless explicitly required.</li>
-      <li>All streams should include at least one stereo AAC track for devices and browsers without 5.1 support.</li>
+      <li>Lors de la fourniture d'un son 5.1, Brightcove recommande d'inclure les types de codage EAC-3 et AC-3.</li>
+      <li>Certains périphériques prennent en charge le format AAC 5.1, mais ceux-ci sont rares, et AAC 5.1 ne doit jamais être fourni en tant que seul format multicanal, sauf si cela est explicitement requis.</li>
+      <li>Tous les flux doivent inclure au moins une piste AAC stéréo pour les appareils et les navigateurs ne prenant pas en charge la version 5.1.</li>
       <li>
-        <p><strong>Windows:</strong> Content with audio above 48kHz for AAC is not supported on Windows and it will cause the player to fail. See <a href="https://docs.microsoft.com/en-gb/windows/desktop/medfound/aac-decoder#format-constraints">this Microsoft document</a> for more information.</p>
+        <p><strong>Fenêtres:</strong> Le contenu dont le son est supérieur à 48 kHz pour AAC n'est pas pris en charge sous Windows et cela provoquera l'échec du lecteur. Consultez<a href="https://docs.microsoft.com/en-gb/windows/desktop/medfound/aac-decoder#format-constraints"> ce document Microsoft</a> pour plus d'informations.</p>
       </li>
-    </ul>
-  </section>
-</article>
+    </ul>   </section></article>

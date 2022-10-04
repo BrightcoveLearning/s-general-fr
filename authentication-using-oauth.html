@@ -1,279 +1,211 @@
-<h1>{{ page.title }}</h1>
-<article class="bcls-article">
-  <summary>{{ page.description }}</summary>
-
-  <section class="bcls-section">
+<h1>{{page.title}}</h1> <article class="bcls-article"> <summary>{{page.description}}</summary> <section class="bcls-section">
     <p></p>
-    <h2 id="Introduction">Introduction</h2>
-    <p>OAuth (<strong>Open Authorization</strong>) is an open standard for access delegation, commonly used as a way for Internet users to grant websites or applications access to their information on other websites, but without using passwords. For instance, consider when you are using a bank application. OAuth provides you a way to get an authorization token to access protected/privileged bank information. A Brightcove Beacon example is when authenticating to one of the Beacon apps, OAuth will provide the UI and validate the credentials of a potential viewer.</p>
-  </section>
-
-  <section class="bcls-section">
-    <h2 id="section-name">Process overview</h2>
-    <p>A high-level look at the process of using OAuth with Brightcove Beacon is:</p>
+    <h2 id="Introduction">Présentation</h2>
+    <p>OAuth (<strong>Open Authorization</strong>) est une norme ouverte pour la délégation d'accès, couramment utilisée pour permettre aux utilisateurs d'Internet d'autoriser des sites Web ou des applications à accéder à leurs informations sur d'autres sites Web, mais sans utiliser de mot de passe. Par exemple, pensez à utiliser une application bancaire. OAuth vous permet d'obtenir un jeton d'autorisation pour accéder aux informations bancaires protégées/privilégiées. Par exemple, lors de l'authentification auprès de l'une des applications Beacon de Brightcove, OAuth fournit l'interface utilisateur et valide les informations d'identification d'un utilisateur potentiel.</p>  </section><section class="bcls-section">
+    <h2 id="section-name">Aperçu du processus</h2>
+    <p>Voici un aperçu général du processus d'utilisation d'OAuth avec Brightcove Beacon:</p>
     <ol>
-      <li>Create an Auth0 API.</li>
-      <li>If using a web application, create an Auth0 single page application. Once created, you will need to send the associated <strong>Client ID</strong> to the Beacon web app team to get the corresponding <strong>Allowed Callback URLs</strong>.</li>
-      <li>Create an Auth0 native application for all other application platforms you are using with Beacon. For each platform, once the applications are created you will need to send the associated <strong>Client ID</strong>s to the specific Beacon platform team to get the corresponding <strong>Allowed Callback URLs</strong>.</li>
-      <li>Enter the returned URLs from each platform team into the corresponding <strong>Allowed Callback URLs</strong> form field for each platform application.</li>
-      <li>From one of the applications, copy the <strong>OpenID Configuration</strong> URL and browse it.</li>
-      <li>Use information from the browsed <strong>OpenID Configuration</strong> web page as values for the <strong>Auth Providers</strong> form in Beacon Classic.</li>
-    </ol>
-  </section>
-
-  <section class="bcls-section">
-    <h2 id="Creating_the_OAuth_API">Creating the OAuth API</h2>
-    <p>You must create an OAuth API for you authentication to function properly. The following steps lead you through this process:</p>
+      <li>Créez une API Auth0.</li>
+      <li>Si vous utilisez une application Web, créez une application monopage Auth0. Une fois créé, vous devrez envoyer l'ID<strong> client associé</strong> à l'équipe de l'application Web Beacon pour obtenir les URL de rappel<strong> autorisées correspondantes</strong>.</li>
+      <li>Créez une application native Auth0 pour toutes les autres plateformes d'applications que vous utilisez avec Beacon. Pour chaque plate-forme, une fois les applications créées, vous devrez envoyer les ID <strong></strong>client associés à l'équipe de plate-forme Beacon spécifique pour obtenir les URL de rappel<strong> autorisées correspondantes</strong>.</li>
+      <li>Saisissez les URL renvoyées par chaque équipe de plateforme dans le champ de<strong> formulaire URL de rappel</strong> autorisées correspondant à chaque application de plate-forme.</li>
+      <li>Dans l'une des applications, copiez l'<strong>URL de configuration</strong> OpenID et parcourez-la.</li>
+      <li>Utilisez les informations de la page<strong> Web de configuration</strong> OpenID consultée comme valeurs pour le<strong> formulaire Fournisseurs d'</strong>authentification dans Beacon Classic.</li>
+    </ol>  </section><section class="bcls-section">
+    <h2 id="Creating_the_OAuth_API">Création de l'API OAuth</h2>
+    <p>Vous devez créer une API OAuth pour que votre authentification fonctionne correctement. Les étapes suivantes vous guident tout au long de ce processus:</p>
     <ol class="bcls-tasklist-restart">
-      <li>Browse to <a href="https://auth0.com/">https://auth0.com/</a> and either login or create an account and then login.
-        <figure class="bcls-figure"> assets/images/s-general-img/authentication-using-oauth/login-screen.png
-          <img class="bcls-image" src="/assets/images/s-general-img/authentication-using-oauth/login-screen.png" alt="login screen">
-        </figure>
+      <li>Accédez à<a href="https://auth0.com/"> https://auth0.com/</a> et connectez-vous ou créez un compte, puis connectez-vous. <figure class="bcls-figure">assets/images/s-general-img/authentication-using-oauth/login-screen.png
+          <img class="bcls-image" src="/assets/images/s-general-img/authentication-using-oauth/login-screen.png" alt="écran de connexion"> </figure>
       </li>
-      <li>From the Dashboard, click <strong>Applications > APIs > Create API</strong>.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-general-img/authentication-using-oauth/create-api.png" alt="create api">
-        </figure>
+      <li>Dans le tableau de bord, cliquez sur<strong> Applications &gt; API &gt; Créer une API</strong>. <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-general-img/authentication-using-oauth/create-api.png" alt="créer une API"> </figure>
       </li>
-      <li>In the <strong>New API</strong> form, enter the following:
+      <li>Dans le<strong> formulaire</strong> Nouvelle API, entrez les informations suivantes:
         <ul>
-          <li>A <strong>Name</strong> to identify this API</li>
-          <li>The <strong>Identifier</strong> is a logical name for the API. A URL is recommended, but it need not be Internet accessible.</li>
-          <li>Leave the <strong>Signing Algorithm</strong> the default of <em>RS256</em>.</li>
-        </ul>
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-general-img/authentication-using-oauth/completed-api-form.png" alt="completed api form">
-        </figure>
+          <li>Un<strong> nom</strong> pour identifier cette API</li>
+          <li>L'<strong>identifiant</strong> est un nom logique pour l'API. Une URL est recommandée, mais elle n'a pas besoin d'être accessible par Internet.</li>
+          <li>Laissez la valeur par défaut<strong> de l'algorithme de</strong> signature<em> RS256</em>.</li>
+        </ul> <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-general-img/authentication-using-oauth/completed-api-form.png" alt="formulaire API rempli"> </figure>
       </li>
-      <li>Click <strong>Create</strong>.</li>
-      <li>From the API details page, click <strong>Settings</strong>, then scroll down to the <strong>Access Settings</strong> and enable <strong>Allow Offline Access</strong>.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-general-img/authentication-using-oauth/allow-offline-access.png" alt="allow offline access">
-        </figure>
+      <li>Cliquez sur<strong> Créer</strong>.</li>
+      <li>Sur la page des détails de l'API, cliquez sur<strong> Paramètres</strong>, puis faites défiler vers le bas jusqu'<strong>aux paramètres d'accès</strong> et activez<strong> Autoriser l'accès hors ligne</strong>. <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-general-img/authentication-using-oauth/allow-offline-access.png" alt="autoriser l'accès hors ligne"> </figure>
       </li>
-      <li>If you choose, you can change the <strong>Token Expiration</strong> to meet your business requirements.</li>
-      <li>Click <strong>Save</strong>.</li>
-      <li>In the left navigation, click <strong>Applications > APIs</strong> and be sure your API has been created.</li>
-    </ol>
-  </section>
-
-  <section class="bcls-section">
-    <h2 id="Creating_the_single_page_application">Creating the single page application</h2>
-    <p>You create a single page application ONLY for your Beacon web app. If you are not going to have a web app, you do not have to perform these steps.</p>
-    <aside class="bcls-aside bcls-aside--tip language-editable">For complete documentation see Auth0's <a href="">Application Settings</a> document.</aside>
+      <li>Si vous le souhaitez, vous pouvez modifier l'expiration du<strong> jeton</strong> pour répondre aux besoins de votre entreprise.</li>
+      <li>Cliquez sur<strong> Enregistrer</strong>.</li>
+      <li>Dans le menu de navigation de gauche, cliquez sur<strong> Applications &gt; API</strong> et assurez-vous que votre API a été créée.</li>
+    </ol>  </section><section class="bcls-section">
+    <h2 id="Creating_the_single_page_application">Création de l'application monopage</h2>
+    <p>Vous créez une application d'une seule page UNIQUEMENT pour votre application Web Beacon. Si vous ne disposez pas d'une application Web, vous n'avez pas à effectuer ces étapes.</p> <aside class="bcls-aside bcls-aside--tip language-editable">Pour une documentation complète, consultez le<a href=""> document Paramètres de</a> l'application Auth0.</aside>
     <ol class="bcls-tasklist-restart">
-      <li>From the Dashboard, click <strong>Applications > Applications > Create Application</strong>.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-general-img/authentication-using-oauth/create-application.png" alt="create application">
-        </figure>
+      <li>Dans le tableau de bord, cliquez sur<strong> Applications &gt; Applications &gt; Créer une application</strong>. <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-general-img/authentication-using-oauth/create-application.png" alt="créer une application"> </figure>
       </li>
-      <li>In the <strong>Create application</strong> dialog, enter a name for your web application and select the <strong>Single Page Web Applications</strong> option.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-general-img/authentication-using-oauth/create-single-page-app-completed-form.png" alt="create single page app completed form">
-        </figure>
+      <li>Dans la boîte de<strong> dialogue</strong> Créer une application, entrez un nom pour votre application Web et sélectionnez l'<strong>option Applications Web</strong> monopage. <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-general-img/authentication-using-oauth/create-single-page-app-completed-form.png" alt="créer un formulaire rempli d'application d'une seule page"> </figure>
       </li>
-      <li>Click <strong>Create</strong>.</li>
-      <li>From the application details page, click <strong>Settings</strong> and locate the <strong>Client ID</strong> value.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-general-img/authentication-using-oauth/client-id-single-page.png" alt="client id">
-        </figure>
+      <li>Cliquez sur<strong> Créer</strong>.</li>
+      <li>Sur la page des détails de l'application, cliquez sur<strong> Paramètres</strong> et localisez la<strong> valeur ID</strong> client. <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-general-img/authentication-using-oauth/client-id-single-page.png" alt="identifiant du client"> </figure>
       </li>
-      <li>You now need to copy the Client ID, be sure you record that it is from your web application, and send the ID to the Beacon web application team. The Beacon team will then send back to you the value you will enter in <strong>Application URIs > Allowed Callback URLs</strong> AND <strong>Application URIs > Allowed Logout URLs</strong>.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-general-img/authentication-using-oauth/allowed-callback-urls-web.png" alt="allowed callback urls">
-        </figure>
+      <li>Vous devez maintenant copier l'ID client, vous assurer d'enregistrer qu'il provient de votre application Web et envoyer l'ID à l'équipe de l'application Web Beacon. L'équipe Beacon vous renverra ensuite la valeur que vous entrerez dans URI d'<strong>application &gt; URL de rappel autorisées</strong> ET<strong> URI d'application &gt; URL de déconnexion autorisées</strong>. <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-general-img/authentication-using-oauth/allowed-callback-urls-web.png" alt="URL de rappel autorisées"> </figure>
       </li>
-      <li>Near the bottom of the application details page, open the <strong>Advanced Settings</strong> and click on <strong>Grant Types</strong>.</li>
-      <li>In the <strong>Grants</strong> section, uncheck/disable the <strong>Implicit</strong> grant.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-general-img/authentication-using-oauth/grant-types-single-page.png" alt="grant types single page">
-        </figure>
+      <li>En bas de la page des détails de la demande, ouvrez les paramètres<strong> avancés</strong> et cliquez sur<strong> Grant Types</strong>.</li>
+      <li>Dans la<strong> section</strong> Grants, décochez/désactivez la<strong> subvention</strong> implicite. <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-general-img/authentication-using-oauth/grant-types-single-page.png" alt="types de subvention d'une seule page"> </figure>
       </li>
-      <li>Click <strong>Save Changes</strong>. Even though you have not yet entered <strong>Allowed Callback URLs</strong> you can save your current data.</li>
-    </ol>
-    <aside class="bcls-aside bcls-aside--warning language-editable">Remember you must submit the Client ID to the Web application team so you can get the proper <em>Allowed Callback URLs</em> AND <em>Allowed Logout URLs</em>. Once received, you will edit your application and enter the provided URLs.</aside>
-  </section>
-
-  <section class="bcls-section">
-    <h2 id="Creating_a_native_application">Creating a native application</h2>
-    <p>You must create a native application for each platform for which you have a Beacon application. This includes:</p>
+      <li>Cliquez sur<strong> Enregistrer les modifications</strong>. Même si vous n'avez pas encore saisi les URL de rappel<strong> autorisées,</strong> vous pouvez enregistrer vos données actuelles.</li>
+    </ol> <aside class="bcls-aside bcls-aside--warning language-editable">N'oubliez pas que vous devez soumettre l'ID client à l'équipe d'application Web afin d'obtenir les URL de rappel <em></em>autorisées<em> ET les URL de déconnexion autorisées appropriées</em>. Une fois reçue, vous allez modifier votre demande et saisir les URL fournies.</aside> </section> <section class="bcls-section">
+    <h2 id="Creating_a_native_application">Création d'une application native</h2>
+    <p>Vous devez créer une application native pour chaque plate-forme pour laquelle vous disposez d'une application Beacon. Cela inclut:</p>
     <ul>
-      <li>iOS/Apple TV (one application needed for both)</li>
-      <li>Android Mobile/Android TV (one application needed for both)</li>
+      <li>iOS/Apple TV (une seule application est requise pour les deux)</li>
+      <li>Android Mobile/Android TV (une seule application est nécessaire pour les deux)</li>
       <li>Roku</li>
-    </ul>
-
-    <aside class="bcls-aside bcls-aside--tip language-editable">For complete documentation see Auth0's <a href="">Application Settings</a> document.</aside>
+    </ul> <aside class="bcls-aside bcls-aside--tip language-editable">Pour une documentation complète, consultez le<a href=""> document Paramètres de</a> l'application Auth0.</aside>
     <ol class="bcls-tasklist-restart">
-      <li>From the Dashboard, click <strong>Applications > Applications > Create Application</strong>.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-general-img/authentication-using-oauth/create-application.png" alt="create application">
-        </figure>
+      <li>Dans le tableau de bord, cliquez sur<strong> Applications &gt; Applications &gt; Créer une application</strong>. <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-general-img/authentication-using-oauth/create-application.png" alt="créer une application"> </figure>
       </li>
-      <li>In the <strong>Create application</strong> dialog, enter a name for your web application and select the <strong>Native</strong> option.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-general-img/authentication-using-oauth/create-native-app-completed-form.png" alt="create native app completed form">
-        </figure>
+      <li>Dans la boîte de<strong> dialogue</strong> Créer une application, entrez un nom pour votre application Web et sélectionnez l'<strong>option</strong> Native. <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-general-img/authentication-using-oauth/create-native-app-completed-form.png" alt="formulaire rempli de création d'une application native"> </figure>
       </li>
-      <li>Click <strong>Create</strong>.</li>
-      <li>From the application details page, click <strong>Settings</strong> and locate the <strong>Client ID</strong> value.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-general-img/authentication-using-oauth/client-id-native.png" alt="client id">
-        </figure>
+      <li>Cliquez sur<strong> Créer</strong>.</li>
+      <li>Sur la page des détails de l'application, cliquez sur<strong> Paramètres</strong> et localisez la<strong> valeur ID</strong> client. <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-general-img/authentication-using-oauth/client-id-native.png" alt="identifiant du client"> </figure>
       </li>
-      <li>You now need to copy the Client ID, be sure you record to which platform this application corresponds. You then need to send the ID to the correct platform team. The Beacon team will then send back to you the value you will enter in <strong>Application URIs > Allowed Callback URLs</strong>.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-general-img/authentication-using-oauth/allowed-callback-urls.png" alt="allowed callback urls">
-        </figure>
+      <li>Vous devez maintenant copier l'ID client, assurez-vous d'enregistrer la plate-forme à laquelle cette application correspond. Vous devez ensuite envoyer l'ID à la bonne équipe de plateforme. L'équipe Beacon vous renverra ensuite la valeur que vous entrerez dans<strong> URI de l'application &gt; URL de rappel autorisées</strong>. <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-general-img/authentication-using-oauth/allowed-callback-urls.png" alt="URL de rappel autorisées"> </figure>
       </li>
-      <li>Still in <strong>Settings</strong>, locate the <strong>Refresh Token Rotation</strong> group and enable <strong>Rotation</strong>.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-general-img/authentication-using-oauth/native-enable-rotation.png" alt="enable rotation">
-        </figure>
+      <li>Toujours dans<strong> Paramètres</strong>, localisez le<strong> groupe Rotation des jetons d'</strong>actualisation et activez<strong> Rotation</strong>. <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-general-img/authentication-using-oauth/native-enable-rotation.png" alt="activer la rotation"> </figure>
       </li>
-      <li>Near the bottom of the application details page, open the <strong>Advanced Settings</strong> and click on <strong>Grant Types</strong>.</li>
-      <li>In the <strong>Grants</strong> section, perform the following:
+      <li>En bas de la page des détails de la demande, ouvrez les paramètres<strong> avancés</strong> et cliquez sur<strong> Grant Types</strong>.</li>
+      <li>Dans la<strong> section</strong> Subventions, effectuez les opérations suivantes:
         <ul>
-          <li>Uncheck/disable the <strong>Implicit</strong> grant.</li>
-          <li>Check/enable the <strong>Device Code</strong> grant.</li>
-        </ul>
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-general-img/authentication-using-oauth/grant-types-native.png" alt="grant types native">
-        </figure>
+          <li>Décochez/désactivez l'<strong>attribution</strong> implicite.</li>
+          <li>Cochez/activez l'<strong>octroi du code d'</strong>appareil.</li>
+        </ul> <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-general-img/authentication-using-oauth/grant-types-native.png" alt="types de subvention natifs"> </figure>
       </li>
-      <li>Click <strong>Save Changes</strong>. Even though you have not yet entered <strong>Allowed Callback URLs</strong> you will be able to save your current data.</li>
-    </ol>
-    <aside class="bcls-aside bcls-aside--warning language-editable">Remember you must submit the Client ID to the correct team so you can get the proper <em>Allowed Callback URLs</em>. Once received you will edit your application and enter the provided URLs.</aside>
-  </section>
-
-  <section class="bcls-section">
-    <h2 id="section-name">Implementing OAuth in Beacon Classic</h2>
-    <p>In this section of the document, you will learn how to use information from your OAuth applications to fill in the <strong>Auth Providers</strong> form in the Beacon Classic CMS.</p>
-    <aside class="bcls-aside bcls-aside--tip language-editable">Note that your account will have to enabled for OAuth to see the appropriate forms.</aside>
+      <li>Cliquez sur<strong> Enregistrer les modifications</strong>. Même si vous n'avez pas encore saisi les URL de rappel<strong> autorisées,</strong> vous serez en mesure d'enregistrer vos données actuelles.</li>
+    </ol> <aside class="bcls-aside bcls-aside--warning language-editable">N'oubliez pas que vous devez soumettre l'ID client à la bonne équipe afin d'obtenir les URL de rappel<em> autorisées appropriées</em>. Une fois reçue, vous allez modifier votre demande et saisir les URL fournies.</aside> </section> <section class="bcls-section">
+    <h2 id="section-name">Implémentation d'OAuth dans Beacon Classic</h2>
+    <p>Dans cette section du document, vous apprendrez comment utiliser les informations de vos applications OAuth pour remplir le<strong> formulaire</strong> Auth Providers dans le CMS Beacon Classic.</p> <aside class="bcls-aside bcls-aside--tip language-editable">Notez que votre compte devra être activé pour que OAuth puisse voir les formulaires appropriés.</aside>
     <ol class="bcls-tasklist">
-      <li>From the dashboard, click on <strong>Applications → Applications</strong> to see a list of your applications.</li>
-      <li>Click on any of your applications to view its details page.</li>
-      <li>Near the bottom of the page, open the <strong>Advanced Settings</strong> then click the <strong>Endpoints</strong> tab.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-general-img/authentication-using-oauth/open-id-configuration.png" alt="open id configuration">
-        </figure>
+      <li>Dans le tableau de bord, cliquez sur<strong> Applications â†' Applications</strong> pour voir la liste de vos applications.</li>
+      <li>Cliquez sur l'une de vos applications pour afficher sa page de détails.</li>
+      <li>En bas de la page, ouvrez les paramètres<strong> avancés,</strong> puis cliquez sur l'<strong>onglet</strong> Endpoints. <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-general-img/authentication-using-oauth/open-id-configuration.png" alt="configuration de l'identifiant ouvert"> </figure>
       </li>
-      <li>Locate the <strong>OpenID Configuration</strong> information and copy the provided URL (note the copy icon at the end of the field).</li>
-      <li>Browse the URL.</li>
-      <li>Check to be sure you see JSON similar to the following:
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-general-img/authentication-using-oauth/openid-config-json.png" alt="openid config json">
-        </figure>
+      <li>Localisez les<strong> informations de configuration</strong> OpenID et copiez l'URL fournie (notez l'icône de copie à la fin du champ).</li>
+      <li>Parcourez l'URL.</li>
+      <li>Vérifiez que le code JSON est similaire au suivant: <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-general-img/authentication-using-oauth/openid-config-json.png" alt="json de configuration openid"> </figure>
       </li>
-      <li>In Beacon Classic, click the gear icon in the top navigation.</li>
-      <li>In the left navigation click <strong>Auth Providers</strong>.</li>
-      <li>Check to be sure you see a form similar to the following:
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-general-img/authentication-using-oauth/classic-auth-providers.png" alt="classic auth providers">
-        </figure>
+      <li>Dans Beacon Classic, cliquez sur l'icône en forme d'engrenage dans la barre de navigation supérieure.</li>
+      <li>Dans le menu de navigation de gauche, cliquez sur Fournisseurs d'<strong>authentification</strong>.</li>
+      <li>Vérifiez qu'un formulaire similaire au suivant s'affiche: <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-general-img/authentication-using-oauth/classic-auth-providers.png" alt="fournisseurs d'authentification classiques"> </figure>
       </li>
-      <li>Populate each field of the form as instructed in the following table:
+      <li>Remplissez chaque champ du formulaire comme indiqué dans le tableau suivant:
         <table class="bcls-table">
           <thead class="bcls-table__head">
             <tr>
-              <th>Beacon CMS Form Field</th>
-              <th>Value or location<br>(actual values to enter are in bold)</th>
+              <th>Champ de formulaire Beacon CMS</th>
+              <th>Valeur ou emplacement<br>(les valeurs réelles à saisir sont en gras)</th>
             </tr>
           </thead>
           <tbody class="bcls-table__body">
             <tr>
-              <td>Auth Endpoint</td>
+              <td>Point de terminaison d'authentification</td>
               <td><strong>/account/social_login</strong></td>
             </tr>
             <tr>
-              <td>Auth Type</td>
+              <td>Type d'autorisation</td>
               <td><strong>openid_connect</strong></td>
             </tr>
             <tr>
-              <td>Token Revalidation</td>
+              <td>Revalidation de jetons</td>
               <td><strong>0</strong></td>
             </tr>
             <tr>
-              <td>Base URL</td>
-              <td>From JSON: <code>issuer</code> value, BE SURE to include the trailing slash (/)</td>
+              <td>URL de base</td>
+              <td>À partir de JSON:<code> valeur de l'</code>émetteur, VEILLEZ à inclure la barre oblique de fin (/)</td>
             </tr>
             <tr>
-              <td>User Info Url</td>
-              <td>From JSON: <code>userinfo_endpoint</code> value</td>
+              <td>URL des informations utilisateur</td>
+              <td>À partir de JSON:<code> valeur</code> userinfo_endpoint</td>
             </tr>
             <tr>
-              <td>Refresh Token Url</td>
-              <td>From JSON: <code>token_endpoint</code> value</td>
+              <td>Rafraîchir</td>
+              <td>Depuis JSON:<code> valeur</code> token_endpoint</td>
             </tr>
             <tr>
-              <td>Revoke Refresh Token Url</td>
-              <td>From JSON: <code>revocation_endpoint</code> value</td>
+              <td>Révoquer l'adresse URL du jeton</td>
+              <td>Depuis JSON:<code> valeur</code> revocation_endpoint</td>
             </tr>
             <tr>
-              <td>Access Token Url</td>
-              <td>From JSON: <code>token_endpoint</code> value</td>
+              <td>URL du jeton d'accès</td>
+              <td>Depuis JSON:<code> valeur</code> token_endpoint</td>
             </tr>
             <tr>
-              <td>Authorization Url</td>
-              <td>From JSON: <code>authorization_endpoint</code> value</td>
+              <td>URL d'autorisation</td>
+              <td>À partir de JSON:<code> valeur</code> authorization_endpoint</td>
             </tr>
             <tr>
-              <td>Pairing Codes Url</td>
-              <td>From JSON: <code>device_authorization_endpoint</code> value</td>
+              <td>URL des codes de couplage</td>
+              <td>Depuis JSON:<code> valeur</code> device_authorization_endpoint</td>
             </tr>
             <tr>
-              <td>Logout Url</td>
-              <td><strong>v2/logout</strong></td>
+              <td>URL de déconnexion</td>
+              <td><strong>v2/déconnexion</strong></td>
             </tr>
             <tr>
-              <td>Scopes</td>
-              <td><strong>openid,profile,offline_access</strong></td>
+              <td>Portées</td>
+              <td><strong>openid, profil, offline_access</strong></td>
             </tr>
             <tr>
-              <td>Has Audience</td>
-              <td><em>See instructions just below the table</em></td>
+              <td>A une audience</td>
+              <td><em>Voir les instructions juste en dessous du tableau</em></td>
             </tr>
             <tr>
-              <td>Jwks Location</td>
-              <td>From JSON: <code>jwks_uri</code> value</td>
+              <td>Emplacement Jwks</td>
+              <td>Depuis JSON:<code> valeur</code> jwks_uri</td>
             </tr>
             <tr>
-              <td>Issuer</td>
-              <td>From JSON: <code>issuer</code> value</td>
+              <td>Émetteur</td>
+              <td>À partir de JSON:<code> valeur</code> de l'émetteur</td>
             </tr>
             <tr>
-              <td>Roku Extension</td>
-              <td><em>Not needed for this implementation</em></td>
+              <td>Extension Roku</td>
+              <td><em>Non nécessaire pour cette mise en œuvre</em></td>
             </tr>
             <tr>
-              <td>Entitlements Claims Key</td>
-              <td><em>Not needed for this implementation</em></td>
+              <td>Clé des réclamations relatives aux droits</td>
+              <td><em>Non nécessaire pour cette mise en œuvre</em></td>
             </tr>
             <tr>
-              <td>Entitlements User Info</td>
-              <td><em>Not needed for this implementation</em></td>
+              <td>Informations sur l'utilisateur des droits</td>
+              <td><em>Non nécessaire pour cette mise en œuvre</em></td>
             </tr>
           </tbody>
         </table>
       </li>
-      <li>Click <strong>Save Settings</strong>.</li>
+      <li>Cliquez sur<strong> Enregistrer les paramètres</strong>.</li>
     </ol>
-    <h3>Get value for <strong>Has Audience</strong></h3>
+    <h3>Obtenir de la valeur pour<strong> Has Public</strong></h3>
     <ol class="bcls-tasklist-restart">
-      <li>From the dashboard, navigate to <strong>Applications > APIs</strong>.</li>
-      <li>Find the API you built earlier and copy the <strong>API Audience</strong> URL (note the copy icon at the end of the field).
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-general-img/authentication-using-oauth/audience.png" alt="audience">
-        </figure>
+      <li>Dans le tableau de bord, accédez à<strong> Applications &gt; API</strong>.</li>
+      <li>Recherchez l'API que vous avez créée précédemment et copiez l'<strong>URL</strong> API Audience (notez l'icône de copie à la fin du champ). <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-general-img/authentication-using-oauth/audience.png" alt="public"> </figure>
       </li>
-      <li>Place this value in the <strong>Has Audience</strong> form field.</li>
+      <li>Placez cette valeur dans le<strong> champ de</strong> formulaire Has Audience.</li>
     </ol>
-    <h3>Confirming correct implementation</h3>
-    <p>Once the OIDC provider is integrated correctly with Brightcove Beacon, the OIDC provider's tool will authenticate users to the Beacon apps. For instance, here is the OAuth implementation login screen from a Brightcove testing account:</p>
-    <figure class="bcls-figure">
-      <img class="bcls-image" src="/assets/images/s-general-img/authentication-using-oauth/bc-example-login.png" alt="bc example login">
-    </figure>
-    <p>Note that this login screen looks completely different than the default Beacon login screen.</p>
-  </section>
-
-</article>
+    <h3>Confirmer la bonne implémentation</h3>
+    <p>Une fois que le fournisseur OIDC est correctement intégré à Brightcove Beacon, l'outil du fournisseur OIDC authentifie les utilisateurs auprès des applications Beacon. Par exemple, voici l'écran de connexion à la mise en œuvre d'OAuth à partir d'un compte de test Brightcove:</p> <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/s-general-img/authentication-using-oauth/bc-example-login.png" alt="exemple de connexion bc"> </figure>
+    <p>Notez que cet écran de connexion est complètement différent de l'écran de connexion par défaut de Beacon.</p>  </section></article>
